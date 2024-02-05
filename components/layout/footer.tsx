@@ -22,7 +22,7 @@ export const Footer: FC<FooterProps> = ({}) => {
         </div>
         <div className="mt-8 md:order-1 md:mt-0">
           <small className="block text-center text-sm text-gray-400 d:text-gray-600">
-            &copy; {new Date().getFullYear()} Felix Tellmann, All rights reserved.
+            &copy; {new Date().getFullYear()} Lalit Kumawat, All rights reserved.
           </small>
         </div>
       </div>

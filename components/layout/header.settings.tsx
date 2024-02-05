@@ -27,7 +27,7 @@ export const ProfileNav: FC<ProfileNavProps> = ({ showNav }) => {
         <DarkmodeIcon />
       </button>
       <Link
-        href="https://github.com/FelixTellmann"
+        href="https://github.com/lalitkumawat1m"
         className={clsx(
           "rounded p-2 text-gray-500 transition-colors d:text-gray-300 d:h:text-gray-50 md:h:text-gray-900",
           showNav ? "h:text-gray-200" : "h:text-gray-900"
@@ -38,7 +38,7 @@ export const ProfileNav: FC<ProfileNavProps> = ({ showNav }) => {
       </Link>
       <Link
         target="_blank"
-        href="mailto:hello@flext.dev"
+        href="mailto:lalitkumawat1129@gmail.com"
         className="button-rainbow ml-4 hidden whitespace-nowrap px-4 py-1.5 text-sm font-medium tracking-tight text-gray-500 md:flex"
       >
         Lets work

@@ -1,7 +1,7 @@
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import { SiGithub } from "@react-icons/all-files/si/SiGithub";
 import { SiLinkedin } from "@react-icons/all-files/si/SiLinkedin";
-import { SiTwitter } from "@react-icons/all-files/si/SiTwitter";
+import { FaXTwitter } from "react-icons/fa6";
 import { Image } from "components/image";
 import { Link } from "components/link";
 
@@ -13,7 +13,6 @@ import { ResumeSectionDateSidebar } from "components/resume/resume-section-data-
 import { ResumeSectionDateEvents } from "components/resume/resume-section-date-events";
 import { useResumeSectionInView } from "components/resume/use-resume-section-in-view";
 import { CV } from "content/liz-cv";
-// import LizProfilePic from "public/images/about/liz-profile-pic.jpg";
 import LizProfilePic from "public/images/about/liz.jpg";
 import { FC, useEffect, useState } from "react";
 import { capitalize } from "utils/capitalize";
@@ -63,7 +62,7 @@ export const Resume: FC = (props) => {
                 ))}
               </h2>
             </header>
-            <div className="mt-1 ml-auto flex-1 items-end justify-end text-right text-[15px] text-gray-500 spacing-0">
+            <div className="ml-auto mt-1 flex-1 items-end justify-end text-right text-[15px] text-gray-500 spacing-0">
               <div>
                 <Link href={`tel:${CV?.mobile.href}`}>{CV?.mobile.number}</Link>
                 <span> - </span>
@@ -72,7 +71,7 @@ export const Resume: FC = (props) => {
               <div>
                 {/*<Link href={CV?.website}>{CV?.website.replace("https://", "")}</Link>*/}
                 {/*<span> - </span>*/}
-                {/*<Link href="https://github.com/FelixTellmann">github.com/FelixTellmann</Link>*/}
+                {/*<Link href="https://github.com/lalitkumawat1m">github.com/FelixTellmann</Link>*/}
               </div>
             </div>
           </th>
@@ -90,7 +89,7 @@ export const Resume: FC = (props) => {
       <tbody className="block print:table-row-group print:!h-screen print:!min-h-screen">
         <tr className="block print:!table-row">
           <td className="block print:!table-cell">
-            <article className="relative mx-auto mb-16 grid max-w-6xl gap-12 px-4 py-16 print:!flex print:!py-0 print:!pl-24 md:px-8 lg:grid-cols-[1fr_200px] print:[&_*]:![-webkit-print-color-adjust:exact] print:[&_*]:![color-adjust:exact] print:[&_*]:![print-color-adjust:exact]">
+            <article className="relative mx-auto mb-16 grid max-w-6xl gap-12 px-4 py-16 md:px-8 lg:grid-cols-[1fr_200px] print:!flex print:!py-0 print:!pl-24 print:[&_*]:![-webkit-print-color-adjust:exact] print:[&_*]:![color-adjust:exact] print:[&_*]:![print-color-adjust:exact]">
               <main className="snap-y snap-normal spacing-10">
                 <ResumeSection title="Intro" className="break-inside-avoid print:!max-w-3xl">
                   <p className="text-[15px] leading-relaxed text-gray-500 d:text-gray-300 print:!-ml-24 print:!max-w-3xl print:!text-base">
@@ -108,7 +107,7 @@ export const Resume: FC = (props) => {
                       <div className="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]" />
                     </div>
                   </div>
-                  <div className="absolute top-[calc(100%-1px)] left-2 -mb-px flex h-8 items-start overflow-hidden">
+                  <div className="absolute left-2 top-[calc(100%-1px)] -mb-px flex h-8 items-start overflow-hidden">
                     <div className="-mt-px flex h-[2px] w-44 -scale-x-100">
                       <div className="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
                       <div className="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
@@ -119,7 +118,7 @@ export const Resume: FC = (props) => {
                       src={LizProfilePic}
                       preload
                       className="rounded-sm shadow-xl shadow-sky-400/10"
-                      alt="Felix Tellmann Profile Pic"
+                      alt="Lalit Kumawat Profile Pic"
                       width="176"
                       height="224"
                       pixelDensity={2}
@@ -400,27 +399,10 @@ export const Resume: FC = (props) => {
                           ))}
                       </ul>
                     </section>
-
-                    {/*{["all", "restaurant"].includes(filter)
-                      ? <section className="relative max-w-prose spacing-1">
-                          <h3 className="items-baseline text-sm tracking-tight spacing-1 ">
-                            <strong className="text-[17px] font-bold text-gray-900 d:text-gray-100">
-                              Other
-                            </strong>{" "}
-                          </h3>
-                          <ul className="list-outside list-disc pl-4 text-sm text-gray-500 marker:text-gray-400 d:text-gray-300/80 d:marker:text-gray-600">
-                            {CV?.other.map(({ name }, index) => (
-                              <li className="pl-3" key={index}>
-                                {name}
-                              </li>
-                            ))}
-                          </ul>
-                        </section>
-                      : null}*/}
                   </div>
                 </ResumeSection>
 
-                <ResumeSection className="break-inside-avoid print:!hidden" title="References">
+                {/* <ResumeSection className="break-inside-avoid print:!hidden" title="References">
                   <div className="spacing-10">
                     {CV?.references.map(({ author, company, title, reference }) => (
                       <figure key={author} className="max-w-prose spacing-2">
@@ -436,15 +418,15 @@ export const Resume: FC = (props) => {
                       </figure>
                     ))}
                   </div>
-                </ResumeSection>
+                </ResumeSection> */}
                 <ResumeSection title="Interests" className="break-inside-avoid print:!hidden">
-                  <p className="text-[15px] leading-relaxed text-gray-500 d:text-gray-300 d:text-gray-300 print:!-ml-24 print:!text-base">
+                  <p className="text-[15px] leading-relaxed text-gray-500 d:text-gray-300 print:!-ml-24 print:!text-base">
                     {CV?.personal}
                   </p>
                   <div className="h-24"></div>
                 </ResumeSection>
               </main>
-              <aside className="top-[144px] mb-auto hidden max-h-min print:!hidden lg:sticky lg:spacing-8">
+              <aside className="top-[144px] mb-auto hidden max-h-min lg:sticky lg:spacing-8 print:!hidden">
                 <figure className="relative -top-2 z-0 ml-2 h-48 w-[9.5rem] rotate-6 print:!absolute print:!left-40 print:!top-6">
                   <div className="absolute -inset-x-10 top-0 h-0.5 bg-gray-900/[0.1] [mask-image:linear-gradient(to_right,transparent,white_4rem,white_calc(100%-4rem),transparent)] d:bg-gray-50/20" />
                   <div className="absolute -inset-y-10 right-0 w-0.5 bg-gray-900/[0.1] [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)] d:bg-gray-50/20" />
@@ -456,7 +438,7 @@ export const Resume: FC = (props) => {
                       <div className="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]" />
                     </div>
                   </div>
-                  <div className="absolute top-[calc(100%-1px)] left-2 -mb-px flex h-8 items-start overflow-hidden">
+                  <div className="absolute left-2 top-[calc(100%-1px)] -mb-px flex h-8 items-start overflow-hidden">
                     <div className="-mt-px flex h-[2px] w-44 -scale-x-100">
                       <div className="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
                       <div className="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
@@ -467,7 +449,7 @@ export const Resume: FC = (props) => {
                       src={LizProfilePic}
                       preload
                       className="rounded-sm shadow-xl shadow-sky-400/10"
-                      alt="Felix Tellmann Profile Pic"
+                      alt="Lalit Kumawat Profile Pic"
                       width="176"
                       height="224"
                       pixelDensity={2}
@@ -502,10 +484,6 @@ export const Resume: FC = (props) => {
                         "all",
                         "relevant",
                         "web / tech dev",
-                        "management",
-                        // "tech support",
-                        "entrepreneurial",
-                        "restaurant",
                       ] as const
                     ).map((type) => (
                       <button
@@ -531,7 +509,7 @@ export const Resume: FC = (props) => {
                   {/*<h4 className="text-[13px] font-medium text-gray-700">Contact:</h4>*/}
                   <nav className="flex flex-wrap gap-2">
                     <Link
-                      href="mailto:hello@flext.dev"
+                      href="mailto:lalitkumawat1129@gmail.com"
                       target="_blank"
                       className="rounded p-1 text-gray-400 transition-all duration-75 hf:bg-gray-100 hf:text-gray-700 d:text-gray-300 d:hf:bg-gray-800/80 d:hf:text-gray-200"
                       data-tip="hello@flext.dev"
@@ -540,7 +518,7 @@ export const Resume: FC = (props) => {
                       <EnvelopeIcon className="h-4 w-4" />
                     </Link>
                     <Link
-                      href="https://github.com/FelixTellmann"
+                      href="https://github.com/lalitkumawat1m"
                       target="_blank"
                       data-tip="Github"
                       className="rounded p-1 text-gray-400 transition-all duration-75 hf:bg-gray-100 hf:text-gray-700 d:text-gray-300 d:hf:bg-gray-800/80 d:hf:text-gray-200"
@@ -549,16 +527,16 @@ export const Resume: FC = (props) => {
                       <SiGithub className="h-4 w-4" />
                     </Link>
                     <Link
-                      href="https://twitter.com/FelixTellmann"
+                      href="https://twitter.com/lalitkumawat1m"
                       target="_blank"
                       data-tip="Twitter"
                       className="rounded p-1 text-gray-400 transition-all duration-75 hf:bg-gray-100 hf:text-gray-700 d:text-gray-300 d:hf:bg-gray-800/80 d:hf:text-gray-200"
                     >
                       <span className="sr-only">Twitter</span>
-                      <SiTwitter className="h-4 w-4" />
+                      <FaXTwitter className="h-4 w-4" />
                     </Link>
                     <Link
-                      href="https://www.linkedin.com/in/felixtellmann"
+                      href="https://www.linkedin.com/in/lalitkumawat1m"
                       target="_blank"
                       data-tip="LinkedIn"
                       className="rounded p-1 text-gray-400 transition-all duration-75 hf:bg-gray-100 hf:text-gray-700 d:text-gray-300 d:hf:bg-gray-800/80 d:hf:text-gray-200"
@@ -568,7 +546,7 @@ export const Resume: FC = (props) => {
                     </Link>
                   </nav>
                   <h5 className="ml-1 text-[13px] text-gray-500 d:text-gray-400">
-                    Cape Town, South Africa
+                    Madhya Pradesh, India
                   </h5>
                 </section>
               </aside>

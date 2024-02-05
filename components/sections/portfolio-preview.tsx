@@ -14,7 +14,7 @@ export const PortfolioPreview: FC<PortfolioPreviewProps> = ({}) => {
   const [filter, setFilter] = useState("All Projects");
 
   return (
-    <section id="portfolio" className="portfolio-preview mb-24 min-h-full spacing-4">
+    <section id="portfolio" className="portfolio-preview mb-24 mt-20 min-h-full spacing-4">
       <header className="mx-auto grid w-full max-w-6xl px-4 md:px-8">
         <div className="heading-pre">{PORTFOLIO.pre}</div>
         <h1 className="heading-2xl -ml-1">{PORTFOLIO.heading}</h1>

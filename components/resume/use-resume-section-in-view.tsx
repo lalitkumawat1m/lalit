@@ -9,10 +9,6 @@ export type ResumeSectionInViewStore = {
     | "relevant"
     | "all"
     | "web / tech dev"
-    | "management"
-    | "restaurant"
-    // | "tech support"
-    | "entrepreneurial";
   selectFilter: (filter: ResumeSectionInViewStore["filter"][0]) => void;
   updateSection: (
     id: keyof ResumeSectionInViewStore["sections"],
@@ -31,7 +27,7 @@ export const useResumeSectionInView = create<ResumeSectionInViewStore>((set) => 
     education: { showing: true, centerVisible: false, fullyVisible: false },
     capabilities: { showing: true, centerVisible: false, fullyVisible: false },
     certifications: { showing: true, centerVisible: false, fullyVisible: false },
-    references: { showing: true, centerVisible: false, fullyVisible: false },
+    // references: { showing: true, centerVisible: false, fullyVisible: false },
     interests: { showing: true, centerVisible: false, fullyVisible: false },
   },
   filter: "relevant",

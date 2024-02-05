@@ -78,9 +78,9 @@ export const MobileNav: FC<HeaderMobileNavProps> = ({ showNav, setShowNav }) => 
             {HEADER.nav.map((navItem, index) => {
               return (
                 <Link
-                  key={navItem.href}
-                  href={navItem.href}
-                  className="group flex items-baseline justify-between py-2 text-gray-300 opacity-0 opacity-0 transition-opacity delay-200 hfa:text-sky-400 [.nav-active_&]:opacity-100"
+                  key={navItem!.href}
+                  href={navItem!.href}
+                  className="group flex items-baseline justify-between py-2 text-gray-300 opacity-0 transition-opacity delay-200 hfa:text-sky-400 [.nav-active_&]:opacity-100"
                   onClick={() => setShowNav(false)}
                 >
                   <span
@@ -91,7 +91,7 @@ export const MobileNav: FC<HeaderMobileNavProps> = ({ showNav, setShowNav }) => 
                         : `transform 0.15s ${0.05 * index}s`,
                     }}
                   >
-                    {navItem.title}
+                    {navItem!.title}
                   </span>
                   <div className="mx-2 h-px flex-1 bg-[linear-gradient(90deg,var(--line-color),var(--line-color)_50%,transparent_0,transparent)] bg-[length:8px_1px] opacity-0 transition-opacity [.nav-active_&]:opacity-40 [.nav-active_&]:delay-500"></div>
                   <small
@@ -102,7 +102,7 @@ export const MobileNav: FC<HeaderMobileNavProps> = ({ showNav, setShowNav }) => 
                         : `transform 0.15s ${0.05 * index}s`,
                     }}
                   >
-                    {navItem.alt}
+                    {navItem!.alt}
                   </small>
                 </Link>
               );

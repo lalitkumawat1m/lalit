@@ -14,17 +14,16 @@ export const Notes: FC<IndexProps> = (props) => {
       </section>
       <section className="intro">
         <div>Welcome</div>
-        <h1>Hi, I am Felix Tellmann.</h1>
+        <h1>Hi, I am Lalit Kumawat.</h1>
         <p>
           I'm a fullstack developer specialized in react based websites and apps with a broad
           spectrum of knowledge from infrastructure/architecture to UX design. I love building clean
           and high performant websites, dev-tools to automate workloads and anything inbetween.
           <br />
-          I'm a self-taught web-engineer with a background in restaurants, yet written my first line
-          of code in 1998.
+          I'm a self-taught web-engineer, yet written my first line
+          of code in 2020.
           <br />
-          Hey, I'm Felix Tellmann. I'm a web developer and ex. Restaurateur living in Cape Town. In
-          2016 I made the daring decision to quit my restaurant job (not for good yet) to embrace my
+          Hey, I'm Lalit Kumawat. I'm a web developer living in India. My
           childhood passion of software development full-time.
           <br />
           Core message:
@@ -38,8 +37,8 @@ export const Notes: FC<IndexProps> = (props) => {
             <li>cta link - Read more about me</li>
             <li>cta primary - Hire / lets work</li>
           </ul>
-          Hi, I'm Felix Tellmann. Fullstack web-developer (and ex Restaurateur) with a strong sense
-          for business success, currently living in Cape Town. I specialize in building beautiful
+          Hi, I'm Lalit Kumawat. Fullstack web-developer with a strong sense
+          for business success, currently living in India. I specialize in building beautiful
           websites and web apps from small to large. I have worked many times through the steps to
           create a new website or app, from the initial idea to feature breakdown, design,
           development, launch and marketing, yet my passion is in the development part. I love

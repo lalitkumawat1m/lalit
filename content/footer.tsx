@@ -1,5 +1,5 @@
 export const FOOTER = {
-  copyright: `© ${new Date().getFullYear()} Felix Tellmann. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} Lalit Kumawat. All rights reserved.`,
   nav: [
     {
       name: "Home",

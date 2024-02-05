@@ -66,8 +66,85 @@ import Vend from "public/icons/tech-logos/vend_pos.svg";
 import NextJs from "public/icons/tech-logos/nextjs.svg";
 import Express from "public/icons/tech-logos/express.svg";
 import Liquid from "public/icons/tech-logos/liquid.svg";
+import { SiDocker, SiFlutter, SiHive, SiMongodb, SiNestjs, SiOpenai, SiPostgresql, SiPython, SiRedux, SiSocketdotio, SiStripe, SiTelegram, SiWebrtc } from "react-icons/si";
 
 export const TECH = {
+  openai: {
+    name: "OpenAI",
+    Icon: ({ className }) => <SiOpenai className={className} />,
+  },
+  zustand: {
+    name: "Zustand",
+    Icon: null,
+  },
+  jwt: {
+    name: "JWT",
+    Icon: null,
+  },
+  stripe: {
+    name: "Stripe",
+    Icon: ({ className }) => <SiStripe className={className} />,
+  },
+  nestjs: {
+    name: "Nestjs",
+    Icon: ({ className }) => <SiNestjs className={className} />,
+  },
+  telegramapi: {
+    name: "Telegram API",
+    Icon: ({ className }) => <SiTelegram className={className} />,
+  },
+  socketio:{
+    name: "Socket.io",
+    Icon: ({className})=>< SiSocketdotio className={className}/>,
+  },
+  docker: {
+    name: "Docker",
+    Icon: ({ className }) => <SiDocker className={className} />,
+  },
+  mongodb: {
+    name: "MongoDB",
+    Icon: ({ className }) => <SiMongodb className={className} />,
+  },
+  postgresql: {
+    name: "PostgresQL",
+    Icon: ({ className }) => <SiPostgresql className={className} />,
+  },
+  flutter: {
+    name: "Flutter",
+    Icon: ({ className }) => <SiFlutter className={className} />,
+  },
+  hive: {
+    name: "Hive",
+    Icon: ({ className }) => <SiHive className={className} />,
+  },
+  getx: {
+    name: "GetX",
+    Icon: null,
+  },
+  java: {
+    name: "Java",
+    Icon: null,
+  },
+  python: {
+    name: "Python",
+    Icon: ({ className }) => <SiPython className={className} />,
+  },
+  redux: {
+    name: "Redux",
+    Icon: ({ className }) => <SiRedux className={className} />,
+  },
+  webrtc: {
+    name: "WebRTC",
+    Icon: ({ className }) => <SiWebrtc className={className} />,
+  },
+  restapi: {
+    name: "REST API",
+    Icon: null,
+  },
+  vscode: {
+    name: "VS Code",
+    Icon: ({ className }) => <SiWebrtc className={className} />,
+  },
   shopify: {
     name: "Shopify",
     Icon: ({ className }) => <SiShopify className={className} />,
