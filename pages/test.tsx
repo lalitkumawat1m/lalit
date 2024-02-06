@@ -6,8 +6,8 @@ import { FC, useCallback, useEffect } from "react";
 type TestProps = {};
 
 export const Test: FC<TestProps> = (props) => {
-  const test = trpc.books.addMany.useMutation();
-  const data = trpc.books.get.useQuery(undefined, { ...fetchOnce });
+  // const test = trpc.books.addMany.useMutation();
+  // const data = trpc.books.get.useQuery(undefined, { ...fetchOnce });
 
   /*const handleClick = useCallback(async () => {
     const data = await test.mutate(BOOKS.map((book) => ({ ...book, published: true })));
