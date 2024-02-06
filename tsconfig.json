@@ -28,7 +28,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "jsx": "preserve",
     "typeRoots": ["./node_modules/@types","./@types/types.d.ts"]
   },
