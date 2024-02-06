@@ -11,15 +11,7 @@
     "postinstall": "prisma generate",
     "start": "next start",
     "export": "next build && next export -o .export",
-    "analyze": "SET ANALYZE=true&& next build",
-    "lint": "gts lint",
-    "format": "prettier --write .",
-    "clean": "gts clean",
-    "compile": "tsc",
-    "fix": "gts fix",
-    "prepare": "npm.cmd run compile",
-    "pretest": "npm.cmd run compile",
-    "posttest": "npm.cmd run lint"
+    "analyze": "SET ANALYZE=true&& next build"
   },
   "engines": {
     "node": ">=16.0.0"
