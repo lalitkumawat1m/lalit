@@ -53,14 +53,17 @@ const BookItem = (props: {
   const [book, setBook] = useState({ ...props.book, upvoted: false });
   const { mutate: upvote } = trpc.books.upvote.useMutation();
 
-  const addVote = useCallback(async (id: string) => {
-    setBook((book) => ({
-      ...book,
-      votes: book.votes + 1,
-      upvoted: true,
-    }));
-    upvote({ id });
-  }, [upvote]);
+  const addVote = useCallback(
+    async (id: string) => {
+      setBook((book) => ({
+        ...book,
+        votes: book.votes + 1,
+        upvoted: true,
+      }));
+      upvote({ id });
+    },
+    [upvote]
+  );
 
   return (
     <figure className="group spacing-2">
@@ -77,11 +80,11 @@ const BookItem = (props: {
           />
         </picture>
         <footer className="absolute -bottom-2 right-4 flex gap-2">
-          {book.rating
-            ? <div className="rounded-md bg-white py-1 px-2 drop-shadow-md">
-                <StarRating rating={book.rating} />
-              </div>
-            : null}
+          {book.rating ? (
+            <div className="rounded-md bg-white py-1 px-2 drop-shadow-md">
+              <StarRating rating={book.rating} />
+            </div>
+          ) : null}
           <button
             className="flex items-center justify-center gap-1 rounded-md bg-white py-1 px-1.5 text-gray-300 drop-shadow-md transition-all h:text-red-500"
             disabled={book.upvoted}

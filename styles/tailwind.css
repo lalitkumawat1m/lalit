@@ -10,7 +10,6 @@
   margin: 10mm 10mm 6mm 10mm;
 }
 
-
 .color-gray--slate {
   --color-gray-100: 241 245 249;
   --color-gray-200: 226 232 240;
@@ -108,12 +107,12 @@
 
 @layer base {
   @font-face {
-    font-family: 'Inter';
+    font-family: "Inter";
     font-weight: 100 900;
     font-display: swap;
     font-style: normal;
-    font-named-instance: 'Regular';
-    src: url('/fonts/inter-var-latin.woff2') format('woff2');
+    font-named-instance: "Regular";
+    src: url("/fonts/inter-var-latin.woff2") format("woff2");
   }
 
   :root {
@@ -146,7 +145,4 @@
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
   }
-
 }
-
-

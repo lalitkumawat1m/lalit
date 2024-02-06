@@ -66,7 +66,21 @@ import Vend from "public/icons/tech-logos/vend_pos.svg";
 import NextJs from "public/icons/tech-logos/nextjs.svg";
 import Express from "public/icons/tech-logos/express.svg";
 import Liquid from "public/icons/tech-logos/liquid.svg";
-import { SiDocker, SiFlutter, SiHive, SiMongodb, SiNestjs, SiOpenai, SiPostgresql, SiPython, SiRedux, SiSocketdotio, SiStripe, SiTelegram, SiWebrtc } from "react-icons/si";
+import {
+  SiDocker,
+  SiFlutter,
+  SiHive,
+  SiMongodb,
+  SiNestjs,
+  SiOpenai,
+  SiPostgresql,
+  SiPython,
+  SiRedux,
+  SiSocketdotio,
+  SiStripe,
+  SiTelegram,
+  SiWebrtc,
+} from "react-icons/si";
 
 export const TECH = {
   openai: {
@@ -93,9 +107,9 @@ export const TECH = {
     name: "Telegram API",
     Icon: ({ className }) => <SiTelegram className={className} />,
   },
-  socketio:{
+  socketio: {
     name: "Socket.io",
-    Icon: ({className})=>< SiSocketdotio className={className}/>,
+    Icon: ({ className }) => <SiSocketdotio className={className} />,
   },
   docker: {
     name: "Docker",

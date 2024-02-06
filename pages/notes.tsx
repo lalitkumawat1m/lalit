@@ -20,11 +20,10 @@ export const Notes: FC<IndexProps> = (props) => {
           spectrum of knowledge from infrastructure/architecture to UX design. I love building clean
           and high performant websites, dev-tools to automate workloads and anything inbetween.
           <br />
-          I'm a self-taught web-engineer, yet written my first line
-          of code in 2020.
+          I'm a self-taught web-engineer, yet written my first line of code in 2020.
           <br />
-          Hey, I'm Lalit Kumawat. I'm a web developer living in India. My
-          childhood passion of software development full-time.
+          Hey, I'm Lalit Kumawat. I'm a web developer living in India. My childhood passion of
+          software development full-time.
           <br />
           Core message:
           <ul>
@@ -37,14 +36,13 @@ export const Notes: FC<IndexProps> = (props) => {
             <li>cta link - Read more about me</li>
             <li>cta primary - Hire / lets work</li>
           </ul>
-          Hi, I'm Lalit Kumawat. Fullstack web-developer with a strong sense
-          for business success, currently living in India. I specialize in building beautiful
-          websites and web apps from small to large. I have worked many times through the steps to
-          create a new website or app, from the initial idea to feature breakdown, design,
-          development, launch and marketing, yet my passion is in the development part. I love
-          writing code that takes things next level, building my own dev-tools, private api
-          integrations, highly performant websites, and user-experiences that makes you feel "Wow"
-          (hover over wow for confetti effect :p).
+          Hi, I'm Lalit Kumawat. Fullstack web-developer with a strong sense for business success,
+          currently living in India. I specialize in building beautiful websites and web apps from
+          small to large. I have worked many times through the steps to create a new website or app,
+          from the initial idea to feature breakdown, design, development, launch and marketing, yet
+          my passion is in the development part. I love writing code that takes things next level,
+          building my own dev-tools, private api integrations, highly performant websites, and
+          user-experiences that makes you feel "Wow" (hover over wow for confetti effect :p).
         </p>
       </section>
       <section>

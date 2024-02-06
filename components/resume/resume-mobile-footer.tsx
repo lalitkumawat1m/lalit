@@ -15,7 +15,7 @@ export const ResumeFooter = () => {
   return (
     <footer
       className={clsx(
-        "fixed inset-x-0 bottom-0 z-40 px-4 py-2 transition-all ease-linear [--resume-footer-bg:theme(colors.gray.50)] lg:hidden print:!hidden",
+        "fixed inset-x-0 bottom-0 z-40 px-4 py-2 transition-all ease-linear [--resume-footer-bg:theme(colors.gray.50)] print:!hidden lg:hidden",
         active ? "max-h-72" : "max-h-10"
       )}
     >
@@ -110,9 +110,7 @@ export const ResumeFooter = () => {
               <SiLinkedin className="h-4 w-4" />
             </Link>
           </nav>
-          <h5 className="ml-1 text-[13px] text-gray-500 d:text-gray-400">
-            Madhya Pradesh, India
-          </h5>
+          <h5 className="ml-1 text-[13px] text-gray-500 d:text-gray-400">Madhya Pradesh, India</h5>
         </section>
       </section>
     </footer>

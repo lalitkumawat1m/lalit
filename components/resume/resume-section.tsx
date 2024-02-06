@@ -1,6 +1,9 @@
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
-import { ResumeSectionInViewStore, useResumeSectionInView } from "components/resume/use-resume-section-in-view";
+import {
+  ResumeSectionInViewStore,
+  useResumeSectionInView,
+} from "components/resume/use-resume-section-in-view";
 import { useInView } from "framer-motion";
 import { FC, PropsWithChildren, useEffect, useRef } from "react";
 import { useWindowSize } from "react-use";
@@ -31,18 +34,12 @@ export const ResumeSection: FC<PropsWithChildren<{ title: string; className?: st
   useEffect(() => {
     const element = sectionContentRef.current;
     if (section.showing && element) {
-      setTimeout(
-        () => {
-          element.style.maxHeight = "";
-        },
-        160
-      );
-      setTimeout(
-        () => {
-          element.style.maxHeight = element.clientHeight !== 0 ? `${element!.clientHeight}px` : "";
-        },
-        500
-      );
+      setTimeout(() => {
+        element.style.maxHeight = "";
+      }, 160);
+      setTimeout(() => {
+        element.style.maxHeight = element.clientHeight !== 0 ? `${element!.clientHeight}px` : "";
+      }, 500);
     }
   }, [key, section.showing, sections]);
 

@@ -9,7 +9,7 @@ import AlphaLionshead from "../public/images/about/alpha-mountain.jpg";
 import Kirstenbosch from "../public/images/about/kirstenbosch.jpg";
 import Camping from "../public/images/about/camping.jpg";
 import Desert from "../public/images/about/desert.jpg";
-import Aboutpic from "../public/images/about/aboutpic.jpg"
+import Aboutpic from "../public/images/about/aboutpic.jpg";
 
 export const ABOUT = {
   stats: [
@@ -41,17 +41,17 @@ export const ABOUT = {
   description: (
     <>
       <p>
-        I'm a India based Software Developer. My focus area for the past few years
-        has been full-stack development with <strong>Next.js</strong>, <strong>Typescript</strong>, <strong>TailwindCSS</strong>{" "}
-        and <strong>Node.js</strong> to create beautiful user- and developer experiences that
-        bring delight.
+        I'm a India based Software Developer. My focus area for the past few years has been
+        full-stack development with <strong>Next.js</strong>, <strong>Typescript</strong>,{" "}
+        <strong>TailwindCSS</strong> and <strong>Node.js</strong> to create beautiful user- and
+        developer experiences that bring delight.
       </p>
       <p>
-        I’ve spent most of my life deeply interested in technology, continuously building
-        things with both. As a teenager, I was a classic computer nerd, spending most of my times
-        messing with the computer, doing 1 of 4 things: Playing games and figuring things out.
-        Tinkering with hardware, building computers. Developing websites and
-        apps. And of course, playing games.
+        I’ve spent most of my life deeply interested in technology, continuously building things
+        with both. As a teenager, I was a classic computer nerd, spending most of my times messing
+        with the computer, doing 1 of 4 things: Playing games and figuring things out. Tinkering
+        with hardware, building computers. Developing websites and apps. And of course, playing
+        games.
       </p>
       <p>Most of that is still true today.</p>
     </>

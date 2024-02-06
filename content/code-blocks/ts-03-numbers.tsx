@@ -1,6 +1,6 @@
 /*= =============== Numbers ================ */
 let integer: number = 6;
-let float: number = 12.4
+let float: number = 12.4;
 let hex: number = 0xf00d;
 let binary: number = 0b1010;
 let octal: number = 0o344;
@@ -10,7 +10,7 @@ let notANumber: number = NaN;
 let inferredNumber = 6;
 // inferredNumber: number
 
-let inferredFloat = 12.4
+let inferredFloat = 12.4;
 // inferredFloat: number
 
 let inferredHex = 0xf00d;
@@ -28,5 +28,5 @@ let inferredBig = 100n;
 let inferredNaN = NaN;
 // inferredBig: number
 
-const inferredConstant = 12
+const inferredConstant = 12;
 // inferredConstant: 12

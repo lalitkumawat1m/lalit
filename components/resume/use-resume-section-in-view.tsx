@@ -5,10 +5,7 @@ export type ResumeSectionInViewStore = {
   sections: {
     [T: string]: { showing: boolean; centerVisible: boolean; fullyVisible: boolean };
   };
-  filter:
-    | "relevant"
-    | "all"
-    | "web / tech dev"
+  filter: "relevant" | "all" | "web / tech dev";
   selectFilter: (filter: ResumeSectionInViewStore["filter"][0]) => void;
   updateSection: (
     id: keyof ResumeSectionInViewStore["sections"],

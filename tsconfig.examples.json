@@ -1,10 +1,7 @@
 {
-
   "compilerOptions": {
     "isolatedModules": false,
     "target": "ESNext"
   },
-  "include": [
-    "content/code-blocks",
-  ],
+  "include": ["content/code-blocks"]
 }

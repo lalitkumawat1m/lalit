@@ -18,14 +18,11 @@ export const Timeline: FC<TimelineProps> = ({}) => {
   useEffect(() => {
     if (!initiated && inView) {
       const container = scrollContainerRef.current as HTMLDivElement;
-      setTimeout(
-        () => {
-          const year = Object.keys(TIMELINEOBJECT)[0];
-          setInitiated(true);
-          setSelected(`${year}-${0}`);
-        },
-        50
-      );
+      setTimeout(() => {
+        const year = Object.keys(TIMELINEOBJECT)[0];
+        setInitiated(true);
+        setSelected(`${year}-${0}`);
+      }, 50);
     }
   }, [inView, initiated]);
 

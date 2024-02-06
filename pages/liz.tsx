@@ -89,7 +89,7 @@ export const Resume: FC = (props) => {
       <tbody className="block print:table-row-group print:!h-screen print:!min-h-screen">
         <tr className="block print:!table-row">
           <td className="block print:!table-cell">
-            <article className="relative mx-auto mb-16 grid max-w-6xl gap-12 px-4 py-16 md:px-8 lg:grid-cols-[1fr_200px] print:!flex print:!py-0 print:!pl-24 print:[&_*]:![-webkit-print-color-adjust:exact] print:[&_*]:![color-adjust:exact] print:[&_*]:![print-color-adjust:exact]">
+            <article className="relative mx-auto mb-16 grid max-w-6xl gap-12 px-4 py-16 print:!flex print:!py-0 print:!pl-24 md:px-8 lg:grid-cols-[1fr_200px] print:[&_*]:![-webkit-print-color-adjust:exact] print:[&_*]:![color-adjust:exact] print:[&_*]:![print-color-adjust:exact]">
               <main className="snap-y snap-normal spacing-10">
                 <ResumeSection title="Intro" className="break-inside-avoid print:!max-w-3xl">
                   <p className="text-[15px] leading-relaxed text-gray-500 d:text-gray-300 print:!-ml-24 print:!max-w-3xl print:!text-base">
@@ -426,7 +426,7 @@ export const Resume: FC = (props) => {
                   <div className="h-24"></div>
                 </ResumeSection>
               </main>
-              <aside className="top-[144px] mb-auto hidden max-h-min lg:sticky lg:spacing-8 print:!hidden">
+              <aside className="top-[144px] mb-auto hidden max-h-min print:!hidden lg:sticky lg:spacing-8">
                 <figure className="relative -top-2 z-0 ml-2 h-48 w-[9.5rem] rotate-6 print:!absolute print:!left-40 print:!top-6">
                   <div className="absolute -inset-x-10 top-0 h-0.5 bg-gray-900/[0.1] [mask-image:linear-gradient(to_right,transparent,white_4rem,white_calc(100%-4rem),transparent)] d:bg-gray-50/20" />
                   <div className="absolute -inset-y-10 right-0 w-0.5 bg-gray-900/[0.1] [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)] d:bg-gray-50/20" />
@@ -479,13 +479,7 @@ export const Resume: FC = (props) => {
                     Filter view:
                   </div>
                   <nav className="flex flex-wrap gap-1.5">
-                    {(
-                      [
-                        "all",
-                        "relevant",
-                        "web / tech dev",
-                      ] as const
-                    ).map((type) => (
+                    {(["all", "relevant", "web / tech dev"] as const).map((type) => (
                       <button
                         key={type}
                         type="button"

@@ -29,13 +29,13 @@ import RealtimeChat from "../public/images/projects/RealtimeChat.png";
 import Omegle from "../public/images/projects/Omegle.png";
 import DallE from "../public/images/projects/DallE .png";
 import Authentication from "../public/images/projects/Authentication.png";
-import MinutesStudio from "../public/images/projects/Minutes Studio.png"
-import TelegramBot from "../public/images/projects/telegram-weather-bot.png"
-import FlutterFinanceUi from "../public/images/projects/Flutter Finance Ui.png"
-import MoneyTracker2 from "../public/images/projects/MoneyTracker2.png"
-import Livekar from "../public/images/projects/Livekar.png"
-import Meetha2 from "../public/images/projects/Meetha2.png"
-import CelebChat from "../public/images/projects/CelebChat.png"
+import MinutesStudio from "../public/images/projects/Minutes Studio.png";
+import TelegramBot from "../public/images/projects/telegram-weather-bot.png";
+import FlutterFinanceUi from "../public/images/projects/Flutter Finance Ui.png";
+import MoneyTracker2 from "../public/images/projects/MoneyTracker2.png";
+import Livekar from "../public/images/projects/Livekar.png";
+import Meetha2 from "../public/images/projects/Meetha2.png";
+import CelebChat from "../public/images/projects/CelebChat.png";
 
 export const PROJECTS = [
   // {

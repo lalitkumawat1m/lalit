@@ -60,7 +60,7 @@ export const PortfolioPreview: FC<PortfolioPreviewProps> = ({}) => {
                 rotationIndex % 2 === 0 && "sm:rotate-[1.5deg]",
                 rotationIndex % 2 === 1 && "sm:rotate-[-1.5deg]",
                 index % 8 === 0 &&
-                  "shadow-[currentBg] bg-[linear-gradient(40deg,var(--tw-gradient-stops))] from-pink-300/80 to-violet-500/40 shadow-violet-500/20",
+                  "bg-[linear-gradient(40deg,var(--tw-gradient-stops))] from-pink-300/80 to-violet-500/40 shadow-[currentBg] shadow-violet-500/20",
                 index % 8 === 1 &&
                   "bg-[linear-gradient(120deg,var(--tw-gradient-stops))] from-yellow-300/80 to-rose-600/80 shadow-rose-600/20",
                 index % 8 === 2 &&
@@ -113,28 +113,28 @@ export const PortfolioPreview: FC<PortfolioPreviewProps> = ({}) => {
                 <div className="mr-auto text-sm font-semibold text-gray-700/80 d:text-gray-300/80">
                   {project.year}
                 </div>
-                {project.repository
-                  ? <Link
-                      target="_blank"
-                      href={project.repository}
-                      className="p-1 text-gray-700/80 transition-all hfa:text-gray-900 d:text-gray-300/80 d:hfa:text-gray-50"
-                      data-tip="View repository"
-                    >
-                      <span className="sr-only">Link to Github repository</span>
-                      <FaGithub className="h-5 w-5 " />
-                    </Link>
-                  : null}
-                {project.url
-                  ? <Link
-                      target="_blank"
-                      href={project.url}
-                      className="p-1 text-gray-700/80 transition-all hfa:text-gray-900 d:text-gray-300/80 d:hfa:text-gray-50"
-                      data-tip="View site"
-                    >
-                      <span className="sr-only">Link to Project</span>
-                      <LinkIcon className="h-5 w-5 " />
-                    </Link>
-                  : null}
+                {project.repository ? (
+                  <Link
+                    target="_blank"
+                    href={project.repository}
+                    className="p-1 text-gray-700/80 transition-all hfa:text-gray-900 d:text-gray-300/80 d:hfa:text-gray-50"
+                    data-tip="View repository"
+                  >
+                    <span className="sr-only">Link to Github repository</span>
+                    <FaGithub className="h-5 w-5 " />
+                  </Link>
+                ) : null}
+                {project.url ? (
+                  <Link
+                    target="_blank"
+                    href={project.url}
+                    className="p-1 text-gray-700/80 transition-all hfa:text-gray-900 d:text-gray-300/80 d:hfa:text-gray-50"
+                    data-tip="View site"
+                  >
+                    <span className="sr-only">Link to Project</span>
+                    <LinkIcon className="h-5 w-5 " />
+                  </Link>
+                ) : null}
               </footer>
             </section>
           );

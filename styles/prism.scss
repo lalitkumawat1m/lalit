@@ -7,16 +7,16 @@
   }
 
   code[class*="language"] {
-    @apply text-white/95 font-normal;
+    @apply font-normal text-white/95;
     transition: 0.15s color;
   }
 
   .token.tag,
   .token.class-name {
-    color: #B7E2F8;
+    color: #b7e2f8;
   }
   .token.tag > .token.punctuation {
-    color: #65C6FF;
+    color: #65c6ff;
   }
 
   .token.selector,
@@ -27,14 +27,14 @@
   }
 
   .token.constant {
-    @apply font-medium text-orange-400
+    @apply font-medium text-orange-400;
   }
   .token.script {
-    @apply text-white font-normal;
-    color: #FD971F;
+    @apply font-normal text-white;
+    color: #fd971f;
   }
   .token.attr-name {
-    color: #A6E22E;
+    color: #a6e22e;
   }
   .token.builtin,
   .token.keyword,
@@ -42,7 +42,7 @@
   .token.pseudo-class,
   .token.important {
     @apply font-bold;
-    color: #F92672;
+    color: #f92672;
   }
 
   .token.attr-value,
@@ -90,9 +90,10 @@
     @apply text-slate-400/80;
   }
 
-  .code-inactive, .code-inactive *  {
-    @apply text-slate-400/50
-    transition: 0.15s color;
+  .code-inactive,
+  .code-inactive * {
+    @apply transition:
+    0.15s color text-slate-400/50;
   }
 
   .token.unchanged {
@@ -101,23 +102,22 @@
 
   .token.deleted,
   .token.inserted {
-    @apply block relative -mx-9 pl-8 pr-5 border-l-4 before:absolute before:top-0 before:left-4;
+    @apply relative -mx-9 block border-l-4 pl-8 pr-5 before:absolute before:top-0 before:left-4;
   }
 
   .token.inserted {
-    @apply bg-teal-400/[0.15] border-teal-400 before:content-['+'] before:text-teal-400;
+    @apply border-teal-400 bg-teal-400/[0.15] before:text-teal-400 before:content-['+'];
   }
 
   .token.deleted {
-    @apply bg-rose-500/[0.15] border-rose-400 before:content-['-'] before:text-rose-400;
+    @apply border-rose-400 bg-rose-500/[0.15] before:text-rose-400 before:content-['-'];
   }
 
-  pre[class^='language-diff-'] {
+  pre[class^="language-diff-"] {
     @apply flex px-9;
   }
 
-  pre[class^='language-diff-'] > code {
-    @apply flex-none min-w-full;
+  pre[class^="language-diff-"] > code {
+    @apply min-w-full flex-none;
   }
-
 }

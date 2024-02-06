@@ -179,8 +179,8 @@ export const CV = {
       type: ["web / tech dev", "relevant"],
       responsibilities: [
         {
-          content:"Worked on awesome projects such as Livekar, MoneyTracker.",
-          type:["web / tech dev", "relevant"],
+          content: "Worked on awesome projects such as Livekar, MoneyTracker.",
+          type: ["web / tech dev", "relevant"],
         },
         {
           content: "Learned how to create cross-platform apps using Flutter and Dart.",
@@ -193,7 +193,7 @@ export const CV = {
         {
           content: "Learned how Database Management & Computer Networking works.",
           type: ["web / tech dev", "relevant"],
-        },   
+        },
       ],
     },
     {
@@ -211,14 +211,13 @@ export const CV = {
           type: ["web / tech dev", "relevant"],
         },
         {
-          content:
-            "Worked on awesome projects such as GetSetBooking, Promptopia.",
+          content: "Worked on awesome projects such as GetSetBooking, Promptopia.",
           type: ["web / tech dev", "relevant"],
         },
         {
           content: "Learned Typescript, NextJS, ReactJS, NodeJS, Express, MongoDB.",
           type: ["web / tech dev", "relevant"],
-        },       
+        },
       ],
     },
     {

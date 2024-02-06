@@ -1,5 +1,18 @@
 import { StarIcon } from "@heroicons/react/20/solid";
-import { BookOpenIcon, BuildingOffice2Icon, CakeIcon, ChartBarIcon, CodeBracketIcon, CodeBracketSquareIcon, ComputerDesktopIcon, FireIcon, LanguageIcon, SignalIcon, UserCircleIcon, WifiIcon } from "@heroicons/react/24/solid";
+import {
+  BookOpenIcon,
+  BuildingOffice2Icon,
+  CakeIcon,
+  ChartBarIcon,
+  CodeBracketIcon,
+  CodeBracketSquareIcon,
+  ComputerDesktopIcon,
+  FireIcon,
+  LanguageIcon,
+  SignalIcon,
+  UserCircleIcon,
+  WifiIcon,
+} from "@heroicons/react/24/solid";
 import { AiOutlineDollar } from "@react-icons/all-files/ai/AiOutlineDollar";
 import { BiGame } from "@react-icons/all-files/bi/BiGame";
 import { BiSticker } from "@react-icons/all-files/bi/BiSticker";

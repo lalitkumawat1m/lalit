@@ -30,48 +30,53 @@ export const Link: FC<LinkProps> = ({
     legacyBehavior,
   };
 
-  const handleClick = useCallback((e) => {
-    if (window.self !== window.top && href) {
-      e.preventDefault();
-      e.stopPropagation();
+  const handleClick = useCallback(
+    (e) => {
+      if (window.self !== window.top && href) {
+        e.preventDefault();
+        e.stopPropagation();
 
-      window?.parent?.postMessage(
-        {
-          source: "theme-content",
-          topic: "redirect",
-          href: href,
-        },
-        "*"
-      );
-    }
-    if (onClick) {
-      onClick(e);
-    }
-  }, [href, onClick]);
+        window?.parent?.postMessage(
+          {
+            source: "theme-content",
+            topic: "redirect",
+            href: href,
+          },
+          "*"
+        );
+      }
+      if (onClick) {
+        onClick(e);
+      }
+    },
+    [href, onClick]
+  );
 
   return (
     <>
-      {href && !isExternalUrl(href)
-        ? <NextLink
-            {...nextLinkProps}
-            href={typeof href === "string" ? href.replace(/^\/products\//gi, "/") : href}
-          >
-            <a onClick={handleClick} {...AnchorProps}>
-              {children}
-            </a>
-          </NextLink>
-        : href
-        ? <a
-            href={typeof href === "string" ? href.replace(/^\/products\//gi, "/") : href}
-            rel={AnchorProps?.target === "_blank" ? "noopener noreferrer" : undefined}
-            onClick={onClick}
-            {...AnchorProps}
-          >
+      {href && !isExternalUrl(href) ? (
+        <NextLink
+          {...nextLinkProps}
+          href={typeof href === "string" ? href.replace(/^\/products\//gi, "/") : href}
+        >
+          <a onClick={handleClick} {...AnchorProps}>
             {children}
           </a>
-        : <span onClick={onClick} {...AnchorProps}>
-            {children}
-          </span>}
+        </NextLink>
+      ) : href ? (
+        <a
+          href={typeof href === "string" ? href.replace(/^\/products\//gi, "/") : href}
+          rel={AnchorProps?.target === "_blank" ? "noopener noreferrer" : undefined}
+          onClick={onClick}
+          {...AnchorProps}
+        >
+          {children}
+        </a>
+      ) : (
+        <span onClick={onClick} {...AnchorProps}>
+          {children}
+        </span>
+      )}
     </>
   );
 };

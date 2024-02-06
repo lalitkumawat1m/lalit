@@ -28,22 +28,22 @@ export const HERO = {
     // },
     {
       name: "Node.js",
-      Icon: ({ className }) => <SiNodeDotJs style={{color:'#417E38'}} className={className} />,
+      Icon: ({ className }) => <SiNodeDotJs style={{ color: "#417E38" }} className={className} />,
     },
     {
       name: "Tailwind",
-      Icon: ({ className }) => <SiTailwindcss style={{color:'#38BDF8'}} className={className} />,
+      Icon: ({ className }) => <SiTailwindcss style={{ color: "#38BDF8" }} className={className} />,
     },
     {
       name: "Typescript",
-      Icon: ({ className }) => <SiTypescript style={{ color: '#007acc' }} className={className} />,
+      Icon: ({ className }) => <SiTypescript style={{ color: "#007acc" }} className={className} />,
     },
   ] as const,
   body: (
     <>
-      I love writing code that takes things next level creating highly performant webapps,
-       automated API integrations, building my own AI-tools, and creating stunning user-experiences
-      that makes you feel{" "}
+      I love writing code that takes things next level creating highly performant webapps, automated
+      API integrations, building my own AI-tools, and creating stunning user-experiences that makes
+      you feel{" "}
       <em
         className="relative cursor-pointer before:absolute b:bottom-0 b:-z-10 b:h-3 b:w-full b:-rotate-2 b:animate-hint-hint b:bg-pink-400/70 b:blur-sm d:b:bg-pink-600"
         onClick={(e) => {
@@ -59,7 +59,11 @@ export const HERO = {
         Redis
       </Link>{" "}
       and{" "} */}
-      <Link href="https://www.langchain.com/" target="_blank" className="underline hfa:text-sky-500">
+      <Link
+        href="https://www.langchain.com/"
+        target="_blank"
+        className="underline hfa:text-sky-500"
+      >
         LangChain
       </Link>
       .

@@ -17,37 +17,25 @@ export const About: FC<AboutProps> = (props) => {
     if (focusImageIndex === images.length - 1) {
       setFocusImageIndex((current) => current + 1);
       setImages((current) => current.sort(() => 0.5 - Math.random()));
-      setTimeout(
-        () => {
-          setFocusImageIndex(0);
-          setTooltip(true);
-          const trigger = new Event("mouseover");
-          setTimeout(
-            () => {
-              buttonRef.current?.dispatchEvent(trigger);
-            },
-            50
-          );
-        },
-        350
-      );
+      setTimeout(() => {
+        setFocusImageIndex(0);
+        setTooltip(true);
+        const trigger = new Event("mouseover");
+        setTimeout(() => {
+          buttonRef.current?.dispatchEvent(trigger);
+        }, 50);
+      }, 350);
     }
 
     if (focusImageIndex < images.length - 1) {
       setFocusImageIndex((current) => current + 1);
-      setTimeout(
-        () => {
-          setTooltip(true);
-          const trigger = new Event("mouseover");
-          setTimeout(
-            () => {
-              buttonRef.current?.dispatchEvent(trigger);
-            },
-            50
-          );
-        },
-        50
-      );
+      setTimeout(() => {
+        setTooltip(true);
+        const trigger = new Event("mouseover");
+        setTimeout(() => {
+          buttonRef.current?.dispatchEvent(trigger);
+        }, 50);
+      }, 50);
     }
   }, [focusImageIndex, images.length, setTooltip]);
 

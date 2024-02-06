@@ -30,52 +30,58 @@ export const HoverEffect: FC<{ className?: string }> = ({ className = "" }) => {
     []
   );
 
-  const handleNavHover = useCallback((e) => {
-    const element = navHoverEffect.current as HTMLDivElement;
-    if (e.target === e.currentTarget) {
-      setNavHover(initialNavPosition);
-    }
-    if (e.target !== e.currentTarget) {
-      const navItemRef = getParentNodeByTag(e.target as HTMLElement, "A");
+  const handleNavHover = useCallback(
+    (e) => {
+      const element = navHoverEffect.current as HTMLDivElement;
+      if (e.target === e.currentTarget) {
+        setNavHover(initialNavPosition);
+      }
+      if (e.target !== e.currentTarget) {
+        const navItemRef = getParentNodeByTag(e.target as HTMLElement, "A");
 
+        if (navItemRef) {
+          setNavHover({
+            width: navItemRef.offsetWidth,
+            height: navItemRef.offsetHeight,
+            left: navItemRef.offsetLeft,
+            top: navItemRef.offsetTop,
+            opacity: 1,
+            borderRadius: getComputedStyle(navItemRef).borderRadius,
+            transition: +element.style.opacity
+              ? "0.18s all, 0.1s opacity"
+              : "0s all, 0.1s 0.0.2s opacity",
+          });
+        }
+      }
+    },
+    [initialNavPosition, setNavHover]
+  );
+
+  const handleNavFocus = useCallback(
+    (e) => {
+      const element = navHoverEffect.current as HTMLDivElement;
+      if (!e?.currentTarget?.matches(":focus-within")) {
+        setNavHover(initialNavPosition);
+        return;
+      }
+
+      const navItemRef = getParentNodeByTag(e.target as HTMLElement, "A");
       if (navItemRef) {
         setNavHover({
           width: navItemRef.offsetWidth,
           height: navItemRef.offsetHeight,
           left: navItemRef.offsetLeft,
           top: navItemRef.offsetTop,
-          opacity: 1,
           borderRadius: getComputedStyle(navItemRef).borderRadius,
+          opacity: 1,
           transition: +element.style.opacity
             ? "0.18s all, 0.1s opacity"
             : "0s all, 0.1s 0.0.2s opacity",
         });
       }
-    }
-  }, [initialNavPosition, setNavHover]);
-
-  const handleNavFocus = useCallback((e) => {
-    const element = navHoverEffect.current as HTMLDivElement;
-    if (!e?.currentTarget?.matches(":focus-within")) {
-      setNavHover(initialNavPosition);
-      return;
-    }
-
-    const navItemRef = getParentNodeByTag(e.target as HTMLElement, "A");
-    if (navItemRef) {
-      setNavHover({
-        width: navItemRef.offsetWidth,
-        height: navItemRef.offsetHeight,
-        left: navItemRef.offsetLeft,
-        top: navItemRef.offsetTop,
-        borderRadius: getComputedStyle(navItemRef).borderRadius,
-        opacity: 1,
-        transition: +element.style.opacity
-          ? "0.18s all, 0.1s opacity"
-          : "0s all, 0.1s 0.0.2s opacity",
-      });
-    }
-  }, [initialNavPosition, setNavHover]);
+    },
+    [initialNavPosition, setNavHover]
+  );
 
   const handleNavReset = useCallback(() => {
     setNavHover(initialNavPosition);

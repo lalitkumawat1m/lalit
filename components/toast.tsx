@@ -29,26 +29,23 @@ export const useToast = create<ToastStore>((set) => ({
       })
     );
 
-    setTimeout(
-      () => {
-        set((state) => {
-          if (
-            !state.toasts.some(
-              ({ id, timestamp }) => id === toast.id && timestamp === toast.timestamp
-            )
-          ) {
-            return state;
-          }
-          return {
-            ...state,
-            toasts: state.toasts.filter(
-              ({ id, timestamp }) => id !== toast.id || timestamp !== toast.timestamp
-            ),
-          };
-        });
-      },
-      2500
-    );
+    setTimeout(() => {
+      set((state) => {
+        if (
+          !state.toasts.some(
+            ({ id, timestamp }) => id === toast.id && timestamp === toast.timestamp
+          )
+        ) {
+          return state;
+        }
+        return {
+          ...state,
+          toasts: state.toasts.filter(
+            ({ id, timestamp }) => id !== toast.id || timestamp !== toast.timestamp
+          ),
+        };
+      });
+    }, 2500);
   },
   removeToast: (id) => {
     set(
@@ -84,9 +81,11 @@ export const Toast: FC = ({}) => {
                 leaveTo="opacity-0"
               >
                 <figure className="button-border pointer-events-auto flex w-full max-w-sm overflow-hidden rounded-lg border-gray-400/30 bg-white p-4 shadow-xl shadow-gray-500/10">
-                  {toast?.error
-                    ? <ExclamationCircleIcon className="h-6 w-6 text-red-400" aria-hidden="true" />
-                    : <CheckCircleIcon className="h-6 w-6 text-green-400" aria-hidden="true" />}
+                  {toast?.error ? (
+                    <ExclamationCircleIcon className="h-6 w-6 text-red-400" aria-hidden="true" />
+                  ) : (
+                    <CheckCircleIcon className="h-6 w-6 text-green-400" aria-hidden="true" />
+                  )}
 
                   <p className="ml-3 w-0 flex-1 pt-0.5 text-sm font-medium text-gray-900">
                     {toast?.message}

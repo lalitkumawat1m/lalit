@@ -11,7 +11,9 @@
     "postinstall": "prisma generate",
     "start": "next start",
     "export": "next build && next export -o .export",
-    "analyze": "SET ANALYZE=true&& next build"
+    "analyze": "SET ANALYZE=true&& next build",
+    "lint": "prettier --check . && stylelint --allow-empty-input \"**/*.{css,scss}\" && next lint",
+    "format": "prettier --write ."
   },
   "engines": {
     "node": ">=16.0.0"
@@ -102,4 +104,3 @@
     "./@types"
   ]
 }
-
