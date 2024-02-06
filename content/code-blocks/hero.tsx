@@ -1,14 +1,14 @@
-import { FC } from "react";
+import {FC} from 'react';
 
 type WelcomeProps = {
   uses:
-    | "explore new tech"
-    | "display my skills"
-    | "find freelancing opportunities"
-    | "find a fulltime job";
+    | 'explore new tech'
+    | 'display my skills'
+    | 'find freelancing opportunities'
+    | 'find a fulltime job';
 };
 
-export const Welcome: FC<WelcomeProps> = ({ uses }) => {
+export const Welcome: FC<WelcomeProps> = ({uses}) => {
   return (
     <>
       <h1>This is my little slice of the internet.</h1>

@@ -1,15 +1,31 @@
-import { createContext, Dispatch, SetStateAction, useContext, useMemo, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
 
-export function makeStore<S>(defaultValue: S, displayName = "") {
+export function makeStore<S>(defaultValue: S, displayName = '') {
   // Make a context for the store
-  const context = createContext<[S, Dispatch<SetStateAction<S>>]>([defaultValue, () => {}]);
+  const context = createContext<[S, Dispatch<SetStateAction<S>>]>([
+    defaultValue,
+    () => {},
+  ]);
 
-  if (displayName !== "") {
+  if (displayName !== '') {
     context.displayName = displayName;
   }
 
   // Make a provider that takes an initialValue
-  const Provider = ({ init = defaultValue, children }: { children: any; init?: S }) => {
+  const Provider = ({
+    init = defaultValue,
+    children,
+  }: {
+    children: any;
+    init?: S;
+  }) => {
     // Make a new state instance
     const [state, setState] = useState<S>(init);
 
@@ -32,5 +48,5 @@ export function makeStore<S>(defaultValue: S, displayName = "") {
   // A hook to help us consume the store
   const useStore = () => useContext<[S, Dispatch<SetStateAction<S>>]>(context);
 
-  return { Provider, useStore };
+  return {Provider, useStore};
 }

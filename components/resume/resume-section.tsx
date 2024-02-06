@@ -1,33 +1,32 @@
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import clsx from "clsx";
+import {ChevronDownIcon} from '@heroicons/react/24/solid';
+import clsx from 'clsx';
 import {
   ResumeSectionInViewStore,
   useResumeSectionInView,
-} from "components/resume/use-resume-section-in-view";
-import { useInView } from "framer-motion";
-import { FC, PropsWithChildren, useEffect, useRef } from "react";
-import { useWindowSize } from "react-use";
-import { toKebabCase } from "utils/to-kebab-case";
+} from 'components/resume/use-resume-section-in-view';
+import {useInView} from 'framer-motion';
+import {FC, PropsWithChildren, useEffect, useRef} from 'react';
+import {useWindowSize} from 'react-use';
+import {toKebabCase} from 'utils/to-kebab-case';
 
-export const ResumeSection: FC<PropsWithChildren<{ title: string; className?: string }>> = ({
-  title,
-  children,
-  className = "",
-}) => {
+export const ResumeSection: FC<
+  PropsWithChildren<{title: string; className?: string}>
+> = ({title, children, className = ''}) => {
   const sectionContentRef = useRef<HTMLElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const centerVisible = useInView(sectionRef, { margin: "-45% 0px -25% 0px" });
-  const fullyVisible = useInView(sectionRef, { amount: 0.9 });
-  const { width } = useWindowSize();
-  const { sections, filter, updateSection, toggleSectionShowing, showSection } =
+  const centerVisible = useInView(sectionRef, {margin: '-45% 0px -25% 0px'});
+  const fullyVisible = useInView(sectionRef, {amount: 0.9});
+  const {width} = useWindowSize();
+  const {sections, filter, updateSection, toggleSectionShowing, showSection} =
     useResumeSectionInView();
-  const key = toKebabCase(title) as keyof ResumeSectionInViewStore["sections"];
+  const key = toKebabCase(title) as keyof ResumeSectionInViewStore['sections'];
   const section = sections[key];
 
   useEffect(() => {
     if (sectionContentRef.current) {
       const element = sectionContentRef.current;
-      element.style.maxHeight = element.clientHeight !== 0 ? `${element!.clientHeight}px` : "";
+      element.style.maxHeight =
+        element.clientHeight !== 0 ? `${element!.clientHeight}px` : '';
     }
   }, []);
 
@@ -35,24 +34,29 @@ export const ResumeSection: FC<PropsWithChildren<{ title: string; className?: st
     const element = sectionContentRef.current;
     if (section.showing && element) {
       setTimeout(() => {
-        element.style.maxHeight = "";
+        element.style.maxHeight = '';
       }, 160);
       setTimeout(() => {
-        element.style.maxHeight = element.clientHeight !== 0 ? `${element!.clientHeight}px` : "";
+        element.style.maxHeight =
+          element.clientHeight !== 0 ? `${element!.clientHeight}px` : '';
       }, 500);
     }
   }, [key, section.showing, sections]);
 
   useEffect(() => {
     const element = sectionContentRef.current;
-    if (element && !element.classList.contains("!max-h-0") && element.style.maxHeight) {
-      sectionContentRef.current.style.maxHeight = "";
+    if (
+      element &&
+      !element.classList.contains('!max-h-0') &&
+      element.style.maxHeight
+    ) {
+      sectionContentRef.current.style.maxHeight = '';
     }
   }, [width, filter]);
 
   useEffect(() => {
     updateSection(
-      toKebabCase(title) as keyof ResumeSectionInViewStore["sections"],
+      toKebabCase(title) as keyof ResumeSectionInViewStore['sections'],
       section.showing,
       centerVisible,
       fullyVisible
@@ -63,7 +67,7 @@ export const ResumeSection: FC<PropsWithChildren<{ title: string; className?: st
     <section
       id={toKebabCase(title)}
       className={clsx(
-        "relative -mx-4 scroll-mt-[122px] overflow-hidden px-4 spacing-4 print:!overflow-visible md:overflow-visible",
+        'relative -mx-4 scroll-mt-[122px] overflow-hidden px-4 spacing-4 print:!overflow-visible md:overflow-visible',
         className
       )}
       ref={sectionRef}
@@ -84,7 +88,10 @@ export const ResumeSection: FC<PropsWithChildren<{ title: string; className?: st
           >
             <span className="sr-only">Toggle Section Visibility</span>
             <ChevronDownIcon
-              className={clsx("h-4 w-4 transition-all", section.showing ? "" : "rotate-180")}
+              className={clsx(
+                'h-4 w-4 transition-all',
+                section.showing ? '' : 'rotate-180'
+              )}
             />
           </button>
         </h2>
@@ -93,8 +100,8 @@ export const ResumeSection: FC<PropsWithChildren<{ title: string; className?: st
       <main
         ref={sectionContentRef}
         className={clsx(
-          "relative transition-all duration-200 ease-linear print:!max-h-max",
-          !section.showing && "!max-h-0 overflow-hidden opacity-0"
+          'relative transition-all duration-200 ease-linear print:!max-h-max',
+          !section.showing && '!max-h-0 overflow-hidden opacity-0'
         )}
       >
         <div className="transition-[all,height] delay-[0s,0.2s]"></div>

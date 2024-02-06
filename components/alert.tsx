@@ -4,8 +4,8 @@ import {
   InformationCircleIcon,
   XCircleIcon,
   XMarkIcon,
-} from "@heroicons/react/24/solid";
-import { FC } from "react";
+} from '@heroicons/react/24/solid';
+import {FC} from 'react';
 
 export type AlertProps = {
   show: boolean;
@@ -14,20 +14,30 @@ export type AlertProps = {
   list?: string[];
   paragraph?: string;
   title?: string;
-  type?: "info" | "warning" | "danger" | "attention" | "success";
+  type?: 'info' | 'warning' | 'danger' | 'attention' | 'success';
 };
 
-export const Alert: FC<AlertProps> = ({ show, type, dismissAlert, title, paragraph, list }) => {
+export const Alert: FC<AlertProps> = ({
+  show,
+  type,
+  dismissAlert,
+  title,
+  paragraph,
+  list,
+}) => {
   if (!show) {
     return <></>;
   }
 
   switch (type) {
-    case "info":
+    case 'info':
       return (
         <section className="rounded-md bg-blue-50 p-4 text-blue-800 spacing-1">
           <header className="relative flex items-center">
-            <InformationCircleIcon className="mr-3 h-5 w-5 text-blue-400" aria-hidden="true" />
+            <InformationCircleIcon
+              className="mr-3 h-5 w-5 text-blue-400"
+              aria-hidden="true"
+            />
             <h3 className="flex-1 text-sm font-medium">{title}</h3>
             <button
               type="button"
@@ -50,11 +60,14 @@ export const Alert: FC<AlertProps> = ({ show, type, dismissAlert, title, paragra
           </main>
         </section>
       );
-    case "warning":
+    case 'warning':
       return (
         <section className="rounded-md bg-orange-50 p-4 text-orange-800 spacing-1">
           <header className="relative flex items-center">
-            <ExclamationCircleIcon className="mr-3 h-5 w-5 text-orange-400" aria-hidden="true" />
+            <ExclamationCircleIcon
+              className="mr-3 h-5 w-5 text-orange-400"
+              aria-hidden="true"
+            />
             <h3 className="flex-1 text-sm font-medium">{title}</h3>
             <button
               type="button"
@@ -77,11 +90,14 @@ export const Alert: FC<AlertProps> = ({ show, type, dismissAlert, title, paragra
           </main>
         </section>
       );
-    case "danger":
+    case 'danger':
       return (
         <section className="rounded-md bg-red-50 p-4 text-red-800 spacing-1">
           <header className="relative flex items-center">
-            <XCircleIcon className="mr-3 h-5 w-5 text-red-400" aria-hidden="true" />
+            <XCircleIcon
+              className="mr-3 h-5 w-5 text-red-400"
+              aria-hidden="true"
+            />
             <h3 className="flex-1 text-sm font-medium">{title}</h3>
             <button
               type="button"
@@ -104,11 +120,14 @@ export const Alert: FC<AlertProps> = ({ show, type, dismissAlert, title, paragra
           </main>
         </section>
       );
-    case "attention":
+    case 'attention':
       return (
         <section className="rounded-md bg-yellow-50 p-4 text-yellow-800 spacing-1">
           <header className="relative flex items-center">
-            <ExclamationCircleIcon className="mr-3 h-5 w-5 text-yellow-400" aria-hidden="true" />
+            <ExclamationCircleIcon
+              className="mr-3 h-5 w-5 text-yellow-400"
+              aria-hidden="true"
+            />
             <h3 className="flex-1 text-sm font-medium">{title}</h3>
             <button
               type="button"
@@ -131,11 +150,14 @@ export const Alert: FC<AlertProps> = ({ show, type, dismissAlert, title, paragra
           </main>
         </section>
       );
-    case "success": {
+    case 'success': {
       return (
         <section className="rounded-md bg-green-50 p-4 text-green-800 spacing-1">
           <header className="relative flex items-center">
-            <CheckCircleIcon className="mr-3 h-5 w-5 text-green-400" aria-hidden="true" />
+            <CheckCircleIcon
+              className="mr-3 h-5 w-5 text-green-400"
+              aria-hidden="true"
+            />
             <h3 className="flex-1 text-sm font-medium">{title}</h3>
             <button
               type="button"

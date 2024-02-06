@@ -5,7 +5,12 @@ type EaseInOutQuadOptions = {
   start: number;
 };
 
-const easeInOutQuad = ({ currentTime, start, change, duration }: EaseInOutQuadOptions) => {
+const easeInOutQuad = ({
+  currentTime,
+  start,
+  change,
+  duration,
+}: EaseInOutQuadOptions) => {
   let newCurrentTime = currentTime;
   newCurrentTime /= duration / 2;
 
@@ -23,7 +28,8 @@ export const scrollToY = (
   container: HTMLElement | Window = window,
   callback: () => void = () => {}
 ): void => {
-  const start = container instanceof HTMLElement ? container.scrollTop : container.scrollY;
+  const start =
+    container instanceof HTMLElement ? container.scrollTop : container.scrollY;
 
   const change = to - start;
   const startDate = new Date().getTime();
@@ -58,7 +64,8 @@ export const scrollToX = (
   container: HTMLElement | Window = window,
   callback: () => void = () => {}
 ): void => {
-  const start = container instanceof HTMLElement ? container.scrollLeft : container.scrollX;
+  const start =
+    container instanceof HTMLElement ? container.scrollLeft : container.scrollX;
 
   const change = to - start;
   const startDate = new Date().getTime();

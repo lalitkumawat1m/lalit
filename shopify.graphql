@@ -263,7 +263,10 @@ interface HasMetafields {
 "Published translations associated with the resource."
 interface HasPublishedTranslations {
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
 }
 
 """
@@ -336,15 +339,20 @@ interface Publishable {
     onlyPublished: Boolean = true
   ): Int!
   "Check to see whether the resource is published to a given channel."
-  publishedOnChannel("The ID of the channel to check." channelId: ID!): Boolean!
-    @deprecated(reason: "Use `publishedOnPublication` instead")
+  publishedOnChannel(
+    "The ID of the channel to check."
+    channelId: ID!
+  ): Boolean! @deprecated(reason: "Use `publishedOnPublication` instead")
   "Check to see whether the resource is published to the calling app's channel."
   publishedOnCurrentChannel: Boolean!
     @deprecated(reason: "Use `publishedOnCurrentPublication` instead")
   "Check to see whether the resource is published to the calling app's publication."
   publishedOnCurrentPublication: Boolean!
   "Check to see whether the resource is published to a given publication."
-  publishedOnPublication("The ID of the publication to check." publicationId: ID!): Boolean!
+  publishedOnPublication(
+    "The ID of the publication to check."
+    publicationId: ID!
+  ): Boolean!
   "The list of resources that are published to a publication."
   resourcePublications(
     "Returns the elements that come after the specified cursor."
@@ -391,7 +399,8 @@ interface Publishable {
     last: Int
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): ChannelConnection! @deprecated(reason: "Use `unpublishedPublications` instead")
+  ): ChannelConnection!
+    @deprecated(reason: "Use `unpublishedPublications` instead")
   "The list of publications that the resource is not published to."
   unpublishedPublications(
     "Returns the elements that come after the specified cursor."
@@ -477,11 +486,16 @@ The concrete type can be `AppRecurringPricing` for recurring billing or `AppUsag
 union AppPricingDetails = AppRecurringPricing | AppUsagePricing
 
 "The main embed of a comment event."
-union CommentEventEmbed = Customer | DraftOrder | Order | Product | ProductVariant
+union CommentEventEmbed =
+  | Customer
+  | DraftOrder
+  | Order
+  | Product
+  | ProductVariant
 
 "All possible instruments for CustomerPaymentMethods."
 union CustomerPaymentInstrument =
-    CustomerCreditCard
+  | CustomerCreditCard
   | CustomerPaypalBillingAgreement
   | CustomerShopPayAgreement
 
@@ -495,17 +509,23 @@ union DeliveryRateProvider = DeliveryParticipant | DeliveryRateDefinition
 union DiscountAutomatic = DiscountAutomaticBasic | DiscountAutomaticBxgy
 
 "A code discount."
-union DiscountCode = DiscountCodeBasic | DiscountCodeBxgy | DiscountCodeFreeShipping
+union DiscountCode =
+  | DiscountCodeBasic
+  | DiscountCodeBxgy
+  | DiscountCodeFreeShipping
 
 "The prerequisite quantity required for the discount to be applicable."
 union DiscountCustomerBuysValue = DiscountPurchaseAmount | DiscountQuantity
 
 "The value of the discount and how it will be applied."
-union DiscountCustomerGetsValue = DiscountAmount | DiscountOnQuantity | DiscountPercentage
+union DiscountCustomerGetsValue =
+  | DiscountAmount
+  | DiscountOnQuantity
+  | DiscountPercentage
 
 "The type used for targeting a set of customers who are eligible for the discount. For example, the discount might be available to all customers or it might only be available to a specific set of customers. You can define the set of customers by targeting a list of customer segments, or by targeting a list of specific customers."
 union DiscountCustomerSelection =
-    DiscountCustomerAll
+  | DiscountCustomerAll
   | DiscountCustomerSavedSearches
   | DiscountCustomers
 
@@ -518,21 +538,30 @@ Entitled or prerequisite items on a discount. An item could be either collection
 union DiscountItems = AllDiscountItems | DiscountCollections | DiscountProducts
 
 "The minimum subtotal or quantity requirements for the discount."
-union DiscountMinimumRequirement = DiscountMinimumQuantity | DiscountMinimumSubtotal
+union DiscountMinimumRequirement =
+  | DiscountMinimumQuantity
+  | DiscountMinimumSubtotal
 
 "The selection of shipping countries to which this discount applies."
-union DiscountShippingDestinationSelection = DiscountCountries | DiscountCountryAll
+union DiscountShippingDestinationSelection =
+  | DiscountCountries
+  | DiscountCountryAll
 
 """
 The resource referenced by the metafield value.
 """
-union MetafieldReference = GenericFile | MediaImage | OnlineStorePage | Product | ProductVariant
+union MetafieldReference =
+  | GenericFile
+  | MediaImage
+  | OnlineStorePage
+  | Product
+  | ProductVariant
 
 """
 A change that has been applied to an order.
 """
 union OrderStagedChange =
-    OrderStagedChangeAddCustomItem
+  | OrderStagedChangeAddCustomItem
   | OrderStagedChangeAddLineItemDiscount
   | OrderStagedChangeAddShippingLine
   | OrderStagedChangeAddVariant
@@ -568,25 +597,31 @@ associated records (selling plan groups, selling plans, billing policy, and deli
 hours after a merchant uninstalls their subscriptions app. We recommend backing up these records if you need
 to restore them later.
 """
-union SellingPlanPricingPolicy = SellingPlanFixedPricingPolicy | SellingPlanRecurringPricingPolicy
+union SellingPlanPricingPolicy =
+  | SellingPlanFixedPricingPolicy
+  | SellingPlanRecurringPricingPolicy
 
 "Represents a selling plan pricing policy adjustment value type."
-union SellingPlanPricingPolicyAdjustmentValue = MoneyV2 | SellingPlanPricingPolicyPercentageValue
+union SellingPlanPricingPolicyAdjustmentValue =
+  | MoneyV2
+  | SellingPlanPricingPolicyPercentageValue
 
 "Describes the delivery method to use to get the physical goods to the customer."
 union SubscriptionDeliveryMethod = SubscriptionDeliveryMethodShipping
 
 "Subscription draft discount types."
-union SubscriptionDiscount = SubscriptionAppliedCodeDiscount | SubscriptionManualDiscount
+union SubscriptionDiscount =
+  | SubscriptionAppliedCodeDiscount
+  | SubscriptionManualDiscount
 
 "The value of the discount and how it will be applied."
 union SubscriptionDiscountValue =
-    SubscriptionDiscountFixedAmountValue
+  | SubscriptionDiscountFixedAmountValue
   | SubscriptionDiscountPercentageValue
 
 "The result of the query to fetch shipping options for the subscription contract."
 union SubscriptionShippingOptionResult =
-    SubscriptionShippingOptionResultFailure
+  | SubscriptionShippingOptionResultFailure
   | SubscriptionShippingOptionResultSuccess
 
 "Information about the payment instrument used for this transaction."
@@ -594,7 +629,7 @@ union TenderTransactionDetails = TenderTransactionCreditCardDetails
 
 "An endpoint to which webhook subscriptions send webhooks events."
 union WebhookSubscriptionEndpoint =
-    WebhookEventBridgeEndpoint
+  | WebhookEventBridgeEndpoint
   | WebhookHttpEndpoint
   | WebhookPubSubEndpoint
 
@@ -719,7 +754,8 @@ type App implements Node {
   """
   uninstallMessage: String!
   "Webpage where you can uninstall the app."
-  uninstallUrl: URL @deprecated(reason: "Use AppInstallation.uninstallUrl instead")
+  uninstallUrl: URL
+    @deprecated(reason: "Use AppInstallation.uninstallUrl instead")
 }
 
 """
@@ -875,7 +911,8 @@ type AppInstallation implements Node {
     sortKey: AppRevenueAttributionRecordSortKeys = CREATED_AT
   ): AppRevenueAttributionRecordConnection!
   "Subscriptions charge to a shop on a recurring basis."
-  subscriptions: [AppSubscription!]! @deprecated(reason: "Use `activeSubscriptions` instead")
+  subscriptions: [AppSubscription!]!
+    @deprecated(reason: "Use `activeSubscriptions` instead")
   "The URL to uninstall the application."
   uninstallUrl: URL
 }
@@ -1780,7 +1817,8 @@ type Channel implements Node {
   """
   Menu items for the channel, which also appear as submenu items in left navigation sidebar in the Shopify admin.
   """
-  navigationItems: [NavigationItem!]! @deprecated(reason: "Use App.navigationItems instead")
+  navigationItems: [NavigationItem!]!
+    @deprecated(reason: "Use App.navigationItems instead")
   "Home page for the channel."
   overviewPath: URL @deprecated(reason: "Use App.launchUrl instead")
   "The product publications for the products published to the channel."
@@ -1795,7 +1833,8 @@ type Channel implements Node {
     last: Int
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): ProductPublicationConnection! @deprecated(reason: "Use `productPublicationsV3` instead")
+  ): ProductPublicationConnection!
+    @deprecated(reason: "Use `productPublicationsV3` instead")
   "The product publications for the list of products published to the channel."
   productPublicationsV3(
     "Returns the elements that come after the specified cursor."
@@ -1859,7 +1898,10 @@ type Collection implements HasMetafieldDefinitions & HasMetafields & HasPublishe
   """
   A single-line, text-only description of the collection, stripped of any HTML tags and formatting that were included in the description.
   """
-  description("Truncates string after the given length." truncateAt: Int): String!
+  description(
+    "Truncates string after the given length."
+    truncateAt: Int
+  ): String!
   """
   The description of the collection, including any HTML tags and formatting. This content is typically displayed to customers, such as on an online store, depending on the theme.
   """
@@ -2002,17 +2044,23 @@ type Collection implements HasMetafieldDefinitions & HasMetafields & HasPublishe
     onlyPublished: Boolean = true
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): CollectionPublicationConnection! @deprecated(reason: "Use `resourcePublications` instead")
+  ): CollectionPublicationConnection!
+    @deprecated(reason: "Use `resourcePublications` instead")
   "Check to see whether the resource is published to a given channel."
-  publishedOnChannel("The ID of the channel to check." channelId: ID!): Boolean!
-    @deprecated(reason: "Use `publishedOnPublication` instead")
+  publishedOnChannel(
+    "The ID of the channel to check."
+    channelId: ID!
+  ): Boolean! @deprecated(reason: "Use `publishedOnPublication` instead")
   "Check to see whether the resource is published to the calling app's channel."
   publishedOnCurrentChannel: Boolean!
     @deprecated(reason: "Use `publishedOnCurrentPublication` instead")
   "Check to see whether the resource is published to the calling app's publication."
   publishedOnCurrentPublication: Boolean!
   "Check to see whether the resource is published to a given publication."
-  publishedOnPublication("The ID of the publication to check." publicationId: ID!): Boolean!
+  publishedOnPublication(
+    "The ID of the publication to check."
+    publicationId: ID!
+  ): Boolean!
   "The list of resources that are published to a publication."
   resourcePublications(
     "Returns the elements that come after the specified cursor."
@@ -2074,7 +2122,10 @@ type Collection implements HasMetafieldDefinitions & HasMetafields & HasPublishe
   """
   title: String!
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
   "The list of channels that the resource is not published to."
   unpublishedChannels(
     "Returns the elements that come after the specified cursor."
@@ -2087,7 +2138,8 @@ type Collection implements HasMetafieldDefinitions & HasMetafields & HasPublishe
     last: Int
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): ChannelConnection! @deprecated(reason: "Use `unpublishedPublications` instead")
+  ): ChannelConnection!
+    @deprecated(reason: "Use `unpublishedPublications` instead")
   "The list of publications that the resource is not published to."
   unpublishedPublications(
     "Returns the elements that come after the specified cursor."
@@ -2419,15 +2471,21 @@ history, and whether they've agreed to receive marketing material by email.
 """
 type Customer implements CommentEventSubject & HasEvents & HasMetafieldDefinitions & HasMetafields & LegacyInteroperability & Node {
   "Whether the customer has agreed to receive marketing material."
-  acceptsMarketing: Boolean! @deprecated(reason: "Use `emailMarketingConsent` instead")
+  acceptsMarketing: Boolean!
+    @deprecated(reason: "Use `emailMarketingConsent` instead")
   """
   The date and time when the customer consented or objected to receiving marketing material by email.
   """
-  acceptsMarketingUpdatedAt: DateTime! @deprecated(reason: "Use `emailMarketingConsent` instead")
+  acceptsMarketingUpdatedAt: DateTime!
+    @deprecated(reason: "Use `emailMarketingConsent` instead")
   "A list of addresses associated with the customer."
-  addresses("Truncate the array result to this size." first: Int): [MailingAddress!]!
+  addresses(
+    "Truncate the array result to this size."
+    first: Int
+  ): [MailingAddress!]!
   "The average amount that the customer spent per order."
-  averageOrderAmount: Money @deprecated(reason: "Use `averageOrderAmountV2` instead")
+  averageOrderAmount: Money
+    @deprecated(reason: "Use `averageOrderAmountV2` instead")
   "The average amount that the customer spent per order."
   averageOrderAmountV2: MoneyV2
   """
@@ -2477,7 +2535,8 @@ type Customer implements CommentEventSubject & HasEvents & HasMetafieldDefinitio
   "The customer's first name."
   firstName: String
   "Whether the customer has a note associated with them."
-  hasNote: Boolean! @deprecated(reason: "Check for a value in the note field directly instead.")
+  hasNote: Boolean!
+    @deprecated(reason: "Check for a value in the note field directly instead.")
   "Whether the merchant has added timeline comments about the customer on the customer's page."
   hasTimelineComment: Boolean!
     @deprecated(
@@ -2624,7 +2683,8 @@ type Customer implements CommentEventSubject & HasEvents & HasMetafieldDefinitio
     sortKey: OrderSortKeys = ID
   ): OrderConnection!
   "The number of orders that the customer has made at the store in their lifetime."
-  ordersCount: UnsignedInt64! @deprecated(reason: "Use `numberOfOrders` instead")
+  ordersCount: UnsignedInt64!
+    @deprecated(reason: "Use `numberOfOrders` instead")
   "A list of the customer's payment methods."
   paymentMethods(
     "Returns the elements that come after the specified cursor."
@@ -3540,7 +3600,8 @@ type DeliveryProfile implements Node {
   "The number of active origin locations for the profile."
   originLocationCount: Int!
   "The number of product variants for this profile. The count for the default profile is not supported and will return -1."
-  productVariantsCount: Int! @deprecated(reason: "Use `productVariantsCountV2` instead")
+  productVariantsCount: Int!
+    @deprecated(reason: "Use `productVariantsCountV2` instead")
   "How many product variants are in this profile."
   productVariantsCountV2: DeliveryProductVariantsCount!
   "The products and variants associated with this profile."
@@ -3726,7 +3787,8 @@ An amount discounting the line that has been allocated by an associated discount
 """
 type DiscountAllocation {
   "Money amount allocated by the discount application."
-  allocatedAmount: MoneyV2! @deprecated(reason: "Use `allocatedAmountSet` instead")
+  allocatedAmount: MoneyV2!
+    @deprecated(reason: "Use `allocatedAmountSet` instead")
   "Money amount allocated by the discount application in shop and presentment currencies."
   allocatedAmountSet: MoneyBag!
   "The discount of which this allocated amount originated from."
@@ -5355,7 +5417,10 @@ type Fulfillment implements LegacyInteroperability & Node {
   Tracking information associated with the fulfillment,
   such as the tracking company, tracking number, and tracking URL.
   """
-  trackingInfo("Truncate the array result to this size." first: Int): [FulfillmentTrackingInfo!]!
+  trackingInfo(
+    "Truncate the array result to this size."
+    first: Int
+  ): [FulfillmentTrackingInfo!]!
   """
   The date and time when the fulfillment was last modified.
   """
@@ -5451,7 +5516,8 @@ type FulfillmentHold {
 "Represents a line item from an order that's included in a fulfillment."
 type FulfillmentLineItem implements Node {
   "The total price after discounts are applied."
-  discountedTotal: Money! @deprecated(reason: "Use `discountedTotalSet` instead")
+  discountedTotal: Money!
+    @deprecated(reason: "Use `discountedTotalSet` instead")
   "The total price after discounts are applied in shop and presentment currencies."
   discountedTotalSet: MoneyBag!
   "A globally-unique identifier."
@@ -6248,7 +6314,10 @@ type Image implements HasMetafields {
 
   If you need multiple variations of the same image, then you can use [GraphQL aliases](https://graphql.org/learn/queries/#aliases).
   """
-  url("A set of options to transform the original image." transform: ImageTransformInput): URL!
+  url(
+    "A set of options to transform the original image."
+    transform: ImageTransformInput
+  ): URL!
   "The original width of the image in pixels. Returns `null` if the image is not hosted by Shopify."
   width: Int
 }
@@ -6503,11 +6572,13 @@ type LineItem implements Node {
   "The discounts that have been allocated onto the line item by discount applications."
   discountAllocations: [DiscountAllocation!]!
   "The total line price after discounts are applied, in shop currency."
-  discountedTotal: Money! @deprecated(reason: "Use `discountedTotalSet` instead")
+  discountedTotal: Money!
+    @deprecated(reason: "Use `discountedTotalSet` instead")
   "The total line price after discounts are applied, in shop and presentment currencies."
   discountedTotalSet: MoneyBag!
   "The approximate split price of a line item unit, in shop currency. This value doesn't include discounts applied to the entire order."
-  discountedUnitPrice: Money! @deprecated(reason: "Use `discountedUnitPriceSet` instead")
+  discountedUnitPrice: Money!
+    @deprecated(reason: "Use `discountedUnitPriceSet` instead")
   "The approximate split price of a line item unit, in shop and presentment currencies. This value doesn't include discounts applied to the entire order."
   discountedUnitPriceSet: MoneyBag!
   "The duties associated with the line item."
@@ -6551,7 +6622,8 @@ type LineItem implements Node {
   "The total price in shop and presentment currencies, without discounts applied. This value is based on the unit price of the variant x quantity."
   originalTotalSet: MoneyBag!
   "The variant unit price without discounts applied, in shop currency."
-  originalUnitPrice: Money! @deprecated(reason: "Use `originalUnitPriceSet` instead")
+  originalUnitPrice: Money!
+    @deprecated(reason: "Use `originalUnitPriceSet` instead")
   "The variant unit price without discounts applied, in shop and presentment currencies."
   originalUnitPriceSet: MoneyBag!
   "The Product object associated with this line item's variant."
@@ -6584,7 +6656,8 @@ type LineItem implements Node {
   "The total discounted value of unfulfilled units, in shop and presentment currencies."
   unfulfilledDiscountedTotalSet: MoneyBag!
   "The total price, without any discounts applied. This value is based on the unit price of the variant x quantity of all unfulfilled units, in shop currency."
-  unfulfilledOriginalTotal: Money! @deprecated(reason: "Use `unfulfilledOriginalTotalSet` instead")
+  unfulfilledOriginalTotal: Money!
+    @deprecated(reason: "Use `unfulfilledOriginalTotalSet` instead")
   "The total price, without any discounts applied. This value is based on the unit price of the variant x quantity of all unfulfilled units, in shop and presentment currencies."
   unfulfilledOriginalTotalSet: MoneyBag!
   "The number of units not yet fulfilled."
@@ -6626,11 +6699,13 @@ type LineItemMutable implements Node {
   "The discounts that have been allocated onto the line item by discount applications."
   discountAllocations: [DiscountAllocation!]!
   "The total line price after discounts are applied, in shop currency."
-  discountedTotal: Money! @deprecated(reason: "Use `discountedTotalSet` instead")
+  discountedTotal: Money!
+    @deprecated(reason: "Use `discountedTotalSet` instead")
   "The total line price after discounts are applied, in shop and presentment currencies."
   discountedTotalSet: MoneyBag!
   "The approximate split price of a line item unit, in shop currency. This value doesn't include discounts applied to the entire order."
-  discountedUnitPrice: Money! @deprecated(reason: "Use `discountedUnitPriceSet` instead")
+  discountedUnitPrice: Money!
+    @deprecated(reason: "Use `discountedUnitPriceSet` instead")
   "The approximate split price of a line item unit, in shop and presentment currencies. This value doesn't include discounts applied to the entire order."
   discountedUnitPriceSet: MoneyBag!
   "The total number of units to fulfill."
@@ -6672,7 +6747,8 @@ type LineItemMutable implements Node {
   "The total price in shop and presentment currencies, without discounts applied. This value is based on the unit price of the variant x quantity."
   originalTotalSet: MoneyBag!
   "The variant unit price without discounts applied, in shop currency."
-  originalUnitPrice: Money! @deprecated(reason: "Use `originalUnitPriceSet` instead")
+  originalUnitPrice: Money!
+    @deprecated(reason: "Use `originalUnitPriceSet` instead")
   "The variant unit price without discounts applied, in shop and presentment currencies."
   originalUnitPriceSet: MoneyBag!
   "The Product object associated with this line item's variant."
@@ -6703,7 +6779,8 @@ type LineItemMutable implements Node {
   "The total discounted value of unfulfilled units, in shop and presentment currencies."
   unfulfilledDiscountedTotalSet: MoneyBag!
   "The total price without any discounts applied. This value is based on the unit price of the variant x quantity of all unfulfilled units, in shop currency."
-  unfulfilledOriginalTotal: Money! @deprecated(reason: "Use `unfulfilledOriginalTotalSet` instead")
+  unfulfilledOriginalTotal: Money!
+    @deprecated(reason: "Use `unfulfilledOriginalTotalSet` instead")
   "The total price without any discounts applied. This value is based on the unit price of the variant x quantity of all unfulfilled units, in shop and presentment currencies."
   unfulfilledOriginalTotalSet: MoneyBag!
   "The number of units not yet fulfilled."
@@ -6747,7 +6824,10 @@ type Link implements HasPublishedTranslations {
   "A context-sensitive label for the link."
   label: String!
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
   "The URL that the link visits."
   url: URL!
 }
@@ -7273,7 +7353,8 @@ type MarketingEvent implements LegacyInteroperability & Node {
   "The date and time when the marketing event started."
   startedAt: DateTime!
   "The display text for the marketing event type."
-  targetTypeDisplayText: String! @deprecated(reason: "Use `sourceAndMedium` instead")
+  targetTypeDisplayText: String!
+    @deprecated(reason: "Use `sourceAndMedium` instead")
   "The marketing event type."
   type: MarketingTactic!
   "The name of the marketing campaign."
@@ -7622,7 +7703,9 @@ type MetafieldDefinitionType {
   supportsDefinitionMigrations: Boolean!
   "The value type for a metafield created with this definition type."
   valueType: MetafieldValueType!
-    @deprecated(reason: "`valueType` is deprecated and `name` should be used for type information.")
+    @deprecated(
+      reason: "`valueType` is deprecated and `name` should be used for type information."
+    )
 }
 
 "Return type for `metafieldDefinitionUnpin` mutation."
@@ -7925,7 +8008,10 @@ type Mutation {
 
   There may be a short delay from when a cancelation starts until the operation is actually canceled.
   """
-  bulkOperationCancel("The ID of the bulk operation to cancel." id: ID!): BulkOperationCancelPayload
+  bulkOperationCancel(
+    "The ID of the bulk operation to cancel."
+    id: ID!
+  ): BulkOperationCancelPayload
   """
   Creates and runs a bulk operation mutation.
 
@@ -7977,7 +8063,8 @@ type Mutation {
   collectionPublish(
     "Specify a collection to publish and the sales channels to publish it to."
     input: CollectionPublishInput!
-  ): CollectionPublishPayload @deprecated(reason: "Use `publishablePublish` instead")
+  ): CollectionPublishPayload
+    @deprecated(reason: "Use `publishablePublish` instead")
   "Removes a set of products from a given collection. It can take a long time to run. Instead of returning a collection it returns a job, which should be polled."
   collectionRemoveProducts(
     "The ID of the collection to remove products from."
@@ -7996,7 +8083,8 @@ type Mutation {
   collectionUnpublish(
     "Specify a collection to unpublish and the sales channels to remove it from."
     input: CollectionUnpublishInput!
-  ): CollectionUnpublishPayload @deprecated(reason: "Use `publishableUnpublish` instead")
+  ): CollectionUnpublishPayload
+    @deprecated(reason: "Use `publishableUnpublish` instead")
   "Updates a collection."
   collectionUpdate(
     "The updated properties for the collection."
@@ -8289,7 +8377,10 @@ type Mutation {
     id: ID!
   ): DiscountCodeDeactivatePayload
   "Deletes a code discount."
-  discountCodeDelete("The ID of the code discount to delete." id: ID!): DiscountCodeDeletePayload
+  discountCodeDelete(
+    "The ID of the code discount to delete."
+    id: ID!
+  ): DiscountCodeDeletePayload
   "Creates a free shipping code discount."
   discountCodeFreeShippingCreate(
     "The input data used to create the code discount."
@@ -8395,18 +8486,30 @@ type Mutation {
   [stagedUploadsCreate mutation](https://shopify.dev/api/admin-graphql/latest/mutations/stageduploadscreate).
   These files are added to the [Files page](https://shopify.com/admin/settings/files) in Shopify admin.
   """
-  fileCreate("List of new files to be created." files: [FileCreateInput!]!): FileCreatePayload
+  fileCreate(
+    "List of new files to be created."
+    files: [FileCreateInput!]!
+  ): FileCreatePayload
   "Deletes file assets."
-  fileDelete("The IDs of the files to be deleted." fileIds: [ID!]!): FileDeletePayload
+  fileDelete(
+    "The IDs of the files to be deleted."
+    fileIds: [ID!]!
+  ): FileDeletePayload
   "Updates a file asset."
-  fileUpdate("List of files to be updated." files: [FileUpdateInput!]!): FileUpdatePayload
+  fileUpdate(
+    "List of files to be updated."
+    files: [FileUpdateInput!]!
+  ): FileUpdatePayload
   "Triggers a workflow defined by the merchant in Shopify Flow. To learn more, see [_Create Shopify Flow triggers_](https://shopify.dev/apps/flow/triggers)."
   flowTriggerReceive(
     "The payload needed to run the Trigger."
     body: String!
   ): FlowTriggerReceivePayload
   "Cancels a fulfillment."
-  fulfillmentCancel("The ID of the fulfillment to be canceled." id: ID!): FulfillmentCancelPayload
+  fulfillmentCancel(
+    "The ID of the fulfillment to be canceled."
+    id: ID!
+  ): FulfillmentCancelPayload
   "Creates a fulfillment for an order."
   fulfillmentCreate(
     "The input fields used to create a fulfillment."
@@ -8597,7 +8700,10 @@ type Mutation {
   """
   Disable a gift card. A disabled gift card cannot be used by a customer. A disabled gift card cannot be re-enabled.
   """
-  giftCardDisable("The ID of the gift card to disable." id: ID!): GiftCardDisablePayload
+  giftCardDisable(
+    "The ID of the gift card to disable."
+    id: ID!
+  ): GiftCardDisablePayload
   "Update a gift card."
   giftCardUpdate(
     "The ID of the gift card to be updated."
@@ -8725,11 +8831,17 @@ type Mutation {
     metafields: [MetafieldsSetInput!]!
   ): MetafieldsSetPayload
   "Captures payment for an authorized transaction on an order. An order can only be captured if it has a successful authorization transaction. Capturing an order will claim the money reserved by the authorization."
-  orderCapture("The input for the mutation." input: OrderCaptureInput!): OrderCapturePayload
+  orderCapture(
+    "The input for the mutation."
+    input: OrderCaptureInput!
+  ): OrderCapturePayload
   """
   Closes an open order.
   """
-  orderClose("The input for the mutation." input: OrderCloseInput!): OrderClosePayload
+  orderClose(
+    "The input for the mutation."
+    input: OrderCloseInput!
+  ): OrderClosePayload
   "Adds a custom line item to an existing order. For example, you could add a gift wrapping service as a [custom line item](https://shopify.dev/api/examples/order-editing#add-a-custom-line-item). To learn how to edit existing orders, refer to [Edit an existing order with Admin API](https://shopify.dev/api/examples/order-editing)."
   orderEditAddCustomItem(
     """
@@ -8785,7 +8897,10 @@ type Mutation {
   Starts editing an order. Mutations are operating on `OrderEdit`.
   All order edits start with `orderEditBegin`, have any number of `orderEdit`* mutations made, and end with `orderEditCommit`.
   """
-  orderEditBegin("The ID of the order to begin editing." id: ID!): OrderEditBeginPayload
+  orderEditBegin(
+    "The ID of the order to begin editing."
+    id: ID!
+  ): OrderEditBeginPayload
   """
   Applies and saves staged changes to an order. Mutations are operating on `OrderEdit`.
   All order edits start with `orderEditBegin`, have any number of `orderEdit`* mutations made, and end with `orderEditCommit`.
@@ -8841,9 +8956,15 @@ type Mutation {
   """
   Opens a closed order.
   """
-  orderOpen("The input for the mutation." input: OrderOpenInput!): OrderOpenPayload
+  orderOpen(
+    "The input for the mutation."
+    input: OrderOpenInput!
+  ): OrderOpenPayload
   "Updates the fields of an order."
-  orderUpdate("The input for the mutation." input: OrderInput!): OrderUpdatePayload
+  orderUpdate(
+    "The input for the mutation."
+    input: OrderInput!
+  ): OrderUpdatePayload
   "Create payment terms."
   paymentTermsCreate(
     "The attributes used to create the payment terms."
@@ -8867,7 +8988,10 @@ type Mutation {
     input: PriceListCreateInput!
   ): PriceListCreatePayload
   "Delete a price list. You can use the `priceListDelete` mutation to delete a price list, so that it no longer applies for products in that country. To delete a price list, you need to specify the price list ID."
-  priceListDelete("The ID for the price list to be deleted." id: ID!): PriceListDeletePayload
+  priceListDelete(
+    "The ID for the price list to be deleted."
+    id: ID!
+  ): PriceListDeletePayload
   "Creates or updates fixed prices on a price list. You can use the `priceListFixedPricesAdd` mutation to set a fixed price for specific product variants. This lets you change product variant pricing on a per country basis. Any existing fixed price list prices for these variants will be overwritten."
   priceListFixedPricesAdd(
     "The ID of the price list to which the fixed prices will be added or updated."
@@ -8890,7 +9014,10 @@ type Mutation {
     input: PriceListUpdateInput!
   ): PriceListUpdatePayload
   "Activate a price rule."
-  priceRuleActivate("ID of the price rule to update." id: ID!): PriceRuleActivatePayload
+  priceRuleActivate(
+    "ID of the price rule to update."
+    id: ID!
+  ): PriceRuleActivatePayload
   "Create a price rule using the input."
   priceRuleCreate(
     "Input fields to create a price rule."
@@ -8899,9 +9026,15 @@ type Mutation {
     priceRuleDiscountCode: PriceRuleDiscountCodeInput
   ): PriceRuleCreatePayload
   "Deactivate a price rule."
-  priceRuleDeactivate("ID of the price rule to update." id: ID!): PriceRuleDeactivatePayload
+  priceRuleDeactivate(
+    "ID of the price rule to update."
+    id: ID!
+  ): PriceRuleDeactivatePayload
   "Delete a price rule."
-  priceRuleDelete("The id of the price rule object." id: ID!): PriceRuleDeletePayload
+  priceRuleDelete(
+    "The id of the price rule object."
+    id: ID!
+  ): PriceRuleDeletePayload
   "Create a discount code for a price rule."
   priceRuleDiscountCodeCreate(
     "The code to create for the price rule."
@@ -9028,7 +9161,8 @@ type Mutation {
   productPublish(
     "Specifies the product to publish and the channels to publish it to."
     input: ProductPublishInput!
-  ): ProductPublishPayload @deprecated(reason: "Use `publishablePublish` instead")
+  ): ProductPublishPayload
+    @deprecated(reason: "Use `publishablePublish` instead")
   "Asynchronously reorders a set of images for a given product."
   productReorderImages(
     "The ID of the product on which to reorder images."
@@ -9047,7 +9181,8 @@ type Mutation {
   productUnpublish(
     "Specifies the product to unpublish and the channel to unpublish it from."
     input: ProductUnpublishInput!
-  ): ProductUnpublishPayload @deprecated(reason: "Use `publishableUnpublish` instead")
+  ): ProductUnpublishPayload
+    @deprecated(reason: "Use `publishableUnpublish` instead")
   """
   Updates a product. If you update a product, and only include some variants in the update,
   then any variants not included will be deleted. To safely manage variants without the risk of
@@ -9056,7 +9191,10 @@ type Mutation {
   If you want to update a single variant, then use
   [productVariantUpdate](https://shopify.dev/api/admin-graphql/latest/mutations/productvariantupdate).
   """
-  productUpdate("The updated properties for a product." input: ProductInput!): ProductUpdatePayload
+  productUpdate(
+    "The updated properties for a product."
+    input: ProductInput!
+  ): ProductUpdatePayload
   "Updates media for a product."
   productUpdateMedia(
     "A list of media updates."
@@ -9207,7 +9345,10 @@ type Mutation {
   """
   Deletes a script tag.
   """
-  scriptTagDelete("The ID of the script tag to delete." id: ID!): ScriptTagDeletePayload
+  scriptTagDelete(
+    "The ID of the script tag to delete."
+    id: ID!
+  ): ScriptTagDeletePayload
   """
   Updates a script tag.
   """
@@ -9291,9 +9432,15 @@ type Mutation {
     id: ID!
   ): ShippingPackageUpdatePayload
   "Deletes a locale for a shop. This also deletes all translations of this locale."
-  shopLocaleDisable("ISO code of the locale to delete." locale: String!): ShopLocaleDisablePayload
+  shopLocaleDisable(
+    "ISO code of the locale to delete."
+    locale: String!
+  ): ShopLocaleDisablePayload
   "Adds a locale for a shop. The newly added locale is in the unpublished state."
-  shopLocaleEnable("ISO code of the locale to enable." locale: String!): ShopLocaleEnablePayload
+  shopLocaleEnable(
+    "ISO code of the locale to enable."
+    locale: String!
+  ): ShopLocaleEnablePayload
   "Updates a locale for a shop."
   shopLocaleUpdate(
     "ISO code of the locale to update."
@@ -9310,12 +9457,14 @@ type Mutation {
   stagedUploadTargetGenerate(
     "The input fields for generating a staged upload."
     input: StagedUploadTargetGenerateInput!
-  ): StagedUploadTargetGeneratePayload @deprecated(reason: "Use `stagedUploadsCreate` instead")
+  ): StagedUploadTargetGeneratePayload
+    @deprecated(reason: "Use `stagedUploadsCreate` instead")
   "Uploads multiple images."
   stagedUploadTargetsGenerate(
     "The input fields for generating staged uploads."
     input: [StageImageInput!]!
-  ): StagedUploadTargetsGeneratePayload @deprecated(reason: "Use `stagedUploadsCreate` instead")
+  ): StagedUploadTargetsGeneratePayload
+    @deprecated(reason: "Use `stagedUploadsCreate` instead")
   "Creates staged upload target URLs for each input and is the first step in the upload process. The returned upload targets with URLs can be used as endpoints to upload the files."
   stagedUploadsCreate(
     "Input for the mutation includes information needed to generate staged upload targets."
@@ -9521,7 +9670,10 @@ type Mutation {
   """
   Deletes a [`UrlRedirect`](https://shopify.dev/api/admin-graphql/latest/objects/UrlRedirect) object.
   """
-  urlRedirectDelete("The ID of the redirect to delete." id: ID!): UrlRedirectDeletePayload
+  urlRedirectDelete(
+    "The ID of the redirect to delete."
+    id: ID!
+  ): UrlRedirectDeletePayload
   """
   Creates a [`UrlRedirectImport`](https://shopify.dev/api/admin-graphql/latest/objects/UrlRedirectImport) object.
 
@@ -9614,7 +9766,10 @@ type OnlineStoreArticle implements HasPublishedTranslations & Navigable & Node {
   "A globally-unique identifier."
   id: ID!
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
 }
 
 """
@@ -9625,7 +9780,10 @@ type OnlineStoreBlog implements HasPublishedTranslations & Node {
   "A globally-unique identifier."
   id: ID!
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
 }
 
 "A custom page on the Online Store."
@@ -9637,7 +9795,10 @@ type OnlineStorePage implements HasPublishedTranslations & Navigable & Node {
   "A globally-unique identifier."
   id: ID!
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
 }
 
 """
@@ -9704,7 +9865,8 @@ type Order implements CommentEventSubject & HasEvents & HasLocalizationExtension
   """
   capturable: Boolean!
   "The total order-level discount amount, before returns, in shop currency."
-  cartDiscountAmount: Money @deprecated(reason: "Use `cartDiscountAmountSet` instead")
+  cartDiscountAmount: Money
+    @deprecated(reason: "Use `cartDiscountAmountSet` instead")
   "The total order-level discount amount, before returns, in shop and presentment currencies."
   cartDiscountAmountSet: MoneyBag
   "The channel that created the order."
@@ -9774,7 +9936,8 @@ type Order implements CommentEventSubject & HasEvents & HasLocalizationExtension
   """
   The customer's visits and interactions with the online store before placing the order.
   """
-  customerJourney: CustomerJourney @deprecated(reason: "Use `customerJourneySummary` instead")
+  customerJourney: CustomerJourney
+    @deprecated(reason: "Use `customerJourneySummary` instead")
   """
   The customer's visits and interactions with the online store before placing the order.
   """
@@ -9818,7 +9981,8 @@ type Order implements CommentEventSubject & HasEvents & HasLocalizationExtension
   """
   A list of draft fulfillments that can be created for the order, which includes line items that can be partially fulfilled.
   """
-  draftFulfillments: [DraftFulfillment!]! @deprecated(reason: "Use `fulfillmentOrders` instead")
+  draftFulfillments: [DraftFulfillment!]!
+    @deprecated(reason: "Use `fulfillmentOrders` instead")
   "Whether the order has had any edits applied."
   edited: Boolean!
   "The email address associated with the customer."
@@ -9887,7 +10051,10 @@ type Order implements CommentEventSubject & HasEvents & HasLocalizationExtension
     reverse: Boolean = false
   ): FulfillmentOrderConnection!
   "List of shipments for the order."
-  fulfillments("Truncate the array result to this size." first: Int): [Fulfillment!]!
+  fulfillments(
+    "Truncate the array result to this size."
+    first: Int
+  ): [Fulfillment!]!
   "Whether the order has been paid in full."
   fullyPaid: Boolean!
   "Whether the merchant added a timeline comment to the order."
@@ -9896,10 +10063,14 @@ type Order implements CommentEventSubject & HasEvents & HasLocalizationExtension
   id: ID!
   "The URL of the first page of the online store that the customer visited before they submitted the order."
   landingPageDisplayText: String
-    @deprecated(reason: "Use `customerJourneySummary.lastVisit.landingPageHtml` instead")
+    @deprecated(
+      reason: "Use `customerJourneySummary.lastVisit.landingPageHtml` instead"
+    )
   "The first page of the online store that the customer visited before they submitted the order."
   landingPageUrl: URL
-    @deprecated(reason: "Use `customerJourneySummary.lastVisit.landingPage` instead")
+    @deprecated(
+      reason: "Use `customerJourneySummary.lastVisit.landingPage` instead"
+    )
   "The ID of the corresponding resource in the REST Admin API."
   legacyResourceId: UnsignedInt64!
   "A list of the order's line items."
@@ -10101,16 +10272,23 @@ type Order implements CommentEventSubject & HasEvents & HasLocalizationExtension
   For example, if the URL is `{shop}.myshopify.com/products/slide?ref=j2tj1tn2`, then this value is `j2tj1tn2`.
   """
   referralCode: String
-    @deprecated(reason: "Use `customerJourneySummary.lastVisit.referralCode` instead")
+    @deprecated(
+      reason: "Use `customerJourneySummary.lastVisit.referralCode` instead"
+    )
   """
   A web domain or short description of the source that sent the customer to your online store. For example, "shopify.com" or "email".
   """
   referrerDisplayText: String
-    @deprecated(reason: "Use `customerJourneySummary.lastVisit.referralInfoHtml` instead")
+    @deprecated(
+      reason: "Use `customerJourneySummary.lastVisit.referralInfoHtml` instead"
+    )
   """
   The URL of the webpage where the customer clicked a link that sent them to your online store.
   """
-  referrerUrl: URL @deprecated(reason: "Use `customerJourneySummary.lastVisit.referrerUrl` instead")
+  referrerUrl: URL
+    @deprecated(
+      reason: "Use `customerJourneySummary.lastVisit.referrerUrl` instead"
+    )
   "The difference between the suggested and actual refund amount of all refunds that have been applied to the order. A positive value indicates a difference in the merchant's favor, and a negative value indicates a difference in the customer's favor."
   refundDiscrepancySet: MoneyBag!
   """
@@ -10205,7 +10383,8 @@ type Order implements CommentEventSubject & HasEvents & HasLocalizationExtension
   The authorized amount that is uncaptured or undercaptured, in shop currency.
   This amount isn't adjusted for returns.
   """
-  totalCapturable: Money! @deprecated(reason: "Use `totalCapturableSet` instead")
+  totalCapturable: Money!
+    @deprecated(reason: "Use `totalCapturableSet` instead")
   """
   The authorized amount that is uncaptured or undercaptured, in shop and presentment currencies.
   This amount isn't adjusted for returns.
@@ -10247,7 +10426,8 @@ type Order implements CommentEventSubject & HasEvents & HasLocalizationExtension
   "The total amount of shipping that was refunded, in shop and presentment currencies."
   totalRefundedShippingSet: MoneyBag!
   "The total shipping amount before discounts and returns, in shop currency."
-  totalShippingPrice: Money! @deprecated(reason: "Use `totalShippingPriceSet` instead")
+  totalShippingPrice: Money!
+    @deprecated(reason: "Use `totalShippingPriceSet` instead")
   "The total shipping amount before discounts and returns, in shop and presentment currencies."
   totalShippingPriceSet: MoneyBag!
   "The total tax amount before returns, in shop currency."
@@ -10255,7 +10435,8 @@ type Order implements CommentEventSubject & HasEvents & HasLocalizationExtension
   "The total tax amount before returns, in shop and presentment currencies."
   totalTaxSet: MoneyBag
   "The sum of all tip amounts for the order, in shop currency."
-  totalTipReceived: MoneyV2! @deprecated(reason: "Use `totalTipReceivedSet` instead")
+  totalTipReceived: MoneyV2!
+    @deprecated(reason: "Use `totalTipReceivedSet` instead")
   "The sum of all tip amounts for the order, in shop and presentment currencies."
   totalTipReceivedSet: MoneyBag!
   "The total weight of the order before returns, in grams."
@@ -10653,7 +10834,8 @@ type OrderTransaction implements Node {
   Specifies the available amount to refund on the gateway.
   This value is only available for transactions of type `SuggestedRefund`.
   """
-  maximumRefundable: Money @deprecated(reason: "Use `maximumRefundableV2` instead")
+  maximumRefundable: Money
+    @deprecated(reason: "Use `maximumRefundableV2` instead")
   """
   Specifies the available amount with currency to refund on the gateway.
   This value is only available for transactions of type `SuggestedRefund`.
@@ -10709,7 +10891,8 @@ type OrderTransaction implements Node {
   Specifies the available amount with currency to capture on the gateway.
   Only available when an amount is capturable or manually mark as paid.
   """
-  totalUnsettledV2: MoneyV2 @deprecated(reason: "Use `totalUnsettledSet` instead")
+  totalUnsettledV2: MoneyV2
+    @deprecated(reason: "Use `totalUnsettledSet` instead")
 }
 
 """
@@ -11213,7 +11396,8 @@ type PriceRuleActivatePayload {
   "The list of errors that occurred from executing the mutation."
   priceRuleUserErrors: [PriceRuleUserError!]!
   "The list of errors that occurred from executing the mutation."
-  userErrors: [UserError!]! @deprecated(reason: "Use `priceRuleUserErrors` instead")
+  userErrors: [UserError!]!
+    @deprecated(reason: "Use `priceRuleUserErrors` instead")
 }
 
 """
@@ -11235,7 +11419,8 @@ type PriceRuleCreatePayload {
   "The list of errors that occurred from executing the mutation."
   priceRuleUserErrors: [PriceRuleUserError!]!
   "The list of errors that occurred from executing the mutation."
-  userErrors: [UserError!]! @deprecated(reason: "Use `priceRuleUserErrors` instead")
+  userErrors: [UserError!]!
+    @deprecated(reason: "Use `priceRuleUserErrors` instead")
 }
 
 "A selection of customers for whom the price rule applies."
@@ -11284,7 +11469,8 @@ type PriceRuleCustomerSelection {
   "Whether the price rule applies to all customers."
   forAllCustomers: Boolean!
   "A list of customer saved searches that contain the customers who can use the price rule."
-  savedSearches: [SavedSearch!]! @deprecated(reason: "Use `customer_segments` instead.")
+  savedSearches: [SavedSearch!]!
+    @deprecated(reason: "Use `customer_segments` instead.")
 }
 
 "Return type for `priceRuleDeactivate` mutation."
@@ -11294,7 +11480,8 @@ type PriceRuleDeactivatePayload {
   "The list of errors that occurred from executing the mutation."
   priceRuleUserErrors: [PriceRuleUserError!]!
   "The list of errors that occurred from executing the mutation."
-  userErrors: [UserError!]! @deprecated(reason: "Use `priceRuleUserErrors` instead")
+  userErrors: [UserError!]!
+    @deprecated(reason: "Use `priceRuleUserErrors` instead")
 }
 
 "Return type for `priceRuleDelete` mutation."
@@ -11306,7 +11493,8 @@ type PriceRuleDeletePayload {
   "The shop of the deleted price rule."
   shop: Shop!
   "The list of errors that occurred from executing the mutation."
-  userErrors: [UserError!]! @deprecated(reason: "Use `priceRuleUserErrors` instead")
+  userErrors: [UserError!]!
+    @deprecated(reason: "Use `priceRuleUserErrors` instead")
 }
 
 "A discount code of a price rule."
@@ -11340,7 +11528,8 @@ type PriceRuleDiscountCodeCreatePayload {
   "The list of errors that occurred from executing the mutation."
   priceRuleUserErrors: [PriceRuleUserError!]!
   "The list of errors that occurred from executing the mutation."
-  userErrors: [UserError!]! @deprecated(reason: "Use `priceRuleUserErrors` instead")
+  userErrors: [UserError!]!
+    @deprecated(reason: "Use `priceRuleUserErrors` instead")
 }
 
 """
@@ -11362,7 +11551,8 @@ type PriceRuleDiscountCodeUpdatePayload {
   "The list of errors that occurred from executing the mutation."
   priceRuleUserErrors: [PriceRuleUserError!]!
   "The list of errors that occurred from executing the mutation."
-  userErrors: [UserError!]! @deprecated(reason: "Use `priceRuleUserErrors` instead")
+  userErrors: [UserError!]!
+    @deprecated(reason: "Use `priceRuleUserErrors` instead")
 }
 
 """
@@ -11546,7 +11736,8 @@ type PriceRuleUpdatePayload {
   "The list of errors that occurred from executing the mutation."
   priceRuleUserErrors: [PriceRuleUserError!]!
   "The list of errors that occurred from executing the mutation."
-  userErrors: [UserError!]! @deprecated(reason: "Use `priceRuleUserErrors` instead")
+  userErrors: [UserError!]!
+    @deprecated(reason: "Use `priceRuleUserErrors` instead")
 }
 
 "Represents an error that happens during execution of a price rule mutation."
@@ -11681,14 +11872,18 @@ type Product implements HasMetafieldDefinitions & HasMetafields & HasPublishedTr
   """
   defaultCursor: String!
   "A stripped description of the product, single line with HTML tags removed."
-  description("Truncates string after the given length." truncateAt: Int): String!
+  description(
+    "Truncates string after the given length."
+    truncateAt: Int
+  ): String!
   "The description of the product, complete with HTML formatting."
   descriptionHtml: HTML!
   """
   Stripped description of the product, single line with HTML tags removed.
   Truncated to 60 characters.
   """
-  descriptionPlainSummary: String! @deprecated(reason: "Use `description` instead")
+  descriptionPlainSummary: String!
+    @deprecated(reason: "Use `description` instead")
   "The featured image for the product."
   featuredImage: Image
   "The featured media for the product."
@@ -11812,10 +12007,15 @@ type Product implements HasMetafieldDefinitions & HasMetafields & HasPublishedTr
   """
   onlineStoreUrl: URL
   "A list of product options. The limit is specified by Shop.resourceLimits.maxProductOptions."
-  options("Truncate the array result to this size." first: Int): [ProductOption!]!
+  options(
+    "Truncate the array result to this size."
+    first: Int
+  ): [ProductOption!]!
   "The price range of the product."
   priceRange: ProductPriceRange!
-    @deprecated(reason: "Deprecated in API version 2020-10. Use `priceRangeV2` instead.")
+    @deprecated(
+      reason: "Deprecated in API version 2020-10. Use `priceRangeV2` instead."
+    )
   "The price range of the product with prices formatted as decimals."
   priceRangeV2: ProductPriceRangeV2!
   "Returns a private metafield by namespace and key that belongs to the resource."
@@ -11852,7 +12052,8 @@ type Product implements HasMetafieldDefinitions & HasMetafields & HasPublishedTr
     last: Int
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): ProductPublicationConnection! @deprecated(reason: "Use `resourcePublications` instead")
+  ): ProductPublicationConnection!
+    @deprecated(reason: "Use `resourcePublications` instead")
   "The product type specified by the merchant."
   productType: String!
   "The number of publications a resource is published on."
@@ -11874,21 +12075,27 @@ type Product implements HasMetafieldDefinitions & HasMetafields & HasPublishedTr
     onlyPublished: Boolean = true
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): ProductPublicationConnection! @deprecated(reason: "Use `resourcePublications` instead")
+  ): ProductPublicationConnection!
+    @deprecated(reason: "Use `resourcePublications` instead")
   """
   The date and time ([ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601)) when the product was published to the Online Store.
   """
   publishedAt: DateTime
   "Check to see whether the resource is published to a given channel."
-  publishedOnChannel("The ID of the channel to check." channelId: ID!): Boolean!
-    @deprecated(reason: "Use `publishedOnPublication` instead")
+  publishedOnChannel(
+    "The ID of the channel to check."
+    channelId: ID!
+  ): Boolean! @deprecated(reason: "Use `publishedOnPublication` instead")
   "Check to see whether the resource is published to the calling app's channel."
   publishedOnCurrentChannel: Boolean!
     @deprecated(reason: "Use `publishedOnCurrentPublication` instead")
   "Check to see whether the resource is published to the calling app's publication."
   publishedOnCurrentPublication: Boolean!
   "Check to see whether the resource is published to a given publication."
-  publishedOnPublication("The ID of the publication to check." publicationId: ID!): Boolean!
+  publishedOnPublication(
+    "The ID of the publication to check."
+    publicationId: ID!
+  ): Boolean!
   "Whether the product can only be purchased with a selling plan (subscription). Products that are sold on subscription (`requiresSellingPlan: true`) can be updated only for online stores. If you update a product to be subscription only, then the product is unpublished from all channels except the online store."
   requiresSellingPlan: Boolean!
   "The resource that is either published or staged to be published to the calling app's publication. Requires the `read_product_listings` scope."
@@ -11972,7 +12179,10 @@ type Product implements HasMetafieldDefinitions & HasMetafields & HasPublishedTr
   "Whether inventory tracking has been enabled for the product."
   tracksInventory: Boolean!
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
   "The list of channels that the resource is not published to."
   unpublishedChannels(
     "Returns the elements that come after the specified cursor."
@@ -11985,7 +12195,8 @@ type Product implements HasMetafieldDefinitions & HasMetafields & HasPublishedTr
     last: Int
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): ChannelConnection! @deprecated(reason: "Use `unpublishedPublications` instead")
+  ): ChannelConnection!
+    @deprecated(reason: "Use `unpublishedPublications` instead")
   "The list of publications that the resource is not published to."
   unpublishedPublications(
     "Returns the elements that come after the specified cursor."
@@ -12206,7 +12417,10 @@ type ProductOption implements HasPublishedTranslations & Node {
   "The product option's position."
   position: Int!
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
   "The corresponding value to the product option name."
   values: [String!]!
 }
@@ -12547,7 +12761,8 @@ type ProductVariant implements HasMetafieldDefinitions & HasMetafields & HasPubl
   """
   Whether a customer needs to provide a shipping address when placing an order for the product variant.
   """
-  requiresShipping: Boolean! @deprecated(reason: "Use `InventoryItem.requiresShipping` instead.")
+  requiresShipping: Boolean!
+    @deprecated(reason: "Use `InventoryItem.requiresShipping` instead.")
   "List of product options applied to the variant."
   selectedOptions: [SelectedOption!]!
   """
@@ -12588,7 +12803,10 @@ type ProductVariant implements HasMetafieldDefinitions & HasMetafields & HasPubl
   "The title of the product variant."
   title: String!
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
   """
   The date and time (ISO 8601 format) when the product variant was last modified.
   """
@@ -13011,7 +13229,10 @@ type QueryRoot {
     sortKey: AppInstallationSortKeys = INSTALLED_AT
   ): AppInstallationConnection!
   "Returns an automatic discount resource by ID."
-  automaticDiscount("The ID of the DiscountAutomatic to return." id: ID!): DiscountAutomatic
+  automaticDiscount(
+    "The ID of the DiscountAutomatic to return."
+    id: ID!
+  ): DiscountAutomatic
     @deprecated(reason: "Use `automaticDiscountNode` instead")
   "Returns an automatic discount resource by ID."
   automaticDiscountNode(
@@ -13090,13 +13311,17 @@ type QueryRoot {
     savedSearchId: ID
     "Sort the underlying list by the given key."
     sortKey: AutomaticDiscountSortKeys = CREATED_AT
-  ): DiscountAutomaticConnection! @deprecated(reason: "Use `automaticDiscountNodes` instead")
+  ): DiscountAutomaticConnection!
+    @deprecated(reason: "Use `automaticDiscountNodes` instead")
   "Returns a list of activated carrier services and associated shop locations that support them."
   availableCarrierServices: [DeliveryCarrierServiceAndLocations!]!
   "Returns a list of available locales."
   availableLocales: [Locale!]!
   "Returns a `DeliveryCarrierService` object by ID."
-  carrierService("The ID of the DeliveryCarrierService to return." id: ID!): DeliveryCarrierService
+  carrierService(
+    "The ID of the DeliveryCarrierService to return."
+    id: ID!
+  ): DeliveryCarrierService
   "Lookup a channel by ID."
   channel("The ID of the Channel to return." id: ID!): Channel
     @deprecated(reason: "Use `publication` instead")
@@ -13114,7 +13339,10 @@ type QueryRoot {
     reverse: Boolean = false
   ): ChannelConnection! @deprecated(reason: "Use `publications` instead")
   "Returns a code discount resource by ID."
-  codeDiscountNode("The ID of the DiscountCodeNode to return." id: ID!): DiscountCodeNode
+  codeDiscountNode(
+    "The ID of the DiscountCodeNode to return."
+    id: ID!
+  ): DiscountCodeNode
   "Returns a code discount identified by its code."
   codeDiscountNodeByCode(
     "The case-insensitive code of the `DiscountCodeNode` to return."
@@ -13176,7 +13404,10 @@ type QueryRoot {
   "Returns a Collection resource by ID."
   collection("The ID of the Collection to return." id: ID!): Collection
   "Return a collection by its handle."
-  collectionByHandle("The handle of the collection." handle: String!): Collection
+  collectionByHandle(
+    "The handle of the collection."
+    handle: String!
+  ): Collection
   "A list of rule conditions to define how collections with rules can be created."
   collectionRulesConditions: [CollectionRuleConditions!]!
   "List of the shop's collection saved searches."
@@ -13325,7 +13556,10 @@ type QueryRoot {
     subjectTypes: [DeletionEventSubjectType!]
   ): DeletionEventConnection!
   "Returns a Delivery Profile resource by ID."
-  deliveryProfile("The ID of the DeliveryProfile to return." id: ID!): DeliveryProfile
+  deliveryProfile(
+    "The ID of the DeliveryProfile to return."
+    id: ID!
+  ): DeliveryProfile
   "Returns a list of saved delivery profiles."
   deliveryProfiles(
     "Returns the elements that come after the specified cursor."
@@ -13472,9 +13706,15 @@ type QueryRoot {
   "Returns a Fulfillment resource by ID."
   fulfillment("The ID of the Fulfillment to return." id: ID!): Fulfillment
   "Returns a Fulfillment order resource by ID."
-  fulfillmentOrder("The ID of the FulfillmentOrder to return." id: ID!): FulfillmentOrder
+  fulfillmentOrder(
+    "The ID of the FulfillmentOrder to return."
+    id: ID!
+  ): FulfillmentOrder
   "Returns a FulfillmentService resource by ID."
-  fulfillmentService("The ID of the FulfillmentService to return." id: ID!): FulfillmentService
+  fulfillmentService(
+    "The ID of the FulfillmentService to return."
+    id: ID!
+  ): FulfillmentService
   "Returns a gift card resource by ID."
   giftCard("The ID of the GiftCard to return." id: ID!): GiftCard
   "Returns a list of gift cards."
@@ -13543,7 +13783,10 @@ type QueryRoot {
     reverse: Boolean = false
   ): InventoryItemConnection!
   "Returns an `InventoryLevel` object by ID."
-  inventoryLevel("The ID of the InventoryLevel to return." id: ID!): InventoryLevel
+  inventoryLevel(
+    "The ID of the InventoryLevel to return."
+    id: ID!
+  ): InventoryLevel
   """
   Returns a Job resource by ID. Used to check the status of internal jobs and any applicable changes.
   """
@@ -13590,7 +13833,9 @@ type QueryRoot {
   ): LocationConnection!
   "Returns a list of all origin locations available for a delivery profile."
   locationsAvailableForDeliveryProfiles: [Location!]
-    @deprecated(reason: "Use `locationsAvailableForDeliveryProfilesConnection` instead")
+    @deprecated(
+      reason: "Use `locationsAvailableForDeliveryProfilesConnection` instead"
+    )
   "Returns a list of all origin locations available for a delivery profile."
   locationsAvailableForDeliveryProfilesConnection(
     "Returns the elements that come after the specified cursor."
@@ -13641,9 +13886,15 @@ type QueryRoot {
     sortKey: MarketingActivitySortKeys = CREATED_AT
   ): MarketingActivityConnection!
   "Returns a MarketingActivity resource by ID."
-  marketingActivity("The ID of the MarketingActivity to return." id: ID!): MarketingActivity
+  marketingActivity(
+    "The ID of the MarketingActivity to return."
+    id: ID!
+  ): MarketingActivity
   "Returns a MarketingEvent resource by ID."
-  marketingEvent("The ID of the MarketingEvent to return." id: ID!): MarketingEvent
+  marketingEvent(
+    "The ID of the MarketingEvent to return."
+    id: ID!
+  ): MarketingEvent
   "A list of marketing events associated with the marketing app."
   marketingEvents(
     "Returns the elements that come after the specified cursor."
@@ -13673,7 +13924,10 @@ type QueryRoot {
   "Returns a metafield by ID."
   metafield("The ID of the Metafield to return." id: ID!): Metafield
   "Returns a metafield definition by ID."
-  metafieldDefinition("The ID of the MetafieldDefinition to return." id: ID!): MetafieldDefinition
+  metafieldDefinition(
+    "The ID of the MetafieldDefinition to return."
+    id: ID!
+  ): MetafieldDefinition
   """
   Each metafield definition has a type, which defines the type of information that it can store.
   This type is enforced across every instance of the resource that owns the metafield definition.
@@ -13907,7 +14161,10 @@ type QueryRoot {
   Returns a private metafield by ID.
   Private metafields are accessible only by the application that created them.
   """
-  privateMetafield("The ID of the PrivateMetafield to return." id: ID!): PrivateMetafield
+  privateMetafield(
+    "The ID of the PrivateMetafield to return."
+    id: ID!
+  ): PrivateMetafield
   """
   Returns a list of private metafields associated to a resource.
   """
@@ -13950,7 +14207,10 @@ type QueryRoot {
     reverse: Boolean = false
   ): SavedSearchConnection!
   "Returns a ProductVariant resource by ID."
-  productVariant("The ID of the ProductVariant to return." id: ID!): ProductVariant
+  productVariant(
+    "The ID of the ProductVariant to return."
+    id: ID!
+  ): ProductVariant
   "List of the product variants."
   productVariants(
     "Returns the elements that come after the specified cursor."
@@ -14087,7 +14347,10 @@ type QueryRoot {
     src: URL
   ): ScriptTagConnection!
   "Returns a Selling Plan Group resource by ID."
-  sellingPlanGroup("The ID of the SellingPlanGroup to return." id: ID!): SellingPlanGroup
+  sellingPlanGroup(
+    "The ID of the SellingPlanGroup to return."
+    id: ID!
+  ): SellingPlanGroup
   "List Selling Plan Groups."
   sellingPlanGroups(
     "Returns the elements that come after the specified cursor."
@@ -14120,7 +14383,10 @@ type QueryRoot {
   """
   shop: Shop!
   "List of locales available on a shop."
-  shopLocales("Return only published locales." published: Boolean = false): [ShopLocale!]!
+  shopLocales(
+    "Return only published locales."
+    published: Boolean = false
+  ): [ShopLocale!]!
   "Shopify Payments account information, including balances and payouts."
   shopifyPaymentsAccount: ShopifyPaymentsAccount
   """
@@ -14164,7 +14430,10 @@ type QueryRoot {
     reverse: Boolean = false
   ): SubscriptionContractConnection!
   "Returns a Subscription Draft resource by ID."
-  subscriptionDraft("The ID of the Subscription Draft to return." id: ID!): SubscriptionDraft
+  subscriptionDraft(
+    "The ID of the Subscription Draft to return."
+    id: ID!
+  ): SubscriptionDraft
   "Returns a list of TenderTransactions associated with the shop."
   tenderTransactions(
     "Returns the elements that come after the specified cursor."
@@ -14189,7 +14458,10 @@ type QueryRoot {
     reverse: Boolean = false
   ): TenderTransactionConnection!
   "Translatable resource."
-  translatableResource("Find a translatable resource by ID." resourceId: ID!): TranslatableResource
+  translatableResource(
+    "Find a translatable resource by ID."
+    resourceId: ID!
+  ): TranslatableResource
   "List of translatable resources."
   translatableResources(
     "Returns the elements that come after the specified cursor."
@@ -14223,7 +14495,10 @@ type QueryRoot {
   "Returns a redirect resource by ID."
   urlRedirect("The ID of the UrlRedirect to return." id: ID!): UrlRedirect
   "Returns a redirect import resource by ID."
-  urlRedirectImport("The ID of the UrlRedirectImport to return." id: ID!): UrlRedirectImport
+  urlRedirectImport(
+    "The ID of the UrlRedirectImport to return."
+    id: ID!
+  ): UrlRedirectImport
   "A list of the shop's URL redirect saved searches."
   urlRedirectSavedSearches(
     "Returns the elements that come after the specified cursor."
@@ -14269,7 +14544,10 @@ type QueryRoot {
     sortKey: UrlRedirectSortKeys = ID
   ): UrlRedirectConnection!
   "Returns a webhook subscription by ID."
-  webhookSubscription("The ID of the WebhookSubscription to return." id: ID!): WebhookSubscription
+  webhookSubscription(
+    "The ID of the WebhookSubscription to return."
+    id: ID!
+  ): WebhookSubscription
   "Returns a list of webhook subscriptions."
   webhookSubscriptions(
     "Returns the elements that come after the specified cursor."
@@ -14828,7 +15106,8 @@ type SearchResultConnection {
   "Information to aid in pagination."
   pageInfo: PageInfo!
   "Information to aid in pagination."
-  resultsAfterCount: Int! @deprecated(reason: "The provided information is not accurate.")
+  resultsAfterCount: Int!
+    @deprecated(reason: "The provided information is not accurate.")
 }
 
 """
@@ -14948,7 +15227,10 @@ type SellingPlanGroup implements Node {
   "Whether the given product is directly associated to the selling plan group."
   appliesToProduct("The ID of the product." productId: ID!): Boolean!
   "Whether the given product variant is directly associated to the selling plan group."
-  appliesToProductVariant("The ID of the product." productVariantId: ID!): Boolean!
+  appliesToProductVariant(
+    "The ID of the product."
+    productVariantId: ID!
+  ): Boolean!
   """
   Whether any of the product variants of the given product are associated to the selling plan group.
   """
@@ -14970,7 +15252,10 @@ type SellingPlanGroup implements Node {
   "A count of products associated to the selling plan group."
   productCount: Int!
   "A count of product variants associated to the selling plan group."
-  productVariantCount("The ID of the product to scope the count to." productId: ID): Int!
+  productVariantCount(
+    "The ID of the product to scope the count to."
+    productId: ID
+  ): Int!
   "Product variants associated to the selling plan group."
   productVariants(
     "Returns the elements that come after the specified cursor."
@@ -15181,7 +15466,8 @@ type ShippingLine {
   """
   discountAllocations: [DiscountAllocation!]!
   "The pre-tax shipping price with discounts applied."
-  discountedPrice: MoneyV2! @deprecated(reason: "Use `discountedPriceSet` instead")
+  discountedPrice: MoneyV2!
+    @deprecated(reason: "Use `discountedPriceSet` instead")
   "The pre-tax shipping price with discounts applied."
   discountedPriceSet: MoneyBag!
   "A globally-unique identifier."
@@ -15303,7 +15589,8 @@ type ShippingRefund {
   "The monetary value of the shipping fees to be refunded in shop and presentment currencies."
   amountSet: MoneyBag!
   "The maximum amount of shipping fees currently refundable."
-  maximumRefundable: Money! @deprecated(reason: "Use `maximumRefundableSet` instead")
+  maximumRefundable: Money!
+    @deprecated(reason: "Use `maximumRefundableSet` instead")
   "The maximum amount of shipping fees currently refundable in shop and presentment currencies."
   maximumRefundableSet: MoneyBag!
   "The monetary value of the tax allocated to shipping fees to be refunded."
@@ -15372,7 +15659,10 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
   "Specifies whether the shop supports checkouts via Checkout API."
   checkoutApiSupported: Boolean!
   "Return a collection by its handle."
-  collectionByHandle("The handle of the collection." handle: String!): Collection
+  collectionByHandle(
+    "The handle of the collection."
+    handle: String!
+  ): Collection
     @deprecated(reason: "Use `QueryRoot.collectionByHandle` instead.")
   "List of the shop's collection saved searches."
   collectionSavedSearches(
@@ -15386,7 +15676,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     last: Int
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): SavedSearchConnection! @deprecated(reason: "Use `QueryRoot.collectionSavedSearches` instead.")
+  ): SavedSearchConnection!
+    @deprecated(reason: "Use `QueryRoot.collectionSavedSearches` instead.")
   "List of the shop's collections."
   collections(
     "Returns the elements that come after the specified cursor."
@@ -15419,7 +15710,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     savedSearchId: ID
     "Sort the underlying list by the given key."
     sortKey: CollectionSortKeys = ID
-  ): CollectionConnection! @deprecated(reason: "Use `QueryRoot.collections` instead.")
+  ): CollectionConnection!
+    @deprecated(reason: "Use `QueryRoot.collections` instead.")
   """
   The public-facing contact email address for the shop.
   Customers will use this email to communicate with the shop owner.
@@ -15468,9 +15760,13 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     reverse: Boolean = false
     "Sort the underlying list by the given key."
     sortKey: CustomerSavedSearchSortKeys = ID
-  ): SavedSearchConnection! @deprecated(reason: "Use `QueryRoot.customerSavedSearches` instead.")
+  ): SavedSearchConnection!
+    @deprecated(reason: "Use `QueryRoot.customerSavedSearches` instead.")
   "A list of tags that have been added to customer accounts."
-  customerTags("Returns up to the first `n` elements from the list." first: Int!): StringConnection!
+  customerTags(
+    "Returns up to the first `n` elements from the list."
+    first: Int!
+  ): StringConnection!
   "Customer accounts associated to the shop."
   customers(
     "Returns the elements that come after the specified cursor."
@@ -15505,7 +15801,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     reverse: Boolean = false
     "Sort the underlying list by the given key."
     sortKey: CustomerSortKeys = ID
-  ): CustomerConnection! @deprecated(reason: "Use `QueryRoot.customers` instead.")
+  ): CustomerConnection!
+    @deprecated(reason: "Use `QueryRoot.customers` instead.")
   "The shop's meta description used in search engine results."
   description: String
   "The domains configured for the shop."
@@ -15522,7 +15819,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     last: Int
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): SavedSearchConnection! @deprecated(reason: "Use `QueryRoot.draftOrderSavedSearches` instead.")
+  ): SavedSearchConnection!
+    @deprecated(reason: "Use `QueryRoot.draftOrderSavedSearches` instead.")
   "A list of tags that have been added to draft orders."
   draftOrderTags(
     "Returns up to the first `n` elements from the list."
@@ -15554,7 +15852,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     reverse: Boolean = false
     "Sort the underlying list by the given key."
     sortKey: DraftOrderSortKeys = ID
-  ): DraftOrderConnection! @deprecated(reason: "Use `QueryRoot.draftOrders` instead.")
+  ): DraftOrderConnection!
+    @deprecated(reason: "Use `QueryRoot.draftOrders` instead.")
   """
   The shop owner's email address.
   Shopify will use this email address to communicate with the shop owner.
@@ -15619,7 +15918,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     query: String
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): InventoryItemConnection! @deprecated(reason: "Use `QueryRoot.inventoryItems` instead.")
+  ): InventoryItemConnection!
+    @deprecated(reason: "Use `QueryRoot.inventoryItems` instead.")
   """
   The number of pendings orders on the shop.
   Limited to a maximum of 10000.
@@ -15659,7 +15959,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     reverse: Boolean = false
     "Sort the underlying list by the given key."
     sortKey: LocationSortKeys = NAME
-  ): LocationConnection! @deprecated(reason: "Use `QueryRoot.locations` instead.")
+  ): LocationConnection!
+    @deprecated(reason: "Use `QueryRoot.locations` instead.")
   "List of a shop's marketing events."
   marketingEvents(
     "Returns the elements that come after the specified cursor."
@@ -15685,7 +15986,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     reverse: Boolean = false
     "Sort the underlying list by the given key."
     sortKey: MarketingEventSortKeys = ID
-  ): MarketingEventConnection! @deprecated(reason: "Use `QueryRoot.marketingEvents` instead.")
+  ): MarketingEventConnection!
+    @deprecated(reason: "Use `QueryRoot.marketingEvents` instead.")
   "The approval signals for a shop to support onboarding to channel apps."
   merchantApprovalSignals: MerchantApprovalSignals
   "Returns a metafield by namespace and key that belongs to the resource."
@@ -15732,7 +16034,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     last: Int
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): SavedSearchConnection! @deprecated(reason: "Use `QueryRoot.orderSavedSearches` instead.")
+  ): SavedSearchConnection!
+    @deprecated(reason: "Use `QueryRoot.orderSavedSearches` instead.")
   "A list of tags that have been added to orders."
   orderTags(
     "Returns up to the first `n` elements from the list."
@@ -15797,7 +16100,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
   "The shop's settings related to payments."
   paymentSettings: PaymentSettings!
   "Number of pending orders on the shop."
-  pendingOrderCount: Int! @deprecated(reason: "Use `limitedPendingOrderCount` instead")
+  pendingOrderCount: Int!
+    @deprecated(reason: "Use `limitedPendingOrderCount` instead")
   "The shop's billing plan."
   plan: ShopPlan!
   "List of the shop's price rule saved searches."
@@ -15812,7 +16116,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     last: Int
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): SavedSearchConnection! @deprecated(reason: "Use `QueryRoot.priceRuleSavedSearches` instead.")
+  ): SavedSearchConnection!
+    @deprecated(reason: "Use `QueryRoot.priceRuleSavedSearches` instead.")
   "List of the shop’s price rules."
   priceRules(
     "Returns the elements that come after the specified cursor."
@@ -15847,7 +16152,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     savedSearchId: ID
     "Sort the underlying list by the given key."
     sortKey: PriceRuleSortKeys = ID
-  ): PriceRuleConnection! @deprecated(reason: "Use `QueryRoot.priceRules` instead.")
+  ): PriceRuleConnection!
+    @deprecated(reason: "Use `QueryRoot.priceRules` instead.")
   "The shop's primary domain name."
   primaryDomain: Domain!
   "Returns a private metafield by namespace and key that belongs to the resource."
@@ -15910,11 +16216,18 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     last: Int
     "Reverse the order of the underlying list."
     reverse: Boolean = false
-  ): SavedSearchConnection! @deprecated(reason: "Use `QueryRoot.productSavedSearches` instead.")
+  ): SavedSearchConnection!
+    @deprecated(reason: "Use `QueryRoot.productSavedSearches` instead.")
   "A list of tags that have been added to products."
-  productTags("Returns up to the first `n` elements from the list." first: Int!): StringConnection!
+  productTags(
+    "Returns up to the first `n` elements from the list."
+    first: Int!
+  ): StringConnection!
   "The list of types added to products."
-  productTypes("Returns up to the first `n` elements from the list." first: Int!): StringConnection!
+  productTypes(
+    "Returns up to the first `n` elements from the list."
+    first: Int!
+  ): StringConnection!
   "List of the shop's product variants."
   productVariants(
     "Returns the elements that come after the specified cursor."
@@ -15957,7 +16270,8 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
     reverse: Boolean = false
     "Sort the underlying list by the given key."
     sortKey: ProductVariantSortKeys = ID
-  ): ProductVariantConnection! @deprecated(reason: "Use `QueryRoot.productVariants` instead.")
+  ): ProductVariantConnection!
+    @deprecated(reason: "Use `QueryRoot.productVariants` instead.")
   "The list of vendors added to products."
   productVendors(
     "Returns up to the first `n` elements from the list."
@@ -16067,11 +16381,17 @@ type Shop implements HasMetafields & HasPublishedTranslations & Node {
   "The shop's time zone offset expressed as a number of minutes."
   timezoneOffsetMinutes: Int!
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
   "The shop's unit system for weights and measures."
   unitSystem: UnitSystem!
   "Fetches a list of images uploaded to the shop by their IDs."
-  uploadedImagesByIds("The IDs of the uploaded images." imageIds: [ID!]!): [Image!]!
+  uploadedImagesByIds(
+    "The IDs of the uploaded images."
+    imageIds: [ID!]!
+  ): [Image!]!
   "The URL of the shop's online store."
   url: URL!
   "The shop's primary unit of weight for products and shipping."
@@ -16114,7 +16434,9 @@ type ShopFeatures {
   captchaExternalDomains: Boolean!
   "Whether the delivery profiles functionality is enabled for this shop."
   deliveryProfiles: Boolean!
-    @deprecated(reason: "Delivery profiles are now 100% enabled across Shopify.")
+    @deprecated(
+      reason: "Delivery profiles are now 100% enabled across Shopify."
+    )
   "Whether a shop has access to the Google Analytics dynamic remarketing feature."
   dynamicRemarketing: Boolean!
   "Whether a shop can be migrated to use Shopify subscriptions."
@@ -16155,7 +16477,8 @@ type ShopFeatures {
   "Whether a shop has ever had subscription products."
   sellsSubscriptions: Boolean!
   "Whether the shop has a Shopify Plus subscription."
-  shopifyPlus: Boolean! @deprecated(reason: "Use Shop.plan.shopifyPlus instead.")
+  shopifyPlus: Boolean!
+    @deprecated(reason: "Use Shop.plan.shopifyPlus instead.")
   """
   Whether to show metrics in the Shopify admin. Metrics are hidden for new merchants until they become meaningful.
   """
@@ -16221,7 +16544,10 @@ type ShopPolicy implements HasPublishedTranslations & Node {
   "A globally-unique identifier."
   id: ID!
   "The translations associated with the resource."
-  translations("Filters translations locale." locale: String!): [PublishedTranslation!]!
+  translations(
+    "Filters translations locale."
+    locale: String!
+  ): [PublishedTranslation!]!
   "The shop policy type."
   type: ShopPolicyType!
   "The public URL of the policy."
@@ -16289,7 +16615,8 @@ type ShopifyPaymentsAccount implements Node {
 
   This is what buyers will see on their credit card or bank statements when making a purchase.
   """
-  chargeStatementDescriptor: String @deprecated(reason: "Use `chargeStatementDescriptors` instead")
+  chargeStatementDescriptor: String
+    @deprecated(reason: "Use `chargeStatementDescriptors` instead")
   """
   Statement descriptors used for charges.
 
@@ -17671,7 +17998,8 @@ type SuggestedOrderTransaction {
   "Specifies the kind of the suggested order transaction."
   kind: SuggestedOrderTransactionKind!
   "Specifies the available amount to refund on the gateway. Only available within SuggestedRefund."
-  maximumRefundable: Money @deprecated(reason: "Use `maximumRefundableSet` instead")
+  maximumRefundable: Money
+    @deprecated(reason: "Use `maximumRefundableSet` instead")
   "Specifies the available amount to refund on the gateway in shop and presentment currencies. Only available within SuggestedRefund."
   maximumRefundableSet: MoneyBag
   "The associated parent transaction, for example the authorization of a capture."
@@ -17687,7 +18015,8 @@ type SuggestedRefund {
   "The sum of all the discounted prices of the line items being refunded."
   discountedSubtotalSet: MoneyBag!
   "The total monetary value available to refund."
-  maximumRefundable: Money! @deprecated(reason: "Use `maximumRefundableSet` instead")
+  maximumRefundable: Money!
+    @deprecated(reason: "Use `maximumRefundableSet` instead")
   "The total monetary value available to refund in shop and presentment currencies."
   maximumRefundableSet: MoneyBag!
   "A list of duties to be refunded from the order."
@@ -19800,7 +20129,8 @@ enum DeliveryConditionOperator {
 "Reasons the shop is blocked from converting to full multi-location delivery profiles mode."
 enum DeliveryLegacyModeBlockedReason {
   "Multi-Location mode is disabled. The shop can't convert to full multi-location delivery profiles mode."
-  MULTI_LOCATION_DISABLED @deprecated(reason: "All shops are now using multi-location mode.")
+  MULTI_LOCATION_DISABLED
+    @deprecated(reason: "All shops are now using multi-location mode.")
   "There are no locations for this store that can fulfill online orders."
   NO_LOCATIONS_FULFILLING_ONLINE_ORDERS
 }
@@ -20641,7 +20971,10 @@ enum MarketingTactic {
   "A display ad."
   DISPLAY @deprecated(reason: "`DISPLAY` is deprecated. Use `AD` instead.")
   "A follow-up email."
-  FOLLOW_UP @deprecated(reason: "'FOLLOW_UP' is deprecated. Use 'TRANSACTIONAL' instead.")
+  FOLLOW_UP
+    @deprecated(
+      reason: "'FOLLOW_UP' is deprecated. Use 'TRANSACTIONAL' instead."
+    )
   "A link."
   LINK
   "A loyalty program."
@@ -20655,7 +20988,8 @@ enum MarketingTactic {
   "A blog post."
   POST
   "A promotional receipt."
-  RECEIPT @deprecated(reason: "'RECEIPT' is deprecated. Use 'TRANSACTIONAL' instead.")
+  RECEIPT
+    @deprecated(reason: "'RECEIPT' is deprecated. Use 'TRANSACTIONAL' instead.")
   "A retargeting ad."
   RETARGETING
   "Paid search."

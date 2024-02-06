@@ -1,8 +1,12 @@
-import { Transition } from "@headlessui/react";
-import { CheckCircleIcon, ExclamationCircleIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import produce from "immer";
-import { FC, Fragment } from "react";
-import create from "zustand";
+import {Transition} from '@headlessui/react';
+import {
+  CheckCircleIcon,
+  ExclamationCircleIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/solid';
+import produce from 'immer';
+import {FC, Fragment} from 'react';
+import create from 'zustand';
 
 type ToastType = {
   id: string;
@@ -15,25 +19,26 @@ type ToastType = {
 type ToastStore = {
   toasts: ToastType[];
   addToast: (notification: ToastType) => void;
-  removeToast: (id: ToastType["id"]) => void;
+  removeToast: (id: ToastType['id']) => void;
 };
 
-export const useToast = create<ToastStore>((set) => ({
+export const useToast = create<ToastStore>(set => ({
   toasts: [],
-  addToast: (toast) => {
+  addToast: toast => {
     set(
-      produce((state) => {
-        const currentToasts = state.toasts.filter(({ id }) => id !== toast.id);
+      produce(state => {
+        const currentToasts = state.toasts.filter(({id}) => id !== toast.id);
         currentToasts.length = Math.min(currentToasts.length, 4);
         state.toasts = [...currentToasts, toast];
       })
     );
 
     setTimeout(() => {
-      set((state) => {
+      set(state => {
         if (
           !state.toasts.some(
-            ({ id, timestamp }) => id === toast.id && timestamp === toast.timestamp
+            ({id, timestamp}) =>
+              id === toast.id && timestamp === toast.timestamp
           )
         ) {
           return state;
@@ -41,23 +46,24 @@ export const useToast = create<ToastStore>((set) => ({
         return {
           ...state,
           toasts: state.toasts.filter(
-            ({ id, timestamp }) => id !== toast.id || timestamp !== toast.timestamp
+            ({id, timestamp}) =>
+              id !== toast.id || timestamp !== toast.timestamp
           ),
         };
       });
     }, 2500);
   },
-  removeToast: (id) => {
+  removeToast: id => {
     set(
-      produce((state) => {
-        state.toasts = state.toasts.filter((toast) => id !== toast.id);
+      produce(state => {
+        state.toasts = state.toasts.filter(toast => id !== toast.id);
       })
     );
   },
 }));
 
 export const Toast: FC = ({}) => {
-  const { toasts, removeToast } = useToast();
+  const {toasts, removeToast} = useToast();
 
   return (
     <>
@@ -82,9 +88,15 @@ export const Toast: FC = ({}) => {
               >
                 <figure className="button-border pointer-events-auto flex w-full max-w-sm overflow-hidden rounded-lg border-gray-400/30 bg-white p-4 shadow-xl shadow-gray-500/10">
                   {toast?.error ? (
-                    <ExclamationCircleIcon className="h-6 w-6 text-red-400" aria-hidden="true" />
+                    <ExclamationCircleIcon
+                      className="h-6 w-6 text-red-400"
+                      aria-hidden="true"
+                    />
                   ) : (
-                    <CheckCircleIcon className="h-6 w-6 text-green-400" aria-hidden="true" />
+                    <CheckCircleIcon
+                      className="h-6 w-6 text-green-400"
+                      aria-hidden="true"
+                    />
                   )}
 
                   <p className="ml-3 w-0 flex-1 pt-0.5 text-sm font-medium text-gray-900">

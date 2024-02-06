@@ -62,17 +62,20 @@ const REGEX = {
 };
 
 function collapseWhitespace(str) {
-  return str.trim().replace(REGEX.whitespace, " ");
+  return str.trim().replace(REGEX.whitespace, ' ');
 }
 
 function dataURIPayload(string) {
-  return encodeURIComponent(string).replace(REGEX.urlHexPairs, specialHexEncode);
+  return encodeURIComponent(string).replace(
+    REGEX.urlHexPairs,
+    specialHexEncode
+  );
 }
 
 // `#` gets converted to `%23`, so quite a few CSS named colors are shorter than
 // their equivalent URL-encoded hex codes.
 function colorCodeToShorterNames(string) {
-  Object.keys(shorterNames).forEach((key) => {
+  Object.keys(shorterNames).forEach(key => {
     if (shorterNames[key].test(string)) {
       string = string.replace(shorterNames[key], key);
     }
@@ -85,21 +88,21 @@ function specialHexEncode(match) {
   switch (
     match // Browsers tolerate these characters, and they're frequent
   ) {
-    case "%20":
-      return " ";
-    case "%3D":
-      return "=";
-    case "%3A":
-      return ":";
-    case "%2F":
-      return "/";
+    case '%20':
+      return ' ';
+    case '%3D':
+      return '=';
+    case '%3A':
+      return ':';
+    case '%2F':
+      return '/';
     default:
       return match; /*.toLowerCase();*/ // compresses better
   }
 }
 
 export function svgToTinyDataUri(svgString) {
-  if (typeof svgString !== "string") {
+  if (typeof svgString !== 'string') {
     throw new TypeError(`Expected a string, but received ${typeof svgString}`);
   }
   // Strip the Byte-Order Mark if the SVG has one
@@ -107,10 +110,13 @@ export function svgToTinyDataUri(svgString) {
     svgString = svgString.slice(1);
   }
 
-  const body = colorCodeToShorterNames(collapseWhitespace(svgString)).replace(REGEX.quotes, "'");
+  const body = colorCodeToShorterNames(collapseWhitespace(svgString)).replace(
+    REGEX.quotes,
+    "'"
+  );
   return `data:image/svg+xml,${dataURIPayload(body)}`;
 }
 
 svgToTinyDataUri.toSrcset = function toSrcset(svgString) {
-  return svgToTinyDataUri(svgString).replace(/ /g, "%20");
+  return svgToTinyDataUri(svgString).replace(/ /g, '%20');
 };

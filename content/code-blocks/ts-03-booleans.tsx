@@ -1,7 +1,7 @@
 /*= =============== Booleans ================ */
-let isLoading: boolean = false;
+const isLoading = false;
 
-let inferredIsLoading = false;
+const inferredIsLoading = false;
 // inferredIsLoading: boolean
 
 const isDone = true;
@@ -13,8 +13,8 @@ const isDone = true;
 const maybeDone = !isLoading && isDone;
 // maybeDone: infers to true
 
-let notAString = !"Super!";
+const notAString = !'Super!';
 // notAString: boolean
 
-const emptyString = !!"";
+const emptyString = !!'';
 // emptyString: false

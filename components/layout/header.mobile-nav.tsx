@@ -1,8 +1,8 @@
-import { Link } from "components/link";
-import clsx from "clsx";
-import { HEADER } from "content/layout";
-import { Property } from "csstype";
-import { FC, MouseEventHandler, useCallback } from "react";
+import {Link} from 'components/link';
+import clsx from 'clsx';
+import {HEADER} from 'content/layout';
+import {Property} from 'csstype';
+import {FC, MouseEventHandler, useCallback} from 'react';
 import BorderWidth = Property.BorderWidth;
 import Width = Property.Width;
 
@@ -27,30 +27,35 @@ const MobileNavButton = ({
       type="button"
       onClick={onClick}
       className="relative z-50 p-1"
-      style={{ "--nav-icon-size": size, "--nav-icon-border": border }}
+      style={{'--nav-icon-size': size, '--nav-icon-border': border}}
     >
       <span className="sr-only">Mobile Navigation</span>
-      <i className={clsx("burger-menu", active && "active")}>
+      <i className={clsx('burger-menu', active && 'active')}>
         <div></div>
       </i>
     </button>
   );
 };
 
-export const MobileNav: FC<HeaderMobileNavProps> = ({ showNav, setShowNav }) => {
+export const MobileNav: FC<HeaderMobileNavProps> = ({showNav, setShowNav}) => {
   const toggleNav = useCallback(() => {
-    setShowNav((current) => !current);
+    setShowNav(current => !current);
   }, [setShowNav]);
 
   return (
     <div className="md:hidden">
-      <MobileNavButton size="24px" border="2px" onClick={toggleNav} active={showNav} />
+      <MobileNavButton
+        size="24px"
+        border="2px"
+        onClick={toggleNav}
+        active={showNav}
+      />
       <div
         className={clsx(
-          " fixed top-0 left-0 h-screen w-full",
+          ' fixed top-0 left-0 h-screen w-full',
           showNav
-            ? "nav-active opacity-100"
-            : "pointer-events-none select-none opacity-0 delay-[900ms]"
+            ? 'nav-active opacity-100'
+            : 'pointer-events-none select-none opacity-0 delay-[900ms]'
         )}
       >
         <div className="absolute inset-0 -z-50 grid grid-cols-[1rem_repeat(16,minmax(0,1fr))_1rem]">
@@ -58,15 +63,17 @@ export const MobileNav: FC<HeaderMobileNavProps> = ({ showNav, setShowNav }) => 
             return (
               <div
                 className={clsx(
-                  "pointer-events-none relative h-full -translate-y-full select-none bg-slate-900 transition-all duration-300 ease-linear",
+                  'pointer-events-none relative h-full -translate-y-full select-none bg-slate-900 transition-all duration-300 ease-linear',
                   index === 0 &&
-                    "relative before:absolute b:top-0 b:right-0 b:h-full b:w-px b:bg-[linear-gradient(180deg,var(--line-color),var(--line-color)_50%,transparent_0,transparent)] b:bg-[length:1px_8px] b:opacity-20",
+                    'relative before:absolute b:top-0 b:right-0 b:h-full b:w-px b:bg-[linear-gradient(180deg,var(--line-color),var(--line-color)_50%,transparent_0,transparent)] b:bg-[length:1px_8px] b:opacity-20',
                   index === 17 &&
-                    "relative before:absolute b:top-0 b:left-0 b:h-full b:w-px b:bg-[linear-gradient(180deg,var(--line-color),var(--line-color)_50%,transparent_0,transparent)] b:bg-[length:1px_8px] b:opacity-20"
+                    'relative before:absolute b:top-0 b:left-0 b:h-full b:w-px b:bg-[linear-gradient(180deg,var(--line-color),var(--line-color)_50%,transparent_0,transparent)] b:bg-[length:1px_8px] b:opacity-20'
                 )}
                 style={{
-                  transitionDelay: showNav ? `${index * 0.01}s` : `${index * 0.025}s`,
-                  "--tw-translate-y": showNav ? "0%" : "-100%",
+                  transitionDelay: showNav
+                    ? `${index * 0.01}s`
+                    : `${index * 0.025}s`,
+                  '--tw-translate-y': showNav ? '0%' : '-100%',
                 }}
                 key={index}
               />

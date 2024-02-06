@@ -2,20 +2,20 @@ export const FOOTER = {
   copyright: `© ${new Date().getFullYear()} Lalit Kumawat. All rights reserved.`,
   nav: [
     {
-      name: "Home",
-      href: "/",
+      name: 'Home',
+      href: '/',
     },
     {
-      name: "HTML to MD",
-      href: "/html-to-md",
+      name: 'HTML to MD',
+      href: '/html-to-md',
     },
     /*{
       name: "Tools",
       href: "/",
     },*/
     {
-      name: "Blog",
-      href: "/blog",
+      name: 'Blog',
+      href: '/blog',
     } /*
     {
       name: "Gear",

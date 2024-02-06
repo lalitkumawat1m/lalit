@@ -1,9 +1,9 @@
 /**
  * This file contains tRPC's HTTP response handler
  */
-import * as trpcNext from "@trpc/server/adapters/next";
-import { trpcRouter } from "server/api-routes";
-import { trpcContext } from "server/trpc/context";
+import * as trpcNext from '@trpc/server/adapters/next';
+import {trpcRouter} from 'server/api-routes';
+import {trpcContext} from 'server/trpc/context';
 
 export default trpcNext.createNextApiHandler({
   router: trpcRouter,
@@ -14,11 +14,11 @@ export default trpcNext.createNextApiHandler({
   /**
    * @link https://trpc.io/docs/error-handling
    */
-  onError({ error }) {
+  onError({error}) {
     console.log(error);
-    if (error.code === "INTERNAL_SERVER_ERROR") {
+    if (error.code === 'INTERNAL_SERVER_ERROR') {
       // send to bug reporting
-      console.error("Something went wrong", error);
+      console.error('Something went wrong', error);
     }
   },
   /**
@@ -30,13 +30,13 @@ export default trpcNext.createNextApiHandler({
   /**
    * @link https://trpc.io/docs/caching#api-response-caching
    */
-  responseMeta({ ctx, paths, type, errors }) {
+  responseMeta({ctx, paths, type, errors}) {
     // assuming you have all your public routes with the keyword `public` in them
-    const github = paths && paths.every((path) => path.includes("fetch.github"));
+    const github = paths && paths.every(path => path.includes('fetch.github'));
     // checking that no procedures errored
     const allOk = errors.length === 0;
     // checking we're doing a query request
-    const isQuery = type === "query";
+    const isQuery = type === 'query';
 
     if (ctx && github && allOk && isQuery) {
       // cache request for 1 day + revalidate once every second

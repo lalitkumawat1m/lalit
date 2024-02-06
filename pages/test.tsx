@@ -1,11 +1,11 @@
-import { trpc } from "components/_app/trpc";
-import { fetchOnce } from "components/_hooks/use-trpc";
-import { BOOKS } from "content/books";
-import { FC, useCallback, useEffect } from "react";
+import {trpc} from 'components/_app/trpc';
+import {fetchOnce} from 'components/_hooks/use-trpc';
+import {BOOKS} from 'content/books';
+import {FC, useCallback, useEffect} from 'react';
 
 type TestProps = {};
 
-export const Test: FC<TestProps> = (props) => {
+export const Test: FC<TestProps> = props => {
   // const test = trpc.books.addMany.useMutation();
   // const data = trpc.books.get.useQuery(undefined, { ...fetchOnce });
 

@@ -1,22 +1,23 @@
-import { ChevronDoubleUpIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
-import { SiGithub } from "@react-icons/all-files/si/SiGithub";
-import { SiLinkedin } from "@react-icons/all-files/si/SiLinkedin";
-import { FaXTwitter } from "react-icons/fa6";
-import { Link } from "components/link";
-import clsx from "clsx";
-import { useResumeSectionInView } from "components/resume/use-resume-section-in-view";
-import { useState } from "react";
-import { scrollToY } from "utils/scroll-to";
+import {ChevronDoubleUpIcon, EnvelopeIcon} from '@heroicons/react/24/solid';
+import {SiGithub} from '@react-icons/all-files/si/SiGithub';
+import {SiLinkedin} from '@react-icons/all-files/si/SiLinkedin';
+import {FaXTwitter} from 'react-icons/fa6';
+import {Link} from 'components/link';
+import clsx from 'clsx';
+import {useResumeSectionInView} from 'components/resume/use-resume-section-in-view';
+import {useState} from 'react';
+import {scrollToY} from 'utils/scroll-to';
 
 export const ResumeFooter = () => {
   const [active, setActive] = useState(false);
-  const { sections, filter, showSection, selectFilter } = useResumeSectionInView();
+  const {sections, filter, showSection, selectFilter} =
+    useResumeSectionInView();
 
   return (
     <footer
       className={clsx(
-        "fixed inset-x-0 bottom-0 z-40 px-4 py-2 transition-all ease-linear [--resume-footer-bg:theme(colors.gray.50)] print:!hidden lg:hidden",
-        active ? "max-h-72" : "max-h-10"
+        'fixed inset-x-0 bottom-0 z-40 px-4 py-2 transition-all ease-linear [--resume-footer-bg:theme(colors.gray.50)] print:!hidden lg:hidden',
+        active ? 'max-h-72' : 'max-h-10'
       )}
     >
       <div
@@ -32,34 +33,38 @@ export const ResumeFooter = () => {
       <button
         className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gray-100 bg-gray-50 p-3 text-gray-600 drop-shadow-md hf:text-gray-900 hf:drop-shadow"
         type="button"
-        onClick={() => setActive((current) => !current)}
+        onClick={() => setActive(current => !current)}
       >
         <span className="sr-only">Show Mobile Navigation</span>
-        <ChevronDoubleUpIcon className={clsx("h-4 w-4 transition-all", active && "rotate-180")} />
+        <ChevronDoubleUpIcon
+          className={clsx('h-4 w-4 transition-all', active && 'rotate-180')}
+        />
       </button>
       <section className="relative z-10 mt-8 grid grid-cols-2 pb-4">
         <section className="spacing-2">
-          <div className="text-[13px] font-medium text-gray-700 d:text-gray-300">Filter view:</div>
+          <div className="text-[13px] font-medium text-gray-700 d:text-gray-300">
+            Filter view:
+          </div>
           <nav className="flex flex-wrap gap-1.5">
             {(
               [
-                "all",
-                "relevant",
-                "web / tech dev",
-                "management",
+                'all',
+                'relevant',
+                'web / tech dev',
+                'management',
                 // "tech support",
-                "entrepreneurial",
-                "restaurant",
+                'entrepreneurial',
+                'restaurant',
               ] as const
-            ).map((type) => (
+            ).map(type => (
               <button
                 key={type}
                 type="button"
                 className={clsx(
-                  "rounded border  px-1.5 py-0.5 text-xs font-medium outline-none hfa:outline-none ",
+                  'rounded border  px-1.5 py-0.5 text-xs font-medium outline-none hfa:outline-none ',
                   filter.includes(type)
-                    ? "border-sky-300 bg-sky-100 text-gray-700 hf:border-sky-400 hf:bg-sky-300/40 hf:text-gray-800 d:border-sky-700 d:bg-sky-900/60 d:text-gray-200 d:hf:bg-sky-700/50 d:hf:text-gray-100"
-                    : "border-gray-200 bg-gray-100 text-gray-400 hf:border-gray-300 hf:bg-gray-200 hf:text-gray-700 d:border-gray-700 d:bg-gray-800 d:text-gray-300 d:hf:border-gray-600 d:hf:bg-gray-700 d:hf:text-gray-100"
+                    ? 'border-sky-300 bg-sky-100 text-gray-700 hf:border-sky-400 hf:bg-sky-300/40 hf:text-gray-800 d:border-sky-700 d:bg-sky-900/60 d:text-gray-200 d:hf:bg-sky-700/50 d:hf:text-gray-100'
+                    : 'border-gray-200 bg-gray-100 text-gray-400 hf:border-gray-300 hf:bg-gray-200 hf:text-gray-700 d:border-gray-700 d:bg-gray-800 d:text-gray-300 d:hf:border-gray-600 d:hf:bg-gray-700 d:hf:text-gray-100'
                 )}
                 onClick={() => {
                   selectFilter(type);
@@ -110,7 +115,9 @@ export const ResumeFooter = () => {
               <SiLinkedin className="h-4 w-4" />
             </Link>
           </nav>
-          <h5 className="ml-1 text-[13px] text-gray-500 d:text-gray-400">Madhya Pradesh, India</h5>
+          <h5 className="ml-1 text-[13px] text-gray-500 d:text-gray-400">
+            Madhya Pradesh, India
+          </h5>
         </section>
       </section>
     </footer>

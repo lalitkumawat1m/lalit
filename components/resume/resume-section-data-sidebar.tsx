@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import { FC, ReactElement } from "react";
+import clsx from 'clsx';
+import {FC, ReactElement} from 'react';
 
 type ResumeSectionDateSidebarProps = {
   dateFrom: string | Date;
@@ -13,7 +13,7 @@ export const ResumeSectionDateSidebar: FC<ResumeSectionDateSidebarProps> = ({
   dateTo,
   isLast,
   showDateRange,
-  sidebar = "",
+  sidebar = '',
 }) => {
   return (
     <aside className="absolute top-1 left-[4.5rem] hidden h-full print:!left-4 print:!block md:block xl:left-6 2xl:left-4 ">
@@ -25,25 +25,25 @@ export const ResumeSectionDateSidebar: FC<ResumeSectionDateSidebarProps> = ({
             {showDateRange ? (
               <div className="spacing-1">
                 <div className="whitespace-nowrap print:!mr-0 xl:mr-2">
-                  {new Date(dateFrom)?.toLocaleDateString("en-GB", {
-                    month: "short",
-                    year: "numeric",
+                  {new Date(dateFrom)?.toLocaleDateString('en-GB', {
+                    month: 'short',
+                    year: 'numeric',
                   })}
                   <span className="hidden print:!inline xl:inline"> -</span>
                 </div>
                 <div className="whitespace-nowrap">
                   {Date.now() > new Date(dateTo).getTime()
-                    ? new Date(dateTo)?.toLocaleDateString("en-GB", {
-                        month: "short",
-                        year: "numeric",
+                    ? new Date(dateTo)?.toLocaleDateString('en-GB', {
+                        month: 'short',
+                        year: 'numeric',
                       })
-                    : "Current"}
+                    : 'Current'}
                 </div>
               </div>
             ) : (
               <span className="whitespace-nowrap">
-                {new Date(dateTo)?.toLocaleDateString("en-GB", {
-                  year: "numeric",
+                {new Date(dateTo)?.toLocaleDateString('en-GB', {
+                  year: 'numeric',
                 })}
               </span>
             )}
@@ -55,10 +55,10 @@ export const ResumeSectionDateSidebar: FC<ResumeSectionDateSidebarProps> = ({
       </div>
       <i
         className={clsx(
-          "absolute left-0 top-6 h-[calc(100%-2px)] w-0.5 -translate-x-1/2",
+          'absolute left-0 top-6 h-[calc(100%-2px)] w-0.5 -translate-x-1/2',
           isLast
-            ? "bg-gradient-to-b from-gray-200 to-transparent d:from-gray-800 print:!via-gray-200"
-            : "bg-gray-200 d:bg-gray-800"
+            ? 'bg-gradient-to-b from-gray-200 to-transparent d:from-gray-800 print:!via-gray-200'
+            : 'bg-gray-200 d:bg-gray-800'
         )}
       />
     </aside>

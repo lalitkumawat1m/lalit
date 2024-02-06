@@ -1,8 +1,8 @@
-import { FC } from "react";
+import {FC} from 'react';
 
 type GalleryProps = {};
 
-export const Gallery: FC<GalleryProps> = (props) => {
+export const Gallery: FC<GalleryProps> = props => {
   return <>Gallery</>;
 };
 

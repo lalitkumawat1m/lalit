@@ -1,18 +1,18 @@
-import { CopyButton } from "components/copy-button";
-import { Code, CodeGroupProps } from "components/typography/code";
+import {CopyButton} from 'components/copy-button';
+import {Code, CodeGroupProps} from 'components/typography/code';
 
 export const CodeEditor = ({
   code,
   language,
 }: {
   code: string | string[];
-  language: CodeGroupProps["language"];
+  language: CodeGroupProps['language'];
 }) => {
   return (
     <figure className="relative w-full flex-col overflow-hidden rounded-md border-2 border-gray-200/40 bg-gray-900 p-2.5 shadow-2xl drop-shadow-lg d:border-gray-600/40">
       <header
         className="mb-2 grid items-center border-b border-b-gray-800 pb-2"
-        style={{ gridTemplateColumns: "50px 1fr 50px" }}
+        style={{gridTemplateColumns: '50px 1fr 50px'}}
       >
         <i className="flex gap-1.5">
           <button
@@ -36,7 +36,7 @@ export const CodeEditor = ({
         </div>
         <div className="flex justify-end">
           <CopyButton
-            content={Array.isArray(code) ? code.join("\n") : code}
+            content={Array.isArray(code) ? code.join('\n') : code}
             className="text-gray-500 hf:text-white"
           />
         </div>

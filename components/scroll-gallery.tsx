@@ -1,18 +1,28 @@
-import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/react/24/solid";
-import { FC, PropsWithChildren, useCallback, useEffect, useRef, useState } from "react";
-import { scrollToX } from "utils/scroll-to";
+import {ArrowLongLeftIcon, ArrowLongRightIcon} from '@heroicons/react/24/solid';
+import {
+  FC,
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import {scrollToX} from 'utils/scroll-to';
 
 export const ScrollGallery: FC<
-  PropsWithChildren<{ itemWidth: number; gapWidth: number; filter }>
-> = ({ itemWidth, gapWidth, children, filter }) => {
+  PropsWithChildren<{itemWidth: number; gapWidth: number; filter}>
+> = ({itemWidth, gapWidth, children, filter}) => {
   const scrollContainerRef = useRef<HTMLElement>(null);
-  const [scrollNavigation, setScrollNavigation] = useState({ prev: false, next: true });
+  const [scrollNavigation, setScrollNavigation] = useState({
+    prev: false,
+    next: true,
+  });
   const [isScrolling, setIsScrolling] = useState(false);
 
   const handleClickPrevious = useCallback(() => {
     if (isScrolling) return;
     const scrollContainer = scrollContainerRef.current as HTMLDivElement;
-    scrollContainer.classList.remove("snap-x");
+    scrollContainer.classList.remove('snap-x');
     setIsScrolling(true);
     scrollToX(
       200,
@@ -20,7 +30,7 @@ export const ScrollGallery: FC<
       scrollContainer,
       () => {
         setIsScrolling(false);
-        scrollContainer.classList.add("snap-x");
+        scrollContainer.classList.add('snap-x');
       }
     );
   }, [gapWidth, isScrolling, itemWidth]);
@@ -28,12 +38,17 @@ export const ScrollGallery: FC<
   const handleClickNext = useCallback(() => {
     if (isScrolling) return;
     const scrollContainer = scrollContainerRef.current as HTMLDivElement;
-    scrollContainer.classList.remove("snap-x");
+    scrollContainer.classList.remove('snap-x');
     setIsScrolling(true);
-    scrollToX(200, scrollContainer.scrollLeft + itemWidth + gapWidth, scrollContainer, () => {
-      setIsScrolling(false);
-      scrollContainer.classList.add("snap-x");
-    });
+    scrollToX(
+      200,
+      scrollContainer.scrollLeft + itemWidth + gapWidth,
+      scrollContainer,
+      () => {
+        setIsScrolling(false);
+        scrollContainer.classList.add('snap-x');
+      }
+    );
   }, [gapWidth, isScrolling, itemWidth]);
 
   useEffect(() => {
@@ -42,24 +57,25 @@ export const ScrollGallery: FC<
       setScrollNavigation(() => ({
         prev: scrollContainer?.scrollLeft > 0,
         next:
-          scrollContainer.children[scrollContainer.children.length - 1]?.getBoundingClientRect()
-            .right > window.innerWidth,
+          scrollContainer.children[
+            scrollContainer.children.length - 1
+          ]?.getBoundingClientRect().right > window.innerWidth,
       }));
     };
 
-    scrollContainer?.addEventListener("scroll", updateScrollNavigation);
+    scrollContainer?.addEventListener('scroll', updateScrollNavigation);
     return () => {
-      scrollContainer?.removeEventListener("scroll", updateScrollNavigation);
+      scrollContainer?.removeEventListener('scroll', updateScrollNavigation);
     };
   }, []);
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current as HTMLDivElement;
-    scrollContainer.classList.remove("snap-x");
+    scrollContainer.classList.remove('snap-x');
     setIsScrolling(true);
     scrollToX(200, 0, scrollContainer, () => {
       setIsScrolling(false);
-      scrollContainer.classList.add("snap-x");
+      scrollContainer.classList.add('snap-x');
     });
   }, [filter, gapWidth, itemWidth]);
 

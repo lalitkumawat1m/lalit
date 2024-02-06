@@ -1,16 +1,16 @@
 ---
-title: "Typeof and Type Queries"
-publishedAt: "2022-04-30"
-summary: "Learn how to use the typeof operator and how to assign type queries and aliases in TypeScript"
-tldr: ""
+title: 'Typeof and Type Queries'
+publishedAt: '2022-04-30'
+summary: 'Learn how to use the typeof operator and how to assign type queries and aliases in TypeScript'
+tldr: ''
 type: Blog
-image: "/images/ts-4.svg"
-icon: "typescript"
+image: '/images/ts-4.svg'
+icon: 'typescript'
 tags:
-  - "typescript"
-  - "javascript"
-  - "development"
-  - "dev tools"
+  - 'typescript'
+  - 'javascript'
+  - 'development'
+  - 'dev tools'
 ---
 
 While it shares the same name as JavaScript's operator `typeof`, TypeScript's `typeof` keyword captures anonymous types in a rather different way - the two can only appear in mutually exclusive contexts.
@@ -24,7 +24,7 @@ typeof 1234; // "number"
 typeof true; // "boolean"
 typeof {}; // "object"
 typeof undefined; // "undefined"
-typeof "Hello World!"; // "string"
+typeof 'Hello World!'; // "string"
 typeof Symbol(); // "symbol"
 typeof parseInt; // "function"
 ```
@@ -46,7 +46,7 @@ const number = typeof 1234;
 In TypeScript, the typeof keyword is used to initiate a **type query**. A type query gets the type of an _identifier_ or _property access expression_ (which is a connection of multiple identifiers):
 
 ```ts
-const box = { width: 100, height: 200 };
+const box = {width: 100, height: 200};
 let anotherBox: typeof box;
 ```
 
@@ -55,7 +55,7 @@ The type of the `box` variable is inferred from its declaration with the annotat
 As with other static type system artifacts, type queries do not manifest at runtime. They are completely removed from the generated JavaScript code:
 
 ```js
-const box = { width: 100, height: 200 };
+const box = {width: 100, height: 200};
 let anotherBox;
 ```
 
@@ -64,7 +64,7 @@ let anotherBox;
 In TypeScript, we can give the captured anonymous type a name using a **type alias**. Then, use that name with TypeScript wherever it expects a type:
 
 ```ts
-const box = { width: 100, height: 200 };
+const box = {width: 100, height: 200};
 
 // Obtain the type of `box` and call it `Box`
 type Box = typeof box;

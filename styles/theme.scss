@@ -1,19 +1,19 @@
 @font-face {
-  font-family: "Inter var";
+  font-family: 'Inter var';
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
-  font-named-instance: "Regular";
-  src: url("/fonts/Inter-roman-latin.var.woff2") format("woff2");
+  font-named-instance: 'Regular';
+  src: url('/fonts/Inter-roman-latin.var.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Inter var";
+  font-family: 'Inter var';
   font-weight: 100 900;
   font-display: swap;
   font-style: italic;
-  font-named-instance: "Italic";
-  src: url("/fonts/Inter-italic-latin.var.woff2") format("woff2");
+  font-named-instance: 'Italic';
+  src: url('/fonts/Inter-italic-latin.var.woff2') format('woff2');
 }
 
 .focus-border:focus {
@@ -28,7 +28,7 @@
 }*/
 
 html {
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
 button,
@@ -37,12 +37,12 @@ textarea {
   font: inherit;
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
 * {
-  &:focus:not(:focus-visible):not(:is([type="checkbox"], [type="radio"])) {
+  &:focus:not(:focus-visible):not(:is([type='checkbox'], [type='radio'])) {
     outline: none;
   }
 
@@ -60,7 +60,7 @@ input[type="number"] {
     @apply ring-2 ring-sky-400 ring-offset-2 dark:ring-white dark:ring-offset-0;
     //@apply rounded-sm
   }
-  :is(input, select):not(:is([type="checkbox"], [type="radio"])):focus-visible {
+  :is(input, select):not(:is([type='checkbox'], [type='radio'])):focus-visible {
     outline: none;
   }
 }

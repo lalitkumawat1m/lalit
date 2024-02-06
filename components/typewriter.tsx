@@ -1,9 +1,9 @@
-import { useInView } from "framer-motion/dist/es/utils/use-in-view.mjs";
-import { FC, useCallback, useEffect, useRef, useState } from "react";
-import { delay } from "utils/delay";
-import { getRandomInteger } from "utils/get-random-integer";
+import {useInView} from 'framer-motion/dist/es/utils/use-in-view.mjs';
+import {FC, useCallback, useEffect, useRef, useState} from 'react';
+import {delay} from 'utils/delay';
+import {getRandomInteger} from 'utils/get-random-integer';
 
-type Sentence = { letter: string; parent: Node; element?: Node }[];
+type Sentence = {letter: string; parent: Node; element?: Node}[];
 
 type TypewriterProps = {
   items: JSX.Element[] | string[];
@@ -26,10 +26,10 @@ export const Typewriter: FC<TypewriterProps> = ({
   loop = true,
 }) => {
   const containerRef = useRef<HTMLSpanElement>(null);
-  const inView = useInView(containerRef, { once: true });
+  const inView = useInView(containerRef, {once: true});
   const [sentences, setSentences] = useState<Sentence[]>([]);
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
-  const [visible, setVisible] = useState("");
+  const [visible, setVisible] = useState('');
   const contentRef = useRef<(HTMLSpanElement | null)[]>([]);
   const [writing, setWriting] = useState(false);
 
@@ -37,8 +37,8 @@ export const Typewriter: FC<TypewriterProps> = ({
     async (currentIndex: number) => {
       if (writing) return;
       setWriting(true);
-      contentRef.current?.forEach((el) => el?.classList?.add("hidden"));
-      contentRef.current[currentIndex]?.classList?.remove("hidden");
+      contentRef.current?.forEach(el => el?.classList?.add('hidden'));
+      contentRef.current[currentIndex]?.classList?.remove('hidden');
       const sentence = sentences[currentIndex] ?? [];
       for (let i = 0; i < sentence.length; i++) {
         await delay(Array.isArray(speed) ? getRandomInteger(speed) : speed);
@@ -50,7 +50,7 @@ export const Typewriter: FC<TypewriterProps> = ({
             break;
           }
         }
-        const letter = document.createElement("span");
+        const letter = document.createElement('span');
         letter.innerHTML = sentence[i].letter;
         if (nextNode && currentParent.contains(nextNode)) {
           sentence[i].parent.insertBefore(letter, nextNode);
@@ -68,14 +68,18 @@ export const Typewriter: FC<TypewriterProps> = ({
         return;
       }
       for (let i = sentence.length; i >= 0; i--) {
-        await delay(Array.isArray(deleteSpeed) ? getRandomInteger(deleteSpeed) : deleteSpeed);
+        await delay(
+          Array.isArray(deleteSpeed)
+            ? getRandomInteger(deleteSpeed)
+            : deleteSpeed
+        );
 
         // @ts-ignore
         sentence[i]?.element?.parentNode?.removeChild(sentence[i].element);
       }
 
       setWriting(false);
-      setCurrentSentenceIndex((current) =>
+      setCurrentSentenceIndex(current =>
         current + 1 === contentRef.current.length ? 0 : current + 1
       );
     },
@@ -87,12 +91,12 @@ export const Typewriter: FC<TypewriterProps> = ({
     contentRef.current.forEach((element: HTMLElement, index) => {
       results[index] = results[index] ?? [];
       const parseNodes = (parentNode: Node) => {
-        parentNode?.childNodes.forEach((node) => {
-          if (node?.nodeName === "#text") {
-            node?.textContent?.split("").forEach((letter) => {
-              results[index].push({ letter, parent: parentNode });
+        parentNode?.childNodes.forEach(node => {
+          if (node?.nodeName === '#text') {
+            node?.textContent?.split('').forEach(letter => {
+              results[index].push({letter, parent: parentNode});
             });
-            node.textContent = "";
+            node.textContent = '';
           }
           if (node?.childNodes?.length) {
             parseNodes(node);
@@ -101,7 +105,7 @@ export const Typewriter: FC<TypewriterProps> = ({
       };
       parseNodes(element);
     });
-    setSentences((current) => current ?? results);
+    setSentences(current => current ?? results);
   }, [items]);
 
   useEffect(() => {
@@ -116,7 +120,7 @@ export const Typewriter: FC<TypewriterProps> = ({
       {items.map((item, index) => {
         return (
           <span
-            ref={(ref) => (contentRef.current[index] = ref)}
+            ref={ref => (contentRef.current[index] = ref)}
             key={index}
             aria-hidden
             className="hidden after:animate-blink after:content-['|']"

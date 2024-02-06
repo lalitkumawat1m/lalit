@@ -1,9 +1,9 @@
-import { Link } from "components/link";
-import { DesktopNav } from "components/layout/header.desktop-nav";
-import { MobileNav } from "components/layout/header.mobile-nav";
-import { ProfileNav } from "components/layout/header.settings";
-import { HEADER } from "content/layout";
-import { FC, useState } from "react";
+import {Link} from 'components/link';
+import {DesktopNav} from 'components/layout/header.desktop-nav';
+import {MobileNav} from 'components/layout/header.mobile-nav';
+import {ProfileNav} from 'components/layout/header.settings';
+import {HEADER} from 'content/layout';
+import {FC, useState} from 'react';
 
 export const Header: FC = ({}) => {
   const [showNav, setShowNav] = useState(false);
@@ -23,7 +23,8 @@ export const Header: FC = ({}) => {
           </Link>
           <DesktopNav />
           <ProfileNav showNav={showNav} />
-          <MobileNav showNav={showNav} setShowNav={setShowNav} /> {/* md:hidden */}
+          <MobileNav showNav={showNav} setShowNav={setShowNav} />{' '}
+          {/* md:hidden */}
         </div>
         <div className="background pointer-events-none absolute inset-0 z-0 select-none ">
           {/*<div className="absolute bottom-0 h-px w-full bg-[linear-gradient(90deg,var(--line-color),var(--line-color)_50%,transparent_0,transparent)] bg-[length:8px_1px] d:[--line-color:theme(colors.gray.700/20)]" />*/}

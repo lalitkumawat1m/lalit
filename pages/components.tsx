@@ -1,10 +1,10 @@
-import { Bars2Icon, Bars3BottomLeftIcon } from "@heroicons/react/24/solid";
-import { Link } from "components/link";
-import { FC } from "react";
+import {Bars2Icon, Bars3BottomLeftIcon} from '@heroicons/react/24/solid';
+import {Link} from 'components/link';
+import {FC} from 'react';
 
 type ComponentsProps = {};
 
-export const Components: FC<ComponentsProps> = (props) => {
+export const Components: FC<ComponentsProps> = props => {
   return (
     <main className="min-h-screen bg-gray-900 text-gray-200">
       <div className="relative mx-auto flex max-w-8xl gap-8 px-4 pt-20 sm:px-6 lg:px-8">

@@ -1,17 +1,17 @@
 ---
-title: "Debugging & Refactoring"
-publishedAt: "2022/05/09"
+title: 'Debugging & Refactoring'
+publishedAt: '2022/05/09'
 hidden: false
-summary: ""
+summary: ''
 type: Blog
-tldr: ""
-image: "/images/debugging.jpg"
-icon: "code"
+tldr: ''
+image: '/images/debugging.jpg'
+icon: 'code'
 tags:
-  - "habits"
-  - "writing"
-  - "personal development"
-  - "productivity"
+  - 'habits'
+  - 'writing'
+  - 'personal development'
+  - 'productivity'
 ---
 
 Today I've spend a good amount of time debugging & refactoring a Shopify site. Its, not a large site and part of my job is to actually remove a lot of old/unused features. Its rather messy code and I'd definitely opt for a complete rewrite if I'd have the time-budget. However, this time I chose to go the faster _quick-fix_ route and saved the client as much money as possible.
@@ -45,8 +45,8 @@ html * {
 Here is an obvious example of refactoring variables in JavaScript:
 
 ```javascript
-const a = "Felix";
-const b = "Tellmann";
+const a = 'Felix';
+const b = 'Tellmann';
 
 function g(a, b) {
   return `Welcome ${a} ${b}, what a wonderful day today.`;
@@ -58,8 +58,8 @@ This code might be shorter, but making it shorter comes at the cost of understan
 Here's a simple refactored version of the snippet:
 
 ```javascript
-const firstName = "Felix";
-const lastName = "Tellmann";
+const firstName = 'Felix';
+const lastName = 'Tellmann';
 
 function greeting(firstName, lastName) {
   return `Welcome ${firstName} ${lastName}, what a wonderful day today.`;

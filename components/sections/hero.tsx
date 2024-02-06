@@ -1,19 +1,24 @@
-import { HeartIcon, MoonIcon, StarIcon, SunIcon } from "@heroicons/react/24/solid";
-import { Link } from "components/link";
-import { Badge } from "components/badge";
-import { CodeEditor } from "components/code-editor";
-import ToggleSwitch from "components/toggle-switch";
-import { TwitterProfile } from "components/twitter-profile";
-import { HERO } from "content/hero";
-import { useTheme } from "next-themes";
-import { FC } from "react";
-import { components } from "twitter-api-sdk/dist/gen/openapi-types";
+import {
+  HeartIcon,
+  MoonIcon,
+  StarIcon,
+  SunIcon,
+} from '@heroicons/react/24/solid';
+import {Link} from 'components/link';
+import {Badge} from 'components/badge';
+import {CodeEditor} from 'components/code-editor';
+import ToggleSwitch from 'components/toggle-switch';
+import {TwitterProfile} from 'components/twitter-profile';
+import {HERO} from 'content/hero';
+import {useTheme} from 'next-themes';
+import {FC} from 'react';
+import {components} from 'twitter-api-sdk/dist/gen/openapi-types';
 
 type HeroProps = {
-  twitterData: components["schemas"]["User"];
+  twitterData: components['schemas']['User'];
 };
-export const Hero: FC<HeroProps> = ({ twitterData }) => {
-  const { theme, setTheme } = useTheme();
+export const Hero: FC<HeroProps> = ({twitterData}) => {
+  const {theme, setTheme} = useTheme();
 
   return (
     <section className="hero relative overflow-hidden pb-40">
@@ -35,8 +40,11 @@ export const Hero: FC<HeroProps> = ({ twitterData }) => {
                 />
               </h2>*/}
             <ul className="sm:scrollbar-none -mx-4 mb-2 flex items-center gap-6 overflow-x-auto px-4 pb-2 text-[15px] font-medium">
-              {HERO.tech.map(({ name, Icon }) => (
-                <li className="flex items-center gap-2 text-gray-500 d:text-gray-400" key={name}>
+              {HERO.tech.map(({name, Icon}) => (
+                <li
+                  className="flex items-center gap-2 text-gray-500 d:text-gray-400"
+                  key={name}
+                >
                   <Icon className="h-7 w-7 text-gray-400 d:text-gray-300/80" />
                   {name}
                 </li>
@@ -103,8 +111,8 @@ export const Hero: FC<HeroProps> = ({ twitterData }) => {
                 <StarIcon className="h-4 w-4 text-yellow-500 group-hfa:text-white" />
               </Link>
               <ToggleSwitch
-                enabled={theme === "dark"}
-                setEnabled={(bool) => setTheme(bool ? "dark" : "light")}
+                enabled={theme === 'dark'}
+                setEnabled={bool => setTheme(bool ? 'dark' : 'light')}
                 enabledIcon={<MoonIcon className="h-3 w-3 text-slate-400" />}
                 disabledIcon={<SunIcon className="h-4 w-4 text-orange-400" />}
               />

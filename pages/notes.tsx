@@ -1,12 +1,13 @@
-import { FC } from "react";
+import {FC} from 'react';
 
 type IndexProps = {};
 
-export const Notes: FC<IndexProps> = (props) => {
+export const Notes: FC<IndexProps> = props => {
   return (
     <>
       <section className="rant">
-        like WTF! why am I so stuck! okay lets just simply start and see what happens...
+        like WTF! why am I so stuck! okay lets just simply start and see what
+        happens...
         <br />
         They do say though, that writing an outline helps alot
         <br />
@@ -16,14 +17,16 @@ export const Notes: FC<IndexProps> = (props) => {
         <div>Welcome</div>
         <h1>Hi, I am Lalit Kumawat.</h1>
         <p>
-          I'm a fullstack developer specialized in react based websites and apps with a broad
-          spectrum of knowledge from infrastructure/architecture to UX design. I love building clean
-          and high performant websites, dev-tools to automate workloads and anything inbetween.
+          I'm a fullstack developer specialized in react based websites and apps
+          with a broad spectrum of knowledge from infrastructure/architecture to
+          UX design. I love building clean and high performant websites,
+          dev-tools to automate workloads and anything inbetween.
           <br />
-          I'm a self-taught web-engineer, yet written my first line of code in 2020.
+          I'm a self-taught web-engineer, yet written my first line of code in
+          2020.
           <br />
-          Hey, I'm Lalit Kumawat. I'm a web developer living in India. My childhood passion of
-          software development full-time.
+          Hey, I'm Lalit Kumawat. I'm a web developer living in India. My
+          childhood passion of software development full-time.
           <br />
           Core message:
           <ul>
@@ -36,17 +39,20 @@ export const Notes: FC<IndexProps> = (props) => {
             <li>cta link - Read more about me</li>
             <li>cta primary - Hire / lets work</li>
           </ul>
-          Hi, I'm Lalit Kumawat. Fullstack web-developer with a strong sense for business success,
-          currently living in India. I specialize in building beautiful websites and web apps from
-          small to large. I have worked many times through the steps to create a new website or app,
-          from the initial idea to feature breakdown, design, development, launch and marketing, yet
-          my passion is in the development part. I love writing code that takes things next level,
-          building my own dev-tools, private api integrations, highly performant websites, and
-          user-experiences that makes you feel "Wow" (hover over wow for confetti effect :p).
+          Hi, I'm Lalit Kumawat. Fullstack web-developer with a strong sense for
+          business success, currently living in India. I specialize in building
+          beautiful websites and web apps from small to large. I have worked
+          many times through the steps to create a new website or app, from the
+          initial idea to feature breakdown, design, development, launch and
+          marketing, yet my passion is in the development part. I love writing
+          code that takes things next level, building my own dev-tools, private
+          api integrations, highly performant websites, and user-experiences
+          that makes you feel "Wow" (hover over wow for confetti effect :p).
         </p>
       </section>
       <section>
-        Timeline?: last 5 years preview. One 3 line point per year. Option to scroll backwards
+        Timeline?: last 5 years preview. One 3 line point per year. Option to
+        scroll backwards
         <a href="https://iterative.ai/about">https://iterative.ai/about</a>
       </section>
       <section>
@@ -64,20 +70,25 @@ export const Notes: FC<IndexProps> = (props) => {
         <section>
           <h1>2021</h1>
           <p>
-            2021 was a year with a fresh start, I recently went non-alcoholic, and kept so for more
-            than 4 month. I also did the Otter trail 5 day hike, in honestly not the greatest
-            weather. I've grown my business on a good scale. Initially, the outlook wasn't the
-            greatest as I had limited financial funds available and expenses that could only be
-            covered for a couple of months if I wouldn't find new clients and get more work.
+            2021 was a year with a fresh start, I recently went non-alcoholic,
+            and kept so for more than 4 month. I also did the Otter trail 5 day
+            hike, in honestly not the greatest weather. I've grown my business
+            on a good scale. Initially, the outlook wasn't the greatest as I had
+            limited financial funds available and expenses that could only be
+            covered for a couple of months if I wouldn't find new clients and
+            get more work.
             <br />
-            From a knowledge perspective, I challenged myself, building and publishing 2 Apps on the
-            Shopify app store, and I took on a lot more work that were backend oriented for my
-            clients, automating their internal workflows.
+            From a knowledge perspective, I challenged myself, building and
+            publishing 2 Apps on the Shopify app store, and I took on a lot more
+            work that were backend oriented for my clients, automating their
+            internal workflows.
             <br />
-            I've also had the opportunity to travel and see Jess and AJ again, after a long time, to
-            spend a week with them and their friends for their wedding. It was an absolute blast
-            being on a small Alpaca farm with 20 people. We also had a wonderful time as their spend
-            their honeymoon in Cape Town and we went on a Wine-tram outing in Franchschoek.
+            I've also had the opportunity to travel and see Jess and AJ again,
+            after a long time, to spend a week with them and their friends for
+            their wedding. It was an absolute blast being on a small Alpaca farm
+            with 20 people. We also had a wonderful time as their spend their
+            honeymoon in Cape Town and we went on a Wine-tram outing in
+            Franchschoek.
             <br />
             Holidays:
             <ul>

@@ -10,7 +10,11 @@ export const getParentNodeByClass = (
     return target;
   }
   if (target.parentNode) {
-    return getParentNodeByClass(target.parentNode as HTMLElement, className, i++);
+    return getParentNodeByClass(
+      target.parentNode as HTMLElement,
+      className,
+      i++
+    );
   }
   return null;
 };

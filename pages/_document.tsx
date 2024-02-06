@@ -1,8 +1,8 @@
 // eslint-disable-next-line @next/next/no-document-import-in-page
-import { Favicon } from "components/_document/favicon";
-import { Font } from "components/_document/font";
-import Document, { Head, Html, Main, NextScript } from "next/document";
-import Script from "next/script";
+import {Favicon} from 'components/_document/favicon';
+import {Font} from 'components/_document/font';
+import Document, {Head, Html, Main, NextScript} from 'next/document';
+import Script from 'next/script';
 
 class Root extends Document {
   render(): JSX.Element {
@@ -13,7 +13,7 @@ class Root extends Document {
           <Favicon />
           <Font />
 
-          {process.env.NODE_ENV === "production" ? (
+          {process.env.NODE_ENV === 'production' ? (
             <Script
               id="umami-script"
               async

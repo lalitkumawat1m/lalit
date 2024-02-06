@@ -5,7 +5,7 @@
  * It has to be a `.js`-file to be imported there.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { z } = require("zod");
+const {z} = require('zod');
 
 const envSchema = z.object({
   // DATABASE_URL: z.string().url(),
@@ -44,13 +44,16 @@ const envSchema = z.object({
   // FACEBOOK_CLIENT_PROD_SECRET: z.string(),
   // NEXT_PUBLIC_APP_VERSION: z.string(),
   // NEXT_PUBLIC_HOSTNAME: z.string(),
-  NODE_ENV: z.enum(["development", "test", "production"]),
+  NODE_ENV: z.enum(['development', 'test', 'production']),
 });
 
 const env = envSchema.safeParse(process.env);
 
 if (!env.success) {
-  console.error("❌ Invalid environment variables:", JSON.stringify(env.error?.format(), null, 4));
+  console.error(
+    '❌ Invalid environment variables:',
+    JSON.stringify(env.error?.format(), null, 4)
+  );
   // eslint-disable-next-line no-process-exit
   process.exit(1);
 }

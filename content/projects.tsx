@@ -1,41 +1,41 @@
-import { TECH } from "content/tech-stack";
-import Aiko from "../public/images/projects/Aiko.jpg";
-import AlphabetPIX from "../public/images/projects/AlphabetPix.jpg";
-import BroadwayJewellers from "../public/images/projects/BroadwayJewellers.jpg";
-import BushScarf from "../public/images/projects/BushScarf.jpg";
-import ClickUpload from "../public/images/projects/ClickUpload.jpg";
-import ErplyEgypt from "../public/images/projects/Erply Egypt.png";
-import ErplyTakealot from "../public/images/projects/Erply Takealot.png";
-import FxStyle from "../public/images/projects/fx-style.png";
-import KidsLiving from "../public/images/projects/kidsliving.jpg";
-import Lunalemon from "../public/images/projects/Lunalemon.jpg";
-import Lunatag from "../public/images/projects/Lunatag.jpg";
-import ShopifyCourierGuy from "../public/images/projects/Shopify CourierGuy.png";
-import ShopifyDear from "../public/images/projects/Shopify Dear Systems.png";
-import VendShopifyOmnisend from "../public/images/projects/Shopify Vend Omnisend.png";
-import ShopifyVend from "../public/images/projects/Shopify Vend.png";
-import ShopifyCms from "../public/images/projects/Shopify-cms.png";
-import ShopifyFtp from "../public/images/projects/shopify-ftp.png";
-import ShopifyTypedNodeApi from "../public/images/projects/shopify-typed-node-api.png";
-import Tellmann from "../public/images/projects/Tellmann.jpg";
-import VendTakealot from "../public/images/projects/Vend Takealot.png";
-import WaraqHealth from "../public/images/projects/Waraq.jpg";
-import ZoomPrinting from "../public/images/projects/ZoomPringing.jpg";
-import GeniusAi from "../public/images/projects/Genius AI.png";
-import Promptopia from "../public/images/projects/Promptopia.png";
-import Clearlink from "../public/images/projects/Clearlink.png";
-import GetSetBooking from "../public/images/projects/GetSetBooking.png";
-import RealtimeChat from "../public/images/projects/RealtimeChat.png";
-import Omegle from "../public/images/projects/Omegle.png";
-import DallE from "../public/images/projects/DallE .png";
-import Authentication from "../public/images/projects/Authentication.png";
-import MinutesStudio from "../public/images/projects/Minutes Studio.png";
-import TelegramBot from "../public/images/projects/telegram-weather-bot.png";
-import FlutterFinanceUi from "../public/images/projects/Flutter Finance Ui.png";
-import MoneyTracker2 from "../public/images/projects/MoneyTracker2.png";
-import Livekar from "../public/images/projects/Livekar.png";
-import Meetha2 from "../public/images/projects/Meetha2.png";
-import CelebChat from "../public/images/projects/CelebChat.png";
+import {TECH} from 'content/tech-stack';
+import Aiko from '../public/images/projects/Aiko.jpg';
+import AlphabetPIX from '../public/images/projects/AlphabetPix.jpg';
+import BroadwayJewellers from '../public/images/projects/BroadwayJewellers.jpg';
+import BushScarf from '../public/images/projects/BushScarf.jpg';
+import ClickUpload from '../public/images/projects/ClickUpload.jpg';
+import ErplyEgypt from '../public/images/projects/Erply Egypt.png';
+import ErplyTakealot from '../public/images/projects/Erply Takealot.png';
+import FxStyle from '../public/images/projects/fx-style.png';
+import KidsLiving from '../public/images/projects/kidsliving.jpg';
+import Lunalemon from '../public/images/projects/Lunalemon.jpg';
+import Lunatag from '../public/images/projects/Lunatag.jpg';
+import ShopifyCourierGuy from '../public/images/projects/Shopify CourierGuy.png';
+import ShopifyDear from '../public/images/projects/Shopify Dear Systems.png';
+import VendShopifyOmnisend from '../public/images/projects/Shopify Vend Omnisend.png';
+import ShopifyVend from '../public/images/projects/Shopify Vend.png';
+import ShopifyCms from '../public/images/projects/Shopify-cms.png';
+import ShopifyFtp from '../public/images/projects/shopify-ftp.png';
+import ShopifyTypedNodeApi from '../public/images/projects/shopify-typed-node-api.png';
+import Tellmann from '../public/images/projects/Tellmann.jpg';
+import VendTakealot from '../public/images/projects/Vend Takealot.png';
+import WaraqHealth from '../public/images/projects/Waraq.jpg';
+import ZoomPrinting from '../public/images/projects/ZoomPringing.jpg';
+import GeniusAi from '../public/images/projects/Genius AI.png';
+import Promptopia from '../public/images/projects/Promptopia.png';
+import Clearlink from '../public/images/projects/Clearlink.png';
+import GetSetBooking from '../public/images/projects/GetSetBooking.png';
+import RealtimeChat from '../public/images/projects/RealtimeChat.png';
+import Omegle from '../public/images/projects/Omegle.png';
+import DallE from '../public/images/projects/DallE .png';
+import Authentication from '../public/images/projects/Authentication.png';
+import MinutesStudio from '../public/images/projects/Minutes Studio.png';
+import TelegramBot from '../public/images/projects/telegram-weather-bot.png';
+import FlutterFinanceUi from '../public/images/projects/Flutter Finance Ui.png';
+import MoneyTracker2 from '../public/images/projects/MoneyTracker2.png';
+import Livekar from '../public/images/projects/Livekar.png';
+import Meetha2 from '../public/images/projects/Meetha2.png';
+import CelebChat from '../public/images/projects/CelebChat.png';
 
 export const PROJECTS = [
   // {
@@ -321,8 +321,8 @@ export const PROJECTS = [
   //   featuredImage: VendShopifyOmnisend,
   // },
   {
-    name: "Genius AI",
-    type: ["AI Tools"],
+    name: 'Genius AI',
+    type: ['AI Tools'],
     tech: [
       TECH.nextjs,
       TECH.tailwind,
@@ -334,60 +334,60 @@ export const PROJECTS = [
       TECH.postgresql,
       TECH.stripe,
     ],
-    year: "2024",
-    url: "https://genius-ai-dusky.vercel.app/",
-    repository: "https://github.com/lalitkumawat1m/Genius-AI",
+    year: '2024',
+    url: 'https://genius-ai-dusky.vercel.app/',
+    repository: 'https://github.com/lalitkumawat1m/Genius-AI',
     description:
-      "A Full responsive Open Source AI Tool for 10X your Productivity it can Generate Music, Video, Photo, Code & Chat.",
+      'A Full responsive Open Source AI Tool for 10X your Productivity it can Generate Music, Video, Photo, Code & Chat.',
     featuredImage: GeniusAi,
   },
   {
-    name: "Promptopia",
-    type: ["AI Tools"],
+    name: 'Promptopia',
+    type: ['AI Tools'],
     tech: [TECH.nextjs, TECH.tailwind, TECH.mongodb, TECH.reactjs],
-    year: "2023",
-    url: "https://promptopia-ten-phi.vercel.app/",
-    repository: "https://github.com/lalitkumawat1m/Promptopia",
+    year: '2023',
+    url: 'https://promptopia-ten-phi.vercel.app/',
+    repository: 'https://github.com/lalitkumawat1m/Promptopia',
     description:
-      "Promptopia is full stack website where anyone can get templets of prompt and also create , read ,update and delete prompts.",
+      'Promptopia is full stack website where anyone can get templets of prompt and also create , read ,update and delete prompts.',
     featuredImage: Promptopia,
   },
   {
-    name: "ClearLink",
-    type: ["Frontend"],
+    name: 'ClearLink',
+    type: ['Frontend'],
     tech: [TECH.reactjs, TECH.tailwind, TECH.figma],
-    year: "2023",
-    url: "https://talentsync-assesement.vercel.app/",
-    repository: "https://github.com/lalitkumawat1m/Talentsync-Assesement",
+    year: '2023',
+    url: 'https://talentsync-assesement.vercel.app/',
+    repository: 'https://github.com/lalitkumawat1m/Talentsync-Assesement',
     description:
-      "I got the assignment to create a frontend project using Figma so I created this website",
+      'I got the assignment to create a frontend project using Figma so I created this website',
     featuredImage: Clearlink,
   },
   {
-    name: "GetSetBooking",
-    type: ["Frontend"],
+    name: 'GetSetBooking',
+    type: ['Frontend'],
     tech: [TECH.reactjs, TECH.tailwind, TECH.nodejs, TECH.mongodb],
-    year: "2023",
-    url: "https://get-set-booking.vercel.app/",
-    repository: "https://github.com/lalitkumawat1m/GetSetBooking",
+    year: '2023',
+    url: 'https://get-set-booking.vercel.app/',
+    repository: 'https://github.com/lalitkumawat1m/GetSetBooking',
     description:
-      "A Hotel Booking WebApp where you can book a hotel room and also see the details of the hotel. It is a full stack website where anyone can book a hotel room.",
+      'A Hotel Booking WebApp where you can book a hotel room and also see the details of the hotel. It is a full stack website where anyone can book a hotel room.',
     featuredImage: GetSetBooking,
   },
   {
-    name: "Omegle 2.0",
-    type: ["Backend"],
+    name: 'Omegle 2.0',
+    type: ['Backend'],
     tech: [TECH.typescript, TECH.reactjs, TECH.nodejs, TECH.socketio],
-    year: "2024",
-    url: "https://omegle-2-0-nine.vercel.app/",
-    repository: "https://github.com/lalitkumawat1m/omegle-2.0",
+    year: '2024',
+    url: 'https://omegle-2-0-nine.vercel.app/',
+    repository: 'https://github.com/lalitkumawat1m/omegle-2.0',
     description:
-      "An Open Source Alternative to Omegle Random Video Chat with Strangers. It is a full stack website where anyone can chat with strangers.",
+      'An Open Source Alternative to Omegle Random Video Chat with Strangers. It is a full stack website where anyone can chat with strangers.',
     featuredImage: Omegle,
   },
   {
-    name: "RealTime Chat",
-    type: ["Backend"],
+    name: 'RealTime Chat',
+    type: ['Backend'],
     tech: [
       TECH.typescript,
       TECH.nestjs,
@@ -398,107 +398,114 @@ export const PROJECTS = [
       TECH.redis,
       TECH.postgresql,
     ],
-    year: "2024",
-    url: "https://realtime-chat-sooty.vercel.app/",
-    repository: "https://github.com/lalitkumawat1m/realtime-chat",
+    year: '2024',
+    url: 'https://realtime-chat-sooty.vercel.app/',
+    repository: 'https://github.com/lalitkumawat1m/realtime-chat',
     description:
-      "An Open Source Full Stack Lightning fast Real Time Chat App. It is a full stack website where anyone can chat with friends in real time. ",
+      'An Open Source Full Stack Lightning fast Real Time Chat App. It is a full stack website where anyone can chat with friends in real time. ',
     featuredImage: RealtimeChat,
   },
   {
-    name: "DALL-E 2 Clone",
-    type: ["AI Tools"],
+    name: 'DALL-E 2 Clone',
+    type: ['AI Tools'],
     tech: [TECH.reactjs, TECH.tailwind, TECH.nodejs, TECH.openai],
-    year: "2023",
-    url: "https://dall-e-ai-clone.vercel.app/",
-    repository: "https://github.com/lalitkumawat1m/DALL-E_AI_CLONE",
+    year: '2023',
+    url: 'https://dall-e-ai-clone.vercel.app/',
+    repository: 'https://github.com/lalitkumawat1m/DALL-E_AI_CLONE',
     description:
-      "A Full Stack MERN AI Image Generation App MidJourney & DALL E Clone. It can Generate images based on Text prompt.",
+      'A Full Stack MERN AI Image Generation App MidJourney & DALL E Clone. It can Generate images based on Text prompt.',
     featuredImage: DallE,
   },
   {
-    name: "Authentication",
-    type: ["Frontend"],
-    tech: [TECH.reactjs, TECH.nodejs, TECH.express, TECH.mongodb, TECH.axios, TECH.jwt],
-    year: "2021",
-    url: "https://mern-auth-psi.vercel.app/login",
-    repository: "https://github.com/lalitkumawat1m/mernAuth",
+    name: 'Authentication',
+    type: ['Frontend'],
+    tech: [
+      TECH.reactjs,
+      TECH.nodejs,
+      TECH.express,
+      TECH.mongodb,
+      TECH.axios,
+      TECH.jwt,
+    ],
+    year: '2021',
+    url: 'https://mern-auth-psi.vercel.app/login',
+    repository: 'https://github.com/lalitkumawat1m/mernAuth',
     description:
-      "Authentication is an Open Source ui for signup and login with jwt token and also have a forgot password and reset password functionality. A full stack authentication application built using the MERN Stack (MongoDB, Express.js, React.js, Node.js) and JWT for token based authentication.",
+      'Authentication is an Open Source ui for signup and login with jwt token and also have a forgot password and reset password functionality. A full stack authentication application built using the MERN Stack (MongoDB, Express.js, React.js, Node.js) and JWT for token based authentication.',
     featuredImage: Authentication,
   },
   {
-    name: "Minutes Studio",
-    type: ["Frontend"],
+    name: 'Minutes Studio',
+    type: ['Frontend'],
     tech: [TECH.reactjs, TECH.tailwindcss, TECH.figma],
-    year: "2023",
-    url: "https://minutes-studio.vercel.app/",
-    repository: "https://github.com/lalitkumawat1m/Minutes_Studio",
+    year: '2023',
+    url: 'https://minutes-studio.vercel.app/',
+    repository: 'https://github.com/lalitkumawat1m/Minutes_Studio',
     description:
-      "I got the assignment to create a frontend project using Figma so I created this website.",
+      'I got the assignment to create a frontend project using Figma so I created this website.',
     featuredImage: MinutesStudio,
   },
   {
-    name: "Weather Telegram Bot",
-    type: ["Backend"],
+    name: 'Weather Telegram Bot',
+    type: ['Backend'],
     tech: [TECH.nestjs, TECH.telegramapi, TECH.reactjs, TECH.mongodb],
-    year: "2023",
-    url: "https://weather-telegram-bot-plum.vercel.app/",
-    repository: "https://github.com/lalitkumawat1m/WeatherTelegramBot",
+    year: '2023',
+    url: 'https://weather-telegram-bot-plum.vercel.app/',
+    repository: 'https://github.com/lalitkumawat1m/WeatherTelegramBot',
     description:
-      "A weather bot made in nestjs for Telegram, to provide periodic updates on the weather.",
+      'A weather bot made in nestjs for Telegram, to provide periodic updates on the weather.',
     featuredImage: TelegramBot,
   },
   {
-    name: "MoneyTracker",
-    type: ["Mobile Apps"],
+    name: 'MoneyTracker',
+    type: ['Mobile Apps'],
     tech: [TECH.flutter, TECH.hive],
-    year: "2023",
-    url: "https://play.google.com/store/apps/details?id=com.lalit.moneytracker",
+    year: '2023',
+    url: 'https://play.google.com/store/apps/details?id=com.lalit.moneytracker',
     description:
-      "An Android app that helps you track your expenses and manage your money effectively. 5k+ Downloads on Play Store.",
+      'An Android app that helps you track your expenses and manage your money effectively. 5k+ Downloads on Play Store.',
     featuredImage: MoneyTracker2,
   },
   {
-    name: "Livekar",
-    type: ["Mobile Apps"],
+    name: 'Livekar',
+    type: ['Mobile Apps'],
     tech: [TECH.flutter, TECH.firebase, TECH.getx, TECH.restapi],
-    year: "2023",
-    url: "https://play.google.com/store/apps/details?id=com.lalit.livekar",
+    year: '2023',
+    url: 'https://play.google.com/store/apps/details?id=com.lalit.livekar',
     description:
-      "Livekar allows you to create and share your photos, live streams and videos with the friends and followers you care about.",
+      'Livekar allows you to create and share your photos, live streams and videos with the friends and followers you care about.',
     featuredImage: Livekar,
   },
   {
-    name: "MEETHA",
-    type: ["Mobile Apps"],
+    name: 'MEETHA',
+    type: ['Mobile Apps'],
     tech: [TECH.java, TECH.webrtc, TECH.firebase],
-    year: "2022",
-    url: "https://play.google.com/store/apps/details?id=com.teach.learningproject",
+    year: '2022',
+    url: 'https://play.google.com/store/apps/details?id=com.teach.learningproject',
     description:
-      "Build Google Firebase Authentication-based HD Live Random Video Chat App. It allows you to chat and make new friends with strangers worldwide in random video calls and messages in person to person. Don’t be shy and just dive in",
+      'Build Google Firebase Authentication-based HD Live Random Video Chat App. It allows you to chat and make new friends with strangers worldwide in random video calls and messages in person to person. Don’t be shy and just dive in',
     featuredImage: Meetha2,
   },
   {
-    name: "Finance App UI",
-    type: ["Mobile Apps"],
+    name: 'Finance App UI',
+    type: ['Mobile Apps'],
     tech: [TECH.flutter],
-    year: "2023",
-    url: "",
-    repository: "https://github.com/lalitkumawat1m/Flutter_finance_app_ui",
+    year: '2023',
+    url: '',
+    repository: 'https://github.com/lalitkumawat1m/Flutter_finance_app_ui',
     description:
-      "I got the assignment to create a beautiful flutter ui project using Figma so I created this app  which is used by many people and has been stared over 45+ times on GitHub.",
+      'I got the assignment to create a beautiful flutter ui project using Figma so I created this app  which is used by many people and has been stared over 45+ times on GitHub.',
     featuredImage: FlutterFinanceUi,
   },
 
   {
-    name: "CelebChat",
-    type: ["Mobile Apps"],
+    name: 'CelebChat',
+    type: ['Mobile Apps'],
     tech: [TECH.java, TECH.firebase, TECH.restapi],
-    year: "2022",
-    url: "https://play.google.com/store/apps/details?id=com.chat.myapplication",
+    year: '2022',
+    url: 'https://play.google.com/store/apps/details?id=com.chat.myapplication',
     description:
-      "CelebChat is the chating app that allows you to chat with new people, make friends, or find a partner. We make it easier to meet people near you:",
+      'CelebChat is the chating app that allows you to chat with new people, make friends, or find a partner. We make it easier to meet people near you:',
     featuredImage: CelebChat,
   },
 ];

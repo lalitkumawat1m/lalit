@@ -1,10 +1,10 @@
-import clsx from "clsx";
-import { FC } from "react";
+import clsx from 'clsx';
+import {FC} from 'react';
 
-export const ButtonLoading: FC<{ className?: string }> = ({ className }) => {
+export const ButtonLoading: FC<{className?: string}> = ({className}) => {
   return (
     <>
-      <div className={clsx("absolute inset-0 bg-inherit", className)} />
+      <div className={clsx('absolute inset-0 bg-inherit', className)} />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 2"

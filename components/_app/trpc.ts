@@ -1,17 +1,22 @@
-import { createTRPCProxyClient, httpLink, loggerLink, splitLink } from "@trpc/client";
-import { httpBatchLink } from "@trpc/client/links/httpBatchLink";
-import { createTRPCNext } from "@trpc/next";
-import { inferProcedureInput, inferProcedureOutput } from "@trpc/server";
-import { NextPageContext } from "next";
-import { TrpcRouter } from "server/api-routes";
-import superjson from "superjson";
+import {
+  createTRPCProxyClient,
+  httpLink,
+  loggerLink,
+  splitLink,
+} from '@trpc/client';
+import {httpBatchLink} from '@trpc/client/links/httpBatchLink';
+import {createTRPCNext} from '@trpc/next';
+import {inferProcedureInput, inferProcedureOutput} from '@trpc/server';
+import {NextPageContext} from 'next';
+import {TrpcRouter} from 'server/api-routes';
+import superjson from 'superjson';
 
 function getBaseUrl() {
-  if (typeof window !== "undefined") {
-    return "";
+  if (typeof window !== 'undefined') {
+    return '';
   }
 
-  if (process.env.NODE_ENV === "development") {
+  if (process.env.NODE_ENV === 'development') {
     return `http://localhost:${process.env.PORT ?? 3000}`;
   }
   // reference for vercel.com
@@ -88,7 +93,7 @@ export const trpc = createTRPCNext<TrpcRouter, SSRContext>({
           }),
         }),
       ],
-      queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
+      queryClientConfig: {defaultOptions: {queries: {staleTime: 60}}},
     };
   },
   ssr: false,
@@ -116,14 +121,18 @@ export const trpc = createTRPCNext<TrpcRouter, SSRContext>({
  * This is a helper method to infer the output of a query resolver
  * @example type HelloOutput = inferQueryOutput<'hello'>
  */
-export type inferQueryOutput<TRouteKey extends keyof TrpcRouter["_def"]["queries"]> =
-  inferProcedureOutput<TrpcRouter["_def"]["queries"][TRouteKey]>;
+export type inferQueryOutput<
+  TRouteKey extends keyof TrpcRouter['_def']['queries'],
+> = inferProcedureOutput<TrpcRouter['_def']['queries'][TRouteKey]>;
 
-export type inferQueryInput<TRouteKey extends keyof TrpcRouter["_def"]["queries"]> =
-  inferProcedureInput<TrpcRouter["_def"]["queries"][TRouteKey]>;
+export type inferQueryInput<
+  TRouteKey extends keyof TrpcRouter['_def']['queries'],
+> = inferProcedureInput<TrpcRouter['_def']['queries'][TRouteKey]>;
 
-export type inferMutationOutput<TRouteKey extends keyof TrpcRouter["_def"]["mutations"]> =
-  inferProcedureOutput<TrpcRouter["_def"]["mutations"][TRouteKey]>;
+export type inferMutationOutput<
+  TRouteKey extends keyof TrpcRouter['_def']['mutations'],
+> = inferProcedureOutput<TrpcRouter['_def']['mutations'][TRouteKey]>;
 
-export type inferMutationInput<TRouteKey extends keyof TrpcRouter["_def"]["mutations"]> =
-  inferProcedureInput<TrpcRouter["_def"]["mutations"][TRouteKey]>;
+export type inferMutationInput<
+  TRouteKey extends keyof TrpcRouter['_def']['mutations'],
+> = inferProcedureInput<TrpcRouter['_def']['mutations'][TRouteKey]>;

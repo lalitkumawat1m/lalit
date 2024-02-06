@@ -1,27 +1,27 @@
-import FlextLogo from "public/logo.svg";
+import FlextLogo from 'public/logo.svg';
 
 export const HEADER = {
   logo: {
-    href: "/",
+    href: '/',
     title: <FlextLogo />,
-    alt: "Flext Logo",
+    alt: 'Flext Logo',
   },
   nav: [
     {
-      href: "/",
-      title: "Home",
-      alt: "Country roads..",
+      href: '/',
+      title: 'Home',
+      alt: 'Country roads..',
       desktop: false,
     },
     {
-      href: "/#about",
-      title: "About",
-      alt: "More about me.",
+      href: '/#about',
+      title: 'About',
+      alt: 'More about me.',
       desktop: true,
     },
     {
-      href: "/#portfolio",
-      title: "Portfolio",
+      href: '/#portfolio',
+      title: 'Portfolio',
       alt: "Work I've done.",
       desktop: true,
     },
@@ -38,9 +38,9 @@ export const HEADER = {
       alt: "Images and stuff",
       desktop: true,
     },*/ {
-      href: "/resume",
-      title: "Resume",
-      alt: "My professional resume",
+      href: '/resume',
+      title: 'Resume',
+      alt: 'My professional resume',
       desktop: true,
     },
   ],

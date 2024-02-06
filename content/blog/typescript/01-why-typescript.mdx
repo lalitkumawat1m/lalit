@@ -1,15 +1,15 @@
 ---
-title: "Why Typescript?"
-publishedAt: "2022-04-01"
-summary: "SUPER"
-image: "/images/ts-1.svg"
-icon: "typescript"
+title: 'Why Typescript?'
+publishedAt: '2022-04-01'
+summary: 'SUPER'
+image: '/images/ts-1.svg'
+icon: 'typescript'
 type: Blog
 tags:
-  - "typescript"
-  - "javascript"
-  - "development"
-  - "dev tools"
+  - 'typescript'
+  - 'javascript'
+  - 'development'
+  - 'dev tools'
 ---
 
 As a JavaScript developer, you already know what TypeScript is and why it is useful.
@@ -62,7 +62,7 @@ Suppose you get a list of bonuses as strings instead of numbers because of a bug
 backend code or application code. What could possibly go wrong here?
 
 ```js
-const salary = calculateSalaryWithBonus(5000, "0");
+const salary = calculateSalaryWithBonus(5000, '0');
 // salary is 50000 😱😱😱
 ```
 
@@ -81,7 +81,7 @@ function calculateSalaryWithBonus(salary: number, bonus: number) {
 If we try to assign the salary no with a string, we would get the following error:
 
 ```ts
-const salary = calculateSalaryWithBonus(5000, "0");
+const salary = calculateSalaryWithBonus(5000, '0');
 // Error: TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
 ```
 

@@ -1,29 +1,31 @@
-import { TECH } from "content/tech-stack";
-import { Link } from "components/link";
+import {TECH} from 'content/tech-stack';
+import {Link} from 'components/link';
 
 export const CV = {
-  name: "Elizabeth Dangwa",
-  title: "UX & UI Designer",
+  name: 'Elizabeth Dangwa',
+  title: 'UX & UI Designer',
   primary_stack: [TECH.figma, TECH.illustrator, TECH.shopify],
-  address: "Cape Town, Vredehoek 8001, South Africa",
-  email: "elizabeth@tellmann.co.za",
-  website: "https://lizt.dev",
+  address: 'Cape Town, Vredehoek 8001, South Africa',
+  email: 'elizabeth@tellmann.co.za',
+  website: 'https://lizt.dev',
   mobile: {
     href: `tel:+763934356`,
-    number: "+27 (0)76 393 4356",
+    number: '+27 (0)76 393 4356',
   },
   intro: (
     <>
-      I am a passionate UX/UI Designer specializing in Ecommerce theme designs. With years of
-      experience designing Shopify sites, I have developed a deep understanding of the Shopify
-      platform and its unique design requirements. I work closely with clients to create custom
-      themes that are tailored to their specific needs, with a focus on delivering designs that are
-      not only visually stunning, but also easy to use and navigate.
+      I am a passionate UX/UI Designer specializing in Ecommerce theme designs.
+      With years of experience designing Shopify sites, I have developed a deep
+      understanding of the Shopify platform and its unique design requirements.
+      I work closely with clients to create custom themes that are tailored to
+      their specific needs, with a focus on delivering designs that are not only
+      visually stunning, but also easy to use and navigate.
       <br />
       <br />
-      My design process is collaborative and user-centred, with a strong emphasis on usability
-      testing and feedback. I believe that great design is not just about aesthetics, but also about
-      solving problems and creating meaningful experiences for users.
+      My design process is collaborative and user-centred, with a strong
+      emphasis on usability testing and feedback. I believe that great design is
+      not just about aesthetics, but also about solving problems and creating
+      meaningful experiences for users.
     </>
   ),
   eduction: [
@@ -38,62 +40,62 @@ export const CV = {
       type: ["relevant"],
     },*/
     {
-      dateFrom: "2010-08-01",
-      dateTo: "2011-08-01",
-      city: "Cape Town",
-      country: "South Africa",
-      institution: "Silwood School of Cookery",
-      certificate: "Sous Chef Training - Certificate in Professional Cookery",
-      level: "School",
-      type: ["relevant"],
+      dateFrom: '2010-08-01',
+      dateTo: '2011-08-01',
+      city: 'Cape Town',
+      country: 'South Africa',
+      institution: 'Silwood School of Cookery',
+      certificate: 'Sous Chef Training - Certificate in Professional Cookery',
+      level: 'School',
+      type: ['relevant'],
     },
     {
-      dateFrom: "2012-08-01",
-      dateTo: "2014-08-01",
-      city: "Cape Town",
-      country: "South Africa",
-      institution: "Varsity College",
-      certificate: "IIE Diploma in Travel and Tourism Management (NQF 6)",
-      level: "School",
-      type: ["relevant"],
+      dateFrom: '2012-08-01',
+      dateTo: '2014-08-01',
+      city: 'Cape Town',
+      country: 'South Africa',
+      institution: 'Varsity College',
+      certificate: 'IIE Diploma in Travel and Tourism Management (NQF 6)',
+      level: 'School',
+      type: ['relevant'],
     },
     {
-      dateFrom: "2015-08-01",
-      dateTo: "2015-08-01",
-      city: "Cape Town",
-      country: "South Africa",
-      institution: "University of Cape Town",
+      dateFrom: '2015-08-01',
+      dateTo: '2015-08-01',
+      city: 'Cape Town',
+      country: 'South Africa',
+      institution: 'University of Cape Town',
       certificate:
-        "Postgraduate Diploma in Business Management (NQF8) Specializing in Tourism and Events",
-      level: "School",
-      type: ["relevant"],
+        'Postgraduate Diploma in Business Management (NQF8) Specializing in Tourism and Events',
+      level: 'School',
+      type: ['relevant'],
     },
   ],
   experience: [
     {
-      dateFrom: "2015-12-01",
-      dateTo: "2023-07-01",
-      city: "Cape Town",
-      country: "South Africa",
-      company: "Kids Living",
-      title: "Freelancing UX/UI Designer & Social Media Expert",
-      type: ["management", "relevant"],
-      description: "",
+      dateFrom: '2015-12-01',
+      dateTo: '2023-07-01',
+      city: 'Cape Town',
+      country: 'South Africa',
+      company: 'Kids Living',
+      title: 'Freelancing UX/UI Designer & Social Media Expert',
+      type: ['management', 'relevant'],
+      description: '',
       responsibilities: [
         {
           content:
             "Growth & Success Partner for the company's online presence. Designed & setup the initial online portal using BigCommerce in 2015 and later on Shopify from 2017 onwards.",
-          type: ["relevant"],
+          type: ['relevant'],
         },
         {
           content:
-            "Continuous SEO implementations and creation of a Best Practices guide for the team to maintain a high quality of content displayed.",
-          type: ["relevant"],
+            'Continuous SEO implementations and creation of a Best Practices guide for the team to maintain a high quality of content displayed.',
+          type: ['relevant'],
         },
         {
           content:
-            "Assisted to grow the stores sales by 25% per year through well designed conversion rate improvements and Social Media marketing efforts.",
-          type: ["relevant"],
+            'Assisted to grow the stores sales by 25% per year through well designed conversion rate improvements and Social Media marketing efforts.',
+          type: ['relevant'],
         } /*
         {
           content: "Monitoring social media channels for customer feedback, reviews, and inquiries",
@@ -105,17 +107,19 @@ export const CV = {
           type: ["relevant"],
         },*/
         {
-          content: "Responsible for a Bi-Monthly E-mail newsletter with more than 15k Subscribers",
-          type: ["relevant"],
+          content:
+            'Responsible for a Bi-Monthly E-mail newsletter with more than 15k Subscribers',
+          type: ['relevant'],
         },
         {
           content:
-            "Designed & Implemented two major website redesigns to improve the user experience",
-          type: ["relevant"],
+            'Designed & Implemented two major website redesigns to improve the user experience',
+          type: ['relevant'],
         },
         {
-          content: "Continuous Social Media Marketing with 15k followers on Instagram and Facebook",
-          type: ["relevant"],
+          content:
+            'Continuous Social Media Marketing with 15k followers on Instagram and Facebook',
+          type: ['relevant'],
         },
         /* {
           content:
@@ -126,133 +130,137 @@ export const CV = {
     },
 
     {
-      dateFrom: "2022-05-01",
-      dateTo: "2023-07-01",
-      city: "Cape Town",
-      country: "South Africa",
-      company: "Lunalemon.dev",
-      title: "Lead UX/UI Designer",
-      type: ["relevant"],
-      description: "",
+      dateFrom: '2022-05-01',
+      dateTo: '2023-07-01',
+      city: 'Cape Town',
+      country: 'South Africa',
+      company: 'Lunalemon.dev',
+      title: 'Lead UX/UI Designer',
+      type: ['relevant'],
+      description: '',
       responsibilities: [
         {
-          content: "Design, concept & implementation for the new Lunalemon.dev website.",
-          type: ["relevant"],
+          content:
+            'Design, concept & implementation for the new Lunalemon.dev website.',
+          type: ['relevant'],
         },
         {
           content:
-            "Built a design guides & templates for websites, social media posts and marketing material.",
-          type: ["relevant"],
+            'Built a design guides & templates for websites, social media posts and marketing material.',
+          type: ['relevant'],
         },
         {
           content:
-            "In charge of 2 major Shopify Apps, covering design, App listing, and marketing sites.",
-          type: ["relevant"],
+            'In charge of 2 major Shopify Apps, covering design, App listing, and marketing sites.',
+          type: ['relevant'],
         },
         {
           content:
-            "Creating wireframes, prototypes, and high-fidelity designs for client projects.",
-          type: ["relevant"],
+            'Creating wireframes, prototypes, and high-fidelity designs for client projects.',
+          type: ['relevant'],
         },
         {
           content:
-            "Created a universal design system that could be adjusted for various e-commerce stores.",
-          type: ["relevant"],
+            'Created a universal design system that could be adjusted for various e-commerce stores.',
+          type: ['relevant'],
         },
         {
-          content: "Client service and communication throughout projects.",
-          type: ["relevant"],
+          content: 'Client service and communication throughout projects.',
+          type: ['relevant'],
         },
       ],
     },
     {
-      dateFrom: "2018-04-01",
-      dateTo: "2020-05-01",
-      city: "Knysna",
-      country: "South Africa",
-      company: "The Burger Exchange Restaurant",
-      title: "Co-Owner & Marketing Director",
-      type: ["relevant"],
-      description: "",
+      dateFrom: '2018-04-01',
+      dateTo: '2020-05-01',
+      city: 'Knysna',
+      country: 'South Africa',
+      company: 'The Burger Exchange Restaurant',
+      title: 'Co-Owner & Marketing Director',
+      type: ['relevant'],
+      description: '',
       responsibilities: [
         {
-          content: "Developing and implementing the overall business strategy & marketing plan.",
-          type: ["relevant"],
+          content:
+            'Developing and implementing the overall business strategy & marketing plan.',
+          type: ['relevant'],
         },
         {
-          content: "Managing the day-to-day operations of the restaurant.",
-          type: ["relevant"],
+          content: 'Managing the day-to-day operations of the restaurant.',
+          type: ['relevant'],
         },
         {
           content:
-            "Created the brand guide, social media templates, menu design, restaurant seating and decor.",
-          type: ["relevant"],
-        },
-        {
-          content: "Managing the restaurant's website and social media presence.",
-          type: ["relevant"],
+            'Created the brand guide, social media templates, menu design, restaurant seating and decor.',
+          type: ['relevant'],
         },
         {
           content:
-            "Increased awareness and sales through Campaigns, promotions, events and business collaborations.",
-          type: ["relevant"],
+            "Managing the restaurant's website and social media presence.",
+          type: ['relevant'],
+        },
+        {
+          content:
+            'Increased awareness and sales through Campaigns, promotions, events and business collaborations.',
+          type: ['relevant'],
         },
       ],
     },
     {
-      dateFrom: "2017-05-01",
-      dateTo: "2018-04-01",
-      city: "Cape Town",
-      country: "South Africa",
-      company: "Liquix.io – Ecommerce Solutions",
-      title: "UX/UI Designer & Client Service Manager",
-      type: ["relevant"],
-      description: "",
+      dateFrom: '2017-05-01',
+      dateTo: '2018-04-01',
+      city: 'Cape Town',
+      country: 'South Africa',
+      company: 'Liquix.io – Ecommerce Solutions',
+      title: 'UX/UI Designer & Client Service Manager',
+      type: ['relevant'],
+      description: '',
       responsibilities: [
         {
-          content: "Growth & Success Partner for varies clients and projects.",
-          type: ["relevant"],
+          content: 'Growth & Success Partner for varies clients and projects.',
+          type: ['relevant'],
         },
 
         {
-          content: "Lead Designer for a SAAS educational application.",
-          type: ["relevant"],
+          content: 'Lead Designer for a SAAS educational application.',
+          type: ['relevant'],
         },
         {
           content:
-            "Presenting design concepts and solutions to clients, and incorporating client feedback into the design process.",
-          type: ["relevant"],
+            'Presenting design concepts and solutions to clients, and incorporating client feedback into the design process.',
+          type: ['relevant'],
         },
         {
           content:
-            "Creating wireframes, prototypes, and high-fidelity designs for websites & applications.",
-          type: ["relevant"],
+            'Creating wireframes, prototypes, and high-fidelity designs for websites & applications.',
+          type: ['relevant'],
         },
       ],
     },
     {
-      dateFrom: "2016-07-01",
-      dateTo: "2017-05-01",
-      city: "Cape Town",
-      country: "South Africa",
-      company: "LizActive Yoga Wear",
-      title: "Product Designer",
-      type: ["relevant"],
-      description: "",
+      dateFrom: '2016-07-01',
+      dateTo: '2017-05-01',
+      city: 'Cape Town',
+      country: 'South Africa',
+      company: 'LizActive Yoga Wear',
+      title: 'Product Designer',
+      type: ['relevant'],
+      description: '',
       responsibilities: [
         {
           content:
-            "Conducting market research to identify customer needs, preferences, and Analyzing sales data and customer feedback for product improvement.",
-          type: ["relevant"],
+            'Conducting market research to identify customer needs, preferences, and Analyzing sales data and customer feedback for product improvement.',
+          type: ['relevant'],
         },
         {
           content:
-            "Created the product design, brand guide, social media templates & marketing campaign material and designed the LizActive website.",
-          type: ["relevant"],
+            'Created the product design, brand guide, social media templates & marketing campaign material and designed the LizActive website.',
+          type: ['relevant'],
         },
         {
-          content: "Defining and prioritizing product features and requirements.",
-          type: ["relevant"],
+          content:
+            'Defining and prioritizing product features and requirements.',
+          type: ['relevant'],
         },
       ],
     },
@@ -472,8 +480,8 @@ export const CV = {
   ],
   projects: [
     {
-      dateFrom: "2022-01-01",
-      dateTo: "2017-01-01",
+      dateFrom: '2022-01-01',
+      dateTo: '2017-01-01',
       sidebar: (
         <>
           Kids Living <br />
@@ -485,10 +493,10 @@ export const CV = {
           </Link>
         </>
       ),
-      title: "Website Re-design",
-      type: ["relevant"],
-      description: "",
-      link: "https://lizt.dev/kidsliving",
+      title: 'Website Re-design',
+      type: ['relevant'],
+      description: '',
+      link: 'https://lizt.dev/kidsliving',
       responsibilities: [
         {
           content: (
@@ -497,22 +505,24 @@ export const CV = {
               offering an extensive range of imported and locally manufactured high-end products. In
               addition to managing the E-commerce store & website, I also handle digital marketing,
               web maintenance, UX design, data structures, and testing of the site with a team.*/}
-              Redesign if the E-commerce website of a large retailer of kid's furniture while
-              creating a visually appealing and user-friendly website that would make it easy for
-              customers to find and purchase what they need. To ensure this, I implemented a variety
-              of strategies to both optimize the overall website structure and create a modern
-              design that was eye-catching and intuitive. Our work as a team resulted in an online
-              store that showcases Kids Living's extensive range of high-quality products, enabling
+              Redesign if the E-commerce website of a large retailer of kid's
+              furniture while creating a visually appealing and user-friendly
+              website that would make it easy for customers to find and purchase
+              what they need. To ensure this, I implemented a variety of
+              strategies to both optimize the overall website structure and
+              create a modern design that was eye-catching and intuitive. Our
+              work as a team resulted in an online store that showcases Kids
+              Living's extensive range of high-quality products, enabling
               customers to have a seamless and enjoyable shopping experience.
             </>
           ),
-          type: ["relevant"],
+          type: ['relevant'],
         },
       ],
     },
     {
-      dateFrom: "2022-01-01",
-      dateTo: "2017-01-01",
+      dateFrom: '2022-01-01',
+      dateTo: '2017-01-01',
       sidebar: (
         <>
           Volkswagen <br />
@@ -524,27 +534,28 @@ export const CV = {
           </Link>
         </>
       ),
-      title: "Ecommerce Website & Parts Matching App",
-      type: ["relevant"],
-      description: "",
-      link: "https://lizt.dev/volkswagen",
+      title: 'Ecommerce Website & Parts Matching App',
+      type: ['relevant'],
+      description: '',
+      link: 'https://lizt.dev/volkswagen',
       responsibilities: [
         {
           content: (
             <>
-              I was tasked to redesign and upgrade their digital presence to better reflect their
-              new brand identity. The secondary objective create an interface for a parts matching
-              functionality for vehicles based on release year, model, and trim with the exact
+              I was tasked to redesign and upgrade their digital presence to
+              better reflect their new brand identity. The secondary objective
+              create an interface for a parts matching functionality for
+              vehicles based on release year, model, and trim with the exact
               fitting parts for their model.
             </>
           ),
-          type: ["relevant"],
+          type: ['relevant'],
         },
       ],
     },
     {
-      dateFrom: "2021-01-01",
-      dateTo: "2017-01-01",
+      dateFrom: '2021-01-01',
+      dateTo: '2017-01-01',
       sidebar: (
         <>
           Lunatag <br />
@@ -556,29 +567,31 @@ export const CV = {
           </Link>
         </>
       ),
-      title: "Shopify App",
-      type: ["relevant"],
-      link: "https://lizt.dev/lunatag",
-      description: "",
+      title: 'Shopify App',
+      type: ['relevant'],
+      link: 'https://lizt.dev/lunatag',
+      description: '',
       responsibilities: [
         {
           content: (
             <>
-              LunaTag, is a Shopify app that enables users to tag their products on their images,
-              making their online store more engaging and shoppable. The goal of the project was to
-              simplify the process of adding product tags to images for Shopify store owners, while
-              also aligning with the requirements of the Shopify platform. Through a combination of
-              research, design, and testing, I was able to design an intuitive and effective app
-              that helps store owners better showcase their products and increase sales.{" "}
+              LunaTag, is a Shopify app that enables users to tag their products
+              on their images, making their online store more engaging and
+              shoppable. The goal of the project was to simplify the process of
+              adding product tags to images for Shopify store owners, while also
+              aligning with the requirements of the Shopify platform. Through a
+              combination of research, design, and testing, I was able to design
+              an intuitive and effective app that helps store owners better
+              showcase their products and increase sales.{' '}
             </>
           ),
-          type: ["relevant"],
+          type: ['relevant'],
         },
       ],
     },
     {
-      dateFrom: "2022-01-01",
-      dateTo: "2017-01-01",
+      dateFrom: '2022-01-01',
+      dateTo: '2017-01-01',
       sidebar: (
         <>
           The Burger <br /> Exchange <br />
@@ -590,28 +603,29 @@ export const CV = {
           </Link>
         </>
       ),
-      title: "Website & Brand Identity",
-      type: ["relevant"],
-      description: "",
-      link: "https://lizt.dev/exchange",
+      title: 'Website & Brand Identity',
+      type: ['relevant'],
+      description: '',
+      link: 'https://lizt.dev/exchange',
       responsibilities: [
         {
           content: (
             <>
-              Introducing Burger Exchange, a burger and grill restaurant that I co-owned and had the
-              pleasure of designing a custom website. The goal of the project was to create a
-              website that reflected the fun and trendy atmosphere of the restaurant, while also
-              making it easy for customers to find information, browse the menu, and make
+              Introducing Burger Exchange, a burger and grill restaurant that I
+              co-owned and had the pleasure of designing a custom website. The
+              goal of the project was to create a website that reflected the fun
+              and trendy atmosphere of the restaurant, while also making it easy
+              for customers to find information, browse the menu, and make
               reservations.
             </>
           ),
-          type: ["relevant"],
+          type: ['relevant'],
         },
       ],
     },
     {
-      dateFrom: "2021-01-01",
-      dateTo: "2017-01-01",
+      dateFrom: '2021-01-01',
+      dateTo: '2017-01-01',
       sidebar: (
         <>
           Demo Store <br />
@@ -623,22 +637,24 @@ export const CV = {
           </Link>
         </>
       ),
-      title: "E-commerce Demo Store Design",
-      type: ["relevant"],
-      description: "",
-      link: "https://lizt.dev/demo-store",
+      title: 'E-commerce Demo Store Design',
+      type: ['relevant'],
+      description: '',
+      link: 'https://lizt.dev/demo-store',
       responsibilities: [
         {
           content: (
             <>
-              The store is based on the brand “De Eekhoorn” which is a high-quality Dutch Furniture
-              brand that focuses on designing and producing sturdy, contemporary and easy to
-              assemble furniture. The goal of this project was to create a visually appealing and
-              user-friendly E-commerce website that merchants can use to interact with the Shopify
-              theme and explore the LunaTag App functionality.
+              The store is based on the brand “De Eekhoorn” which is a
+              high-quality Dutch Furniture brand that focuses on designing and
+              producing sturdy, contemporary and easy to assemble furniture. The
+              goal of this project was to create a visually appealing and
+              user-friendly E-commerce website that merchants can use to
+              interact with the Shopify theme and explore the LunaTag App
+              functionality.
             </>
           ),
-          type: ["relevant"],
+          type: ['relevant'],
         },
       ],
     } /* {
@@ -667,7 +683,7 @@ export const CV = {
   capabilities: {
     languages: [
       {
-        name: "English - native",
+        name: 'English - native',
         Icon: null,
       },
     ],
@@ -679,9 +695,22 @@ export const CV = {
       TECH.github,
       TECH.vercel,
     ],
-    design: [TECH.figma, TECH.illustrator, TECH.sketch, TECH.photoshop, TECH.shopify_polaris],
+    design: [
+      TECH.figma,
+      TECH.illustrator,
+      TECH.sketch,
+      TECH.photoshop,
+      TECH.shopify_polaris,
+    ],
     marketing: [TECH.meta, TECH.google, TECH.facebook, TECH.instagram],
-    dataProviders: [TECH.shopify, TECH.vend, TECH.erply, TECH.dear, TECH.micros, TECH.wordpress],
+    dataProviders: [
+      TECH.shopify,
+      TECH.vend,
+      TECH.erply,
+      TECH.dear,
+      TECH.micros,
+      TECH.wordpress,
+    ],
     tools: [
       TECH.micros,
       TECH.asana,
@@ -694,34 +723,34 @@ export const CV = {
   },
   certifications: [
     {
-      date: "2022",
-      name: "Certified Tester – Foundation Level - ISTQB®",
-      type: ["web / tech dev", "relevant"],
+      date: '2022',
+      name: 'Certified Tester – Foundation Level - ISTQB®',
+      type: ['web / tech dev', 'relevant'],
     },
     {
-      date: "2021",
-      name: "CodeCodemy - HTML, CSS & JavaScript development ",
-      type: ["web / tech dev", "relevant"],
+      date: '2021',
+      name: 'CodeCodemy - HTML, CSS & JavaScript development ',
+      type: ['web / tech dev', 'relevant'],
     },
     {
-      date: "2021",
-      name: "Shopify - App Development Certification",
-      type: ["web / tech dev", "relevant"],
+      date: '2021',
+      name: 'Shopify - App Development Certification',
+      type: ['web / tech dev', 'relevant'],
     },
     {
-      date: "2021",
-      name: "Shopify - Business Fundamentals Certification",
-      type: ["web / tech dev", "relevant"],
+      date: '2021',
+      name: 'Shopify - Business Fundamentals Certification',
+      type: ['web / tech dev', 'relevant'],
     },
     {
-      date: "2019",
-      name: "Shopify - Theme Development Certification",
-      type: ["web / tech dev", "relevant"],
+      date: '2019',
+      name: 'Shopify - Theme Development Certification',
+      type: ['web / tech dev', 'relevant'],
     },
     {
-      date: "2020",
-      name: "Shopify - Product Fundamentals Certification",
-      type: ["web / tech dev", "relevant"],
+      date: '2020',
+      name: 'Shopify - Product Fundamentals Certification',
+      type: ['web / tech dev', 'relevant'],
     },
     /*    {
       date: "2011",
@@ -734,9 +763,9 @@ export const CV = {
       type: ["relevant"],
     },*/
     {
-      date: "2017",
-      name: "200hr and 500hr Advanced Yoga Teacher Training - RYT Qualification",
-      type: ["relevant"],
+      date: '2017',
+      name: '200hr and 500hr Advanced Yoga Teacher Training - RYT Qualification',
+      type: ['relevant'],
     },
     /* {
       date: "2017",
@@ -744,30 +773,30 @@ export const CV = {
       type: ["relevant"],
     },*/
     {
-      date: "2015",
-      name: "Photography and Lighting",
-      type: ["relevant"],
+      date: '2015',
+      name: 'Photography and Lighting',
+      type: ['relevant'],
     },
   ],
   references: [
     {
-      author: "Jeroen Hartgers",
-      title: "Managing Director",
-      company: "Kids Living",
+      author: 'Jeroen Hartgers',
+      title: 'Managing Director',
+      company: 'Kids Living',
       reference:
         "It is a pleasure to work with Felix as a design and development partner and ecommerce specialist. You can point out a problem to him and know that it will be handled, and he brings a positive vibe to the team at the same time. His approach to web is modern and progressive, and it is very refreshing. Furthermore, he has a real passion for web development, producing excellent results, being up to date with all the latest technology and being reliable and easy to work with. Ask him about anything from performance to accessibility or on-site tech support, he'll go out of his way to find a solution.",
     },
     {
-      author: "Thomas Fuss",
-      title: "Managing Director",
-      company: "Ademas Solutions",
+      author: 'Thomas Fuss',
+      title: 'Managing Director',
+      company: 'Ademas Solutions',
       reference:
-        "Felix has a highly technical aptitude, which is further enhanced by his experience and general desire to be the best. My favorite thing about working with Felix is his ability to tell when a problem needs to be fixed right away and when a problem needs to be solved quickly. Whatever he does, he is always dedicated to doing an excellent job, and he makes the right engineering decisions for the project. In addition to learning new technologies at an exceptionally fast rate, he is often the first one to come to when a technical problem arises. In his role as a team player, Felix appears equally comfortable joining a project team and working directly on it, mentoring less experienced developers, or leading a project as a technical lead. Felix has always been a pleasant presence at customer meetings, as he is able to answer questions clearly and accurately, and he is not afraid to express his opinion on technical issues as well. I will miss working with Felix and will be confident in recommending him for any technical position in the future. He is well liked and highly respected by his colleagues from all areas of the business.",
+        'Felix has a highly technical aptitude, which is further enhanced by his experience and general desire to be the best. My favorite thing about working with Felix is his ability to tell when a problem needs to be fixed right away and when a problem needs to be solved quickly. Whatever he does, he is always dedicated to doing an excellent job, and he makes the right engineering decisions for the project. In addition to learning new technologies at an exceptionally fast rate, he is often the first one to come to when a technical problem arises. In his role as a team player, Felix appears equally comfortable joining a project team and working directly on it, mentoring less experienced developers, or leading a project as a technical lead. Felix has always been a pleasant presence at customer meetings, as he is able to answer questions clearly and accurately, and he is not afraid to express his opinion on technical issues as well. I will miss working with Felix and will be confident in recommending him for any technical position in the future. He is well liked and highly respected by his colleagues from all areas of the business.',
     },
     {
-      author: "Juan De Bruyn",
-      title: "Restaurant Manager",
-      company: "The Exchange Restaurant",
+      author: 'Juan De Bruyn',
+      title: 'Restaurant Manager',
+      company: 'The Exchange Restaurant',
       reference: `I have been fortunate enough to be working both along & with Lalit Kumawat for the past 8 months. Felix has been an absolute light and strength in the team he runs. His approach to every challenge with a calm, firm & respectful attitude is something to be admired and to be learned by everyone. In spite of the challenges, this type of leadership makes a happy and productive work environment because it brings everyone together. I wish Felix all the best for his future endeavors. He is sure to make any challenge he takes on an absolute success.`,
     },
   ],

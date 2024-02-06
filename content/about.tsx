@@ -1,56 +1,60 @@
 // @ts-ignore
-import DontBeADick from "../public/images/about/dont-be-a-dick.jpg";
-import Namibia from "../public/images/about/namibia.jpg";
-import QuadBike from "../public/images/about/quadbike.jpg";
-import ChristmasInWilderness from "../public/images/about/christmas-wilderness.jpg";
-import Ottertrail from "../public/images/about/ottertrail.jpg";
-import Running from "../public/images/about/running.jpg";
-import AlphaLionshead from "../public/images/about/alpha-mountain.jpg";
-import Kirstenbosch from "../public/images/about/kirstenbosch.jpg";
-import Camping from "../public/images/about/camping.jpg";
-import Desert from "../public/images/about/desert.jpg";
-import Aboutpic from "../public/images/about/aboutpic.jpg";
+import DontBeADick from '../public/images/about/dont-be-a-dick.jpg';
+import Namibia from '../public/images/about/namibia.jpg';
+import QuadBike from '../public/images/about/quadbike.jpg';
+import ChristmasInWilderness from '../public/images/about/christmas-wilderness.jpg';
+import Ottertrail from '../public/images/about/ottertrail.jpg';
+import Running from '../public/images/about/running.jpg';
+import AlphaLionshead from '../public/images/about/alpha-mountain.jpg';
+import Kirstenbosch from '../public/images/about/kirstenbosch.jpg';
+import Camping from '../public/images/about/camping.jpg';
+import Desert from '../public/images/about/desert.jpg';
+import Aboutpic from '../public/images/about/aboutpic.jpg';
 
 export const ABOUT = {
   stats: [
     {
       statistic: `${
-        new Date(Date.now() - new Date("2003-05-29T01:30:00").getTime()).getFullYear() - 1970
+        new Date(
+          Date.now() - new Date('2003-05-29T01:30:00').getTime()
+        ).getFullYear() - 1970
       }`,
       tooltip: `${Math.round(
-        (Date.now() - new Date("2003-05-29T01:30:00").getTime()) / 1000
+        (Date.now() - new Date('2003-05-29T01:30:00').getTime()) / 1000
       )} seconds`,
-      caption: "Years Old",
+      caption: 'Years Old',
     },
     {
-      statistic: "4+",
-      tooltip: "First line of code written in 2020",
-      caption: "Years Web Dev",
+      statistic: '4+',
+      tooltip: 'First line of code written in 2020',
+      caption: 'Years Web Dev',
     },
     {
-      statistic: "1",
-      tooltip: "I ❤️ talk about Tech.",
-      caption: "YT Channel",
+      statistic: '1',
+      tooltip: 'I ❤️ talk about Tech.',
+      caption: 'YT Channel',
     },
     {
-      statistic: "467",
-      tooltip: "51 GitHub Stars",
-      caption: "Commits",
+      statistic: '467',
+      tooltip: '51 GitHub Stars',
+      caption: 'Commits',
     },
   ],
   description: (
     <>
       <p>
-        I'm a India based Software Developer. My focus area for the past few years has been
-        full-stack development with <strong>Next.js</strong>, <strong>Typescript</strong>,{" "}
-        <strong>TailwindCSS</strong> and <strong>Node.js</strong> to create beautiful user- and
-        developer experiences that bring delight.
+        I'm a India based Software Developer. My focus area for the past few
+        years has been full-stack development with <strong>Next.js</strong>,{' '}
+        <strong>Typescript</strong>, <strong>TailwindCSS</strong> and{' '}
+        <strong>Node.js</strong> to create beautiful user- and developer
+        experiences that bring delight.
       </p>
       <p>
-        I’ve spent most of my life deeply interested in technology, continuously building things
-        with both. As a teenager, I was a classic computer nerd, spending most of my times messing
-        with the computer, doing 1 of 4 things: Playing games and figuring things out. Tinkering
-        with hardware, building computers. Developing websites and apps. And of course, playing
+        I’ve spent most of my life deeply interested in technology, continuously
+        building things with both. As a teenager, I was a classic computer nerd,
+        spending most of my times messing with the computer, doing 1 of 4
+        things: Playing games and figuring things out. Tinkering with hardware,
+        building computers. Developing websites and apps. And of course, playing
         games.
       </p>
       <p>Most of that is still true today.</p>
@@ -59,7 +63,7 @@ export const ABOUT = {
   images: [
     {
       src: Aboutpic,
-      alt: "Lalit Kumawat",
+      alt: 'Lalit Kumawat',
     },
     // {
     //   src: Namibia,

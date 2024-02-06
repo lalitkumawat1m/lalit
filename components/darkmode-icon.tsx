@@ -1,11 +1,11 @@
-import { m as motion, useMotionValue, useTransform } from "framer-motion";
-import { useTheme } from "next-themes";
-import { FC } from "react";
+import {m as motion, useMotionValue, useTransform} from 'framer-motion';
+import {useTheme} from 'next-themes';
+import {FC} from 'react';
 
 const DarkmodeIcon: FC = () => {
-  const { theme, setTheme } = useTheme();
+  const {theme, setTheme} = useTheme();
   const duration = 0.7;
-  const isDark = theme === "dark";
+  const isDark = theme === 'dark';
 
   const moonVariants = {
     checked: {
@@ -31,7 +31,7 @@ const DarkmodeIcon: FC = () => {
   const pathLengthSun = useTransform(scaleSun, [0.6, 1], [0, 1]);
 
   return (
-    <motion.div animate={isDark ? "checked" : "unchecked"}>
+    <motion.div animate={isDark ? 'checked' : 'unchecked'}>
       <motion.svg
         width="18"
         height="18"
@@ -47,7 +47,7 @@ const DarkmodeIcon: FC = () => {
           strokeLinejoin="round"
           variants={sunVariants}
           custom={isDark}
-          transition={{ duration }}
+          transition={{duration}}
           style={{
             pathLength: pathLengthSun,
             scale: scaleSun,
@@ -61,7 +61,7 @@ const DarkmodeIcon: FC = () => {
           strokeLinejoin="round"
           variants={sunVariants}
           custom={isDark}
-          transition={{ duration }}
+          transition={{duration}}
           style={{
             pathLength: pathLengthSun,
             scale: scaleSun,
@@ -75,7 +75,7 @@ const DarkmodeIcon: FC = () => {
           strokeLinejoin="round"
           variants={sunVariants}
           custom={isDark}
-          transition={{ duration }}
+          transition={{duration}}
           style={{
             pathLength: pathLengthSun,
             scale: scaleSun,
@@ -89,7 +89,7 @@ const DarkmodeIcon: FC = () => {
           strokeLinejoin="round"
           variants={sunVariants}
           custom={isDark}
-          transition={{ duration }}
+          transition={{duration}}
           style={{
             pathLength: pathLengthSun,
             scale: scaleSun,
@@ -103,7 +103,7 @@ const DarkmodeIcon: FC = () => {
           strokeLinejoin="round"
           variants={sunVariants}
           custom={isDark}
-          transition={{ duration }}
+          transition={{duration}}
           style={{
             pathLength: pathLengthSun,
             scale: scaleSun,
@@ -117,7 +117,7 @@ const DarkmodeIcon: FC = () => {
           strokeLinejoin="round"
           variants={sunVariants}
           custom={isDark}
-          transition={{ duration }}
+          transition={{duration}}
           style={{
             pathLength: pathLengthSun,
             scale: scaleSun,
@@ -131,7 +131,7 @@ const DarkmodeIcon: FC = () => {
           strokeLinejoin="round"
           variants={sunVariants}
           custom={isDark}
-          transition={{ duration }}
+          transition={{duration}}
           style={{
             pathLength: pathLengthSun,
             scale: scaleSun,
@@ -145,7 +145,7 @@ const DarkmodeIcon: FC = () => {
           strokeLinejoin="round"
           variants={sunVariants}
           custom={isDark}
-          transition={{ duration }}
+          transition={{duration}}
           style={{
             pathLength: pathLengthSun,
             scale: scaleSun,
@@ -159,7 +159,7 @@ const DarkmodeIcon: FC = () => {
           strokeLinejoin="round"
           variants={sunVariants}
           custom={isDark}
-          transition={{ duration }}
+          transition={{duration}}
           style={{
             pathLength: pathLengthSun,
             scale: scaleSun,
@@ -171,7 +171,7 @@ const DarkmodeIcon: FC = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          transition={{ duration }}
+          transition={{duration}}
           variants={moonVariants}
           custom={isDark}
           style={{

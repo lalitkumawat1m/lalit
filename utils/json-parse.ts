@@ -1,6 +1,6 @@
-import * as fs from "fs";
+import * as fs from 'fs';
 
-export const JSONParse = (object: any, origin = "") => {
+export const JSONParse = (object: any, origin = '') => {
   try {
     return JSON.parse(object);
   } catch (err) {

@@ -1,16 +1,16 @@
-import { SiGithub } from "@react-icons/all-files/si/SiGithub";
-import { Link } from "components/link";
-import clsx from "clsx";
-import DarkmodeIcon from "components/darkmode-icon";
-import { useTheme } from "next-themes";
-import { FC } from "react";
+import {SiGithub} from '@react-icons/all-files/si/SiGithub';
+import {Link} from 'components/link';
+import clsx from 'clsx';
+import DarkmodeIcon from 'components/darkmode-icon';
+import {useTheme} from 'next-themes';
+import {FC} from 'react';
 
 type ProfileNavProps = {
   showNav: boolean;
 };
 
-export const ProfileNav: FC<ProfileNavProps> = ({ showNav }) => {
-  const { theme, setTheme } = useTheme();
+export const ProfileNav: FC<ProfileNavProps> = ({showNav}) => {
+  const {theme, setTheme} = useTheme();
 
   return (
     <nav className="z-10 ml-auto flex gap-1 pl-4">
@@ -18,10 +18,10 @@ export const ProfileNav: FC<ProfileNavProps> = ({ showNav }) => {
       <button
         type="button"
         className={clsx(
-          "rounded p-2 text-gray-500 transition-colors d:text-gray-300 d:h:text-gray-50 md:h:text-gray-900",
-          showNav ? "h:text-gray-200" : "h:text-gray-900"
+          'rounded p-2 text-gray-500 transition-colors d:text-gray-300 d:h:text-gray-50 md:h:text-gray-900',
+          showNav ? 'h:text-gray-200' : 'h:text-gray-900'
         )}
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       >
         <span className="sr-only">Switch Color Theme</span>
         <DarkmodeIcon />
@@ -29,8 +29,8 @@ export const ProfileNav: FC<ProfileNavProps> = ({ showNav }) => {
       <Link
         href="https://github.com/lalitkumawat1m"
         className={clsx(
-          "rounded p-2 text-gray-500 transition-colors d:text-gray-300 d:h:text-gray-50 md:h:text-gray-900",
-          showNav ? "h:text-gray-200" : "h:text-gray-900"
+          'rounded p-2 text-gray-500 transition-colors d:text-gray-300 d:h:text-gray-50 md:h:text-gray-900',
+          showNav ? 'h:text-gray-200' : 'h:text-gray-900'
         )}
       >
         <span className="sr-only">Github</span>

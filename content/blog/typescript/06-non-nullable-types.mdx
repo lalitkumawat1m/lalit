@@ -1,16 +1,16 @@
 ---
-title: "Nullable and Non-nullable types"
-publishedAt: "2022-05-04"
-summary: "Learn how to use nullable and Non-nullable types in TypeScript"
-tldr: ""
+title: 'Nullable and Non-nullable types'
+publishedAt: '2022-05-04'
+summary: 'Learn how to use nullable and Non-nullable types in TypeScript'
+tldr: ''
 type: Blog
-image: "/images/ts-6.svg"
-icon: "typescript"
+image: '/images/ts-6.svg'
+icon: 'typescript'
 tags:
-  - "typescript"
-  - "javascript"
-  - "development"
-  - "dev tools"
+  - 'typescript'
+  - 'javascript'
+  - 'development'
+  - 'dev tools'
 ---
 
 In this article, we'll discuss `non-nullable` types, which give the type system a fundamental boost by helping prevent nullability errors at compile time.
@@ -21,7 +21,7 @@ Until TypeScript 2.0, the type checker considered `null` and `undefined` to be v
 
 ```ts
 let name: string;
-name = "Felix"; // OK
+name = 'Felix'; // OK
 name = undefined; // OK
 name = null; // OK
 
@@ -58,7 +58,7 @@ As soon as we compile our previous examples with strict null checking enabled, w
 // Compiled with --strictNullChecks
 
 let name: string;
-name = "Felix"; // OK
+name = 'Felix'; // OK
 name = undefined; // Error
 name = null; // Error
 
@@ -82,7 +82,7 @@ When strict null checking is enabled, types aren't nullable by default. Thus, to
 
 ```ts
 let name: string | null;
-name = "Felix"; // OK
+name = 'Felix'; // OK
 name = undefined; // Error
 name = null; // OK
 ```
@@ -95,8 +95,8 @@ type User = {
   lastName: string | undefined;
 };
 
-const nicole: User = { firstName: "Nicole", lastName: undefined };
-const jimmy: User = { firstName: "Jimmy", lastName: "Doe" };
+const nicole: User = {firstName: 'Nicole', lastName: undefined};
+const jimmy: User = {firstName: 'Jimmy', lastName: 'Doe'};
 ```
 
 It is possible to make the `lastName` property optional by appending the symbol ? to its name, which allows us to omit the definition of the `lastName` property entirely. Also, the `undefined` type is automatically added to the union type, so the following assignment is type-correct:
@@ -108,13 +108,13 @@ type User = {
 };
 
 // We can assign a string to the "lastName" property
-const jimmy: User = { firstName: "Jimmy", lastName: "Doe" };
+const jimmy: User = {firstName: 'Jimmy', lastName: 'Doe'};
 
 // ... or we can explicitly assign the value undefined
-const nicole: User = { firstName: "Nicole", lastName: undefined };
+const nicole: User = {firstName: 'Nicole', lastName: undefined};
 
 // ... or we can not define the property at all
-const tom: User = { firstName: "Tom" };
+const tom: User = {firstName: 'Tom'};
 ```
 
 ## Property Access with Nullable Types
@@ -173,7 +173,7 @@ If you prefer, you can check the value returned by the `typeof` operator:
 
 ```ts
 function doSomething(callback?: () => void) {
-  if (typeof callback === "function") {
+  if (typeof callback === 'function') {
     callback();
   }
 }

@@ -1,8 +1,8 @@
-import { FC } from "react";
+import {FC} from 'react';
 
 type WorkProps = {};
 
-export const Portfolio: FC<WorkProps> = (props) => {
+export const Portfolio: FC<WorkProps> = props => {
   return <>Work</>;
 };
 

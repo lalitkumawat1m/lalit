@@ -3,18 +3,30 @@
     @apply relative block h-[var(--nav-icon-size)] w-[var(--nav-icon-size)];
     > div {
       @apply absolute top-[calc(50%-var(--nav-icon-border)/2)] h-[var(--nav-icon-border)] w-full bg-gray-500;
-      transition: background-color 0.2s, top 0.2s, left 0.2s, transform 0.2s 0.15s;
+      transition:
+        background-color 0.2s,
+        top 0.2s,
+        left 0.2s,
+        transform 0.2s 0.15s;
 
       @apply before:absolute b:left-0 b:bottom-[calc(var(--nav-icon-size)/3)] b:h-[var(--nav-icon-border)] b:w-[66%] b:bg-gray-500;
 
       &:before {
-        transition: bottom 0.2s 0.2s, left 0.1s, transform 0.2s, background-color 0.4s 0.2s;
+        transition:
+          bottom 0.2s 0.2s,
+          left 0.1s,
+          transform 0.2s,
+          background-color 0.4s 0.2s;
       }
 
       @apply after:absolute a:right-0 a:top-[calc(var(--nav-icon-size)/3)] a:h-[var(--nav-icon-border)] a:w-[66%] a:bg-gray-500;
 
       &:after {
-        transition: top 0.2s 0.2s, right 0.1s, transform 0.2s, background-color 0.4s 0.2s;
+        transition:
+          top 0.2s 0.2s,
+          right 0.1s,
+          transform 0.2s,
+          background-color 0.4s 0.2s;
       }
     }
 
@@ -24,12 +36,20 @@
 
         @apply b:bottom-0 b:left-[calc(var(--nav-icon-size)/6)] b:-rotate-45 b:bg-sky-500;
         &:before {
-          transition: background-color 0.2s, bottom 0.2s, left 0.2s, transform 0.2s 0.15s;
+          transition:
+            background-color 0.2s,
+            bottom 0.2s,
+            left 0.2s,
+            transform 0.2s 0.15s;
         }
 
         @apply a:top-0 a:right-[calc(var(--nav-icon-size)/6)] a:rotate-45 a:bg-sky-500;
         &:after {
-          transition: background-color 0.2s, top 0.2s, right 0.2s, transform 0.2s 0.15s;
+          transition:
+            background-color 0.2s,
+            top 0.2s,
+            right 0.2s,
+            transform 0.2s 0.15s;
         }
       }
     }

@@ -1,18 +1,18 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import {PrismaAdapter} from '@next-auth/prisma-adapter';
 
-import { env } from "server/trpc/env";
-import { prisma } from "server/trpc/prisma";
-import bcrypt from "bcrypt";
-import cuid from "cuid";
-import NextAuth, { Account, NextAuthOptions, User } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
-import EmailProvider from "next-auth/providers/email";
-import FacebookProvider from "next-auth/providers/facebook";
-import GithubProvider from "next-auth/providers/github";
-import GoogleProvider from "next-auth/providers/google";
-import TwitterProvider from "next-auth/providers/twitter";
-import { isValidPassword } from "utils/validate-password";
-import validate from "validator";
+import {env} from 'server/trpc/env';
+import {prisma} from 'server/trpc/prisma';
+import bcrypt from 'bcrypt';
+import cuid from 'cuid';
+import NextAuth, {Account, NextAuthOptions, User} from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
+import EmailProvider from 'next-auth/providers/email';
+import FacebookProvider from 'next-auth/providers/facebook';
+import GithubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
+import TwitterProvider from 'next-auth/providers/twitter';
+import {isValidPassword} from 'utils/validate-password';
+import validate from 'validator';
 
 export const authOptions: NextAuthOptions = {
   // Configure one or more authentication providers
@@ -20,14 +20,14 @@ export const authOptions: NextAuthOptions = {
   // secret: env.NEXTAUTH_SECRET,
   session: {
     maxAge: 120 * 24 * 60 * 60, // 120 days
-    strategy: "jwt",
+    strategy: 'jwt',
   },
   debug: false,
   pages: {
-    signIn: "/auth/sign-in",
-    signOut: "/auth/sign-out",
-    error: "/auth/error", // Error code passed in query string as ?error=
-    verifyRequest: "/auth/verify-request", // (used for check email message)
+    signIn: '/auth/sign-in',
+    signOut: '/auth/sign-out',
+    error: '/auth/error', // Error code passed in query string as ?error=
+    verifyRequest: '/auth/verify-request', // (used for check email message)
   },
   providers: [
     // GithubProvider({
@@ -67,17 +67,17 @@ export const authOptions: NextAuthOptions = {
       // },
     }),
     CredentialsProvider({
-      id: "sign-up",
+      id: 'sign-up',
       // The name to display on the sign in form (e.g. "Sign in with...")
       // The credentials is used to generate a suitable form on the sign in page.
       // You can specify whatever fields you are expecting to be submitted.
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        name: { label: "Name", type: "text" },
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
-        marketing: { label: "Accepts Marketing", type: "checkbox" },
+        name: {label: 'Name', type: 'text'},
+        email: {label: 'Email', type: 'email'},
+        password: {label: 'Password', type: 'password'},
+        marketing: {label: 'Accepts Marketing', type: 'checkbox'},
       },
       // @ts-ignore
       authorize: async (credentials, req) => {
@@ -130,7 +130,10 @@ export const authOptions: NextAuthOptions = {
             };
           }
 
-          const isValidPassword = await bcrypt.compare(credentials.password, user.password);
+          const isValidPassword = await bcrypt.compare(
+            credentials.password,
+            user.password
+          );
 
           if (isValidPassword) {
             return user;
@@ -140,21 +143,21 @@ export const authOptions: NextAuthOptions = {
             incorrectPassword: true,
           };
         } catch (err) {
-          console.log("Authorize error:", err);
+          console.log('Authorize error:', err);
           return null;
         }
       },
     }),
     CredentialsProvider({
-      id: "sign-in",
+      id: 'sign-in',
       // The name to display on the sign in form (e.g. "Sign in with...")
       // The credentials is used to generate a suitable form on the sign in page.
       // You can specify whatever fields you are expecting to be submitted.
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
+        email: {label: 'Email', type: 'email'},
+        password: {label: 'Password', type: 'password'},
       },
       // @ts-ignore
       authorize: async (credentials, req) => {
@@ -164,7 +167,10 @@ export const authOptions: NextAuthOptions = {
             incorrectPassword: true,
           };
         }
-        if (!isValidPassword(credentials.password) || !validate.isEmail(credentials.email)) {
+        if (
+          !isValidPassword(credentials.password) ||
+          !validate.isEmail(credentials.email)
+        ) {
           return {
             validationError: true,
           };
@@ -193,18 +199,21 @@ export const authOptions: NextAuthOptions = {
             };
           }
 
-          const isValidPassword = await bcrypt.compare(credentials.password, user.password);
+          const isValidPassword = await bcrypt.compare(
+            credentials.password,
+            user.password
+          );
 
           if (isValidPassword) {
             return user;
           }
-          console.log("Hash not matched");
+          console.log('Hash not matched');
 
           return {
             incorrectPassword: true,
           };
         } catch (err) {
-          console.log("Authorize error:", err);
+          console.log('Authorize error:', err);
           return null;
         }
       },
@@ -214,7 +223,13 @@ export const authOptions: NextAuthOptions = {
   ],
 
   callbacks: {
-    signIn: async ({ user: untypedUser, account, profile, email, credentials }) => {
+    signIn: async ({
+      user: untypedUser,
+      account,
+      profile,
+      email,
+      credentials,
+    }) => {
       const user = untypedUser as User & {
         accounts: Account[];
         validationError: any;
@@ -225,13 +240,13 @@ export const authOptions: NextAuthOptions = {
       };
       if (credentials) {
         if (user.validationError) {
-          return "http://localhost:3000/auth/error?error=validation-error";
+          return 'http://localhost:3000/auth/error?error=validation-error';
         }
 
         if (user.accountExists) {
           return `http://localhost:3000/auth/error?error=account-exists|||${user?.accounts
-            .map((acc) => acc.provider)
-            .join(",")}`;
+            .map(acc => acc.provider)
+            .join(',')}`;
         }
 
         if (user.accountNotFound) {
@@ -243,7 +258,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         if (!user?.emailVerified) {
-          return "http://localhost:3000/auth/error?error=email-not-verified";
+          return 'http://localhost:3000/auth/error?error=email-not-verified';
         }
       }
 
@@ -260,14 +275,18 @@ export const authOptions: NextAuthOptions = {
             accounts: true,
           },
         });
-        if (fullUser?.accounts.some((acc) => acc.providerAccountId === account.providerAccountId)) {
+        if (
+          fullUser?.accounts.some(
+            acc => acc.providerAccountId === account.providerAccountId
+          )
+        ) {
           return true;
         }
         if (fullUser?.accounts.length) {
           return `http://localhost:3000/auth/error?error=account-exists|||${fullUser?.accounts
             // @ts-ignore
-            ?.map((acc) => acc.provider)
-            .join(",")}`;
+            ?.map(acc => acc.provider)
+            .join(',')}`;
         }
       }
 
@@ -278,21 +297,21 @@ export const authOptions: NextAuthOptions = {
 
       return false;*/
     },
-    session: async ({ session, token, user }) => {
+    session: async ({session, token, user}) => {
       // Send properties to the client, like an access_token from a provider.
-      console.log("next-auth Callback: session");
+      console.log('next-auth Callback: session');
       // console.log({ session, token, user });
       console.log(session);
       return session;
     },
-    redirect: async ({ url, baseUrl }) => {
+    redirect: async ({url, baseUrl}) => {
       // console.log({ url, baseUrl });
-      console.log("next-auth Callback: redirect");
+      console.log('next-auth Callback: redirect');
       return url;
     },
-    jwt: async ({ token, user, account, profile, isNewUser }) => {
+    jwt: async ({token, user, account, profile, isNewUser}) => {
       // Persist the OAuth access_token to the token right after signin
-      console.log("next-auth Callback: jwt");
+      console.log('next-auth Callback: jwt');
 
       // console.log({ token, user, account, profile, isNewUser });
       return token;

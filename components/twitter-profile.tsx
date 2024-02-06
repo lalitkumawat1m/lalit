@@ -1,9 +1,9 @@
-import { Image } from "components/image";
-import { Link } from "components/link";
-import { FC } from "react";
-import { components } from "twitter-api-sdk/dist/gen/openapi-types";
+import {Image} from 'components/image';
+import {Link} from 'components/link';
+import {FC} from 'react';
+import {components} from 'twitter-api-sdk/dist/gen/openapi-types';
 
-type TwitterProfileProps = components["schemas"]["User"];
+type TwitterProfileProps = components['schemas']['User'];
 
 export const TwitterProfile: FC<TwitterProfileProps> = ({
   profile_image_url,
@@ -26,7 +26,9 @@ export const TwitterProfile: FC<TwitterProfileProps> = ({
         </figure>
         <div className="flex flex-col justify-center">
           <h2 className="text-sm font-semibold tracking-wide">{name}</h2>
-          <h3 className="text-sm tracking-tight text-gray-500 d:text-gray-300/90">@{username}</h3>
+          <h3 className="text-sm tracking-tight text-gray-500 d:text-gray-300/90">
+            @{username}
+          </h3>
         </div>
         <Link
           target="_blank"
@@ -45,11 +47,11 @@ export const TwitterProfile: FC<TwitterProfileProps> = ({
         <p className="text-[13px] text-gray-500 d:text-gray-300/90">
           <span className="font-semibold text-gray-600 d:text-gray-200">
             {public_metrics?.following_count}
-          </span>{" "}
-          Following{" "}
+          </span>{' '}
+          Following{' '}
           <span className="ml-2 font-semibold text-gray-600 d:text-gray-200">
             {public_metrics?.followers_count}
-          </span>{" "}
+          </span>{' '}
           Followers
         </p>
       </footer>

@@ -1,24 +1,31 @@
-import { TECH } from "content/tech-stack";
-import { Link } from "components/link";
+import {TECH} from 'content/tech-stack';
+import {Link} from 'components/link';
 
 export const CV = {
-  name: "Lalit Kumawat",
-  title: "Fullstack Engineer",
-  primary_stack: [TECH.typescript, TECH.react, TECH.nodejs, TECH.tailwindcss, TECH.nestjs],
-  address: "Madhya Pradesh, India",
-  email: "lalitkumawat112@gmail.com",
-  website: "https://flext.dev",
+  name: 'Lalit Kumawat',
+  title: 'Fullstack Engineer',
+  primary_stack: [
+    TECH.typescript,
+    TECH.react,
+    TECH.nodejs,
+    TECH.tailwindcss,
+    TECH.nestjs,
+  ],
+  address: 'Madhya Pradesh, India',
+  email: 'lalitkumawat112@gmail.com',
+  website: 'https://flext.dev',
   mobile: {
     href: `tel:+91xxxxxxxxxx`,
-    number: "+91 xxx xxx xxxx",
+    number: '+91 xxx xxx xxxx',
   },
   intro: (
     <>
-      I am a passionate self-taught software developer seeking a new challenge. I specialize in
-      front-end & serverless backend- development using Typescript, React.js, and Node.js. As an
-      advocate for web performance, accessibility, I create amazing web applications to improve the
-      internet. I love encountering hard-to-solve-problems and approach them with patience,
-      determination, and relentless perseverance.
+      I am a passionate self-taught software developer seeking a new challenge.
+      I specialize in front-end & serverless backend- development using
+      Typescript, React.js, and Node.js. As an advocate for web performance,
+      accessibility, I create amazing web applications to improve the internet.
+      I love encountering hard-to-solve-problems and approach them with
+      patience, determination, and relentless perseverance.
     </>
   ),
   eduction: [
@@ -43,14 +50,14 @@ export const CV = {
     //   type: [],
     // },
     {
-      dateFrom: "2009-06-01",
-      dateTo: "2020-04-01",
-      city: "Mandsaur",
-      country: "India",
-      institution: "Saraswati Vidhya Mandir",
-      certificate: "High School Certificate",
-      level: "School",
-      type: ["relevant"],
+      dateFrom: '2009-06-01',
+      dateTo: '2020-04-01',
+      city: 'Mandsaur',
+      country: 'India',
+      institution: 'Saraswati Vidhya Mandir',
+      certificate: 'High School Certificate',
+      level: 'School',
+      type: ['relevant'],
     },
     // {
     //   dateFrom: "2008-01-01",
@@ -109,135 +116,142 @@ export const CV = {
     //   type: ["relevant", "management", "restaurant"],
     // },
     {
-      dateFrom: "2020-06-01",
-      dateTo: "2024-06-01",
-      city: "Mandsaur",
-      country: "Madhya Pradesh, India",
-      institution: "Mandsaur University",
+      dateFrom: '2020-06-01',
+      dateTo: '2024-06-01',
+      city: 'Mandsaur',
+      country: 'Madhya Pradesh, India',
+      institution: 'Mandsaur University',
       certificate: "Bachelor's, Computer Science",
-      level: "Higher Education",
-      type: ["relevant", "web / tech dev"],
+      level: 'Higher Education',
+      type: ['relevant', 'web / tech dev'],
     },
   ],
   experience: [
     {
-      dateFrom: "2020-07-01",
-      dateTo: "2020-12-31",
-      city: "",
-      country: "",
-      company: "",
-      title: "",
-      description: "",
-      type: ["web / tech dev", "relevant"],
+      dateFrom: '2020-07-01',
+      dateTo: '2020-12-31',
+      city: '',
+      country: '',
+      company: '',
+      title: '',
+      description: '',
+      type: ['web / tech dev', 'relevant'],
       responsibilities: [
         {
-          content: "Learned C Language.",
-          type: ["web / tech dev", "relevant"],
+          content: 'Learned C Language.',
+          type: ['web / tech dev', 'relevant'],
         },
         {
-          content: "Learned how operating system works.",
-          type: ["web / tech dev", "relevant"],
+          content: 'Learned how operating system works.',
+          type: ['web / tech dev', 'relevant'],
         },
       ],
     },
     {
-      dateFrom: "2021-01-01",
-      dateTo: "2021-12-31",
-      city: "",
-      country: "",
-      company: "",
-      title: "",
-      description: "",
-      type: ["web / tech dev", "relevant"],
+      dateFrom: '2021-01-01',
+      dateTo: '2021-12-31',
+      city: '',
+      country: '',
+      company: '',
+      title: '',
+      description: '',
+      type: ['web / tech dev', 'relevant'],
       responsibilities: [
         {
-          content: "Learned how Data Structures & Algorithms works.",
-          type: ["web / tech dev", "relevant"],
-        },
-        {
-          content: "Created my first ever portfolio website and open-sourced it.",
-          type: ["web / tech dev", "relevant"],
-        },
-        {
-          content: "Learned Python, Java & Object oriented Programming.",
-          type: ["web / tech dev", "relevant"],
-        },
-        {
-          content: "Learned HTML, CSS, Javascript and ReactJS.",
-          type: ["web / tech dev", "relevant"],
-        },
-      ],
-    },
-    {
-      dateFrom: "2022-01-01",
-      dateTo: "2022-12-31",
-      city: "",
-      country: "",
-      company: "",
-      title: "",
-      description: "",
-      type: ["web / tech dev", "relevant"],
-      responsibilities: [
-        {
-          content: "Worked on awesome projects such as Livekar, MoneyTracker.",
-          type: ["web / tech dev", "relevant"],
-        },
-        {
-          content: "Learned how to create cross-platform apps using Flutter and Dart.",
-          type: ["web / tech dev", "relevant"],
-        },
-        {
-          content: "Learned Android Development, Firebase, SQL & Git/GitHub.",
-          type: ["web / tech dev", "relevant"],
-        },
-        {
-          content: "Learned how Database Management & Computer Networking works.",
-          type: ["web / tech dev", "relevant"],
-        },
-      ],
-    },
-    {
-      dateFrom: "2023-01-01",
-      dateTo: "2023-12-31",
-      city: "",
-      country: "",
-      company: "",
-      title: "",
-      description: "",
-      type: ["web / tech dev", "relevant"],
-      responsibilities: [
-        {
-          content: "Started Open Source Contribution Journey from million.js library.",
-          type: ["web / tech dev", "relevant"],
-        },
-        {
-          content: "Worked on awesome projects such as GetSetBooking, Promptopia.",
-          type: ["web / tech dev", "relevant"],
-        },
-        {
-          content: "Learned Typescript, NextJS, ReactJS, NodeJS, Express, MongoDB.",
-          type: ["web / tech dev", "relevant"],
-        },
-      ],
-    },
-    {
-      dateFrom: "2024-01-01",
-      dateTo: "2024-02-01",
-      city: "",
-      country: "",
-      company: "",
-      title: "",
-      description: "",
-      type: ["web / tech dev", "relevant"],
-      responsibilities: [
-        {
-          content: "Worked on awesome projects such as Real Time Chat, Omegle 2.0, Genius AI.",
-          type: ["web / tech dev", "relevant"],
+          content: 'Learned how Data Structures & Algorithms works.',
+          type: ['web / tech dev', 'relevant'],
         },
         {
           content:
-            "Learned WebSocket, WebRTC, Docker, Prisma, PostgresQL, GraphQL, NestJS, Zustand.",
-          type: ["web / tech dev", "relevant"],
+            'Created my first ever portfolio website and open-sourced it.',
+          type: ['web / tech dev', 'relevant'],
+        },
+        {
+          content: 'Learned Python, Java & Object oriented Programming.',
+          type: ['web / tech dev', 'relevant'],
+        },
+        {
+          content: 'Learned HTML, CSS, Javascript and ReactJS.',
+          type: ['web / tech dev', 'relevant'],
+        },
+      ],
+    },
+    {
+      dateFrom: '2022-01-01',
+      dateTo: '2022-12-31',
+      city: '',
+      country: '',
+      company: '',
+      title: '',
+      description: '',
+      type: ['web / tech dev', 'relevant'],
+      responsibilities: [
+        {
+          content: 'Worked on awesome projects such as Livekar, MoneyTracker.',
+          type: ['web / tech dev', 'relevant'],
+        },
+        {
+          content:
+            'Learned how to create cross-platform apps using Flutter and Dart.',
+          type: ['web / tech dev', 'relevant'],
+        },
+        {
+          content: 'Learned Android Development, Firebase, SQL & Git/GitHub.',
+          type: ['web / tech dev', 'relevant'],
+        },
+        {
+          content:
+            'Learned how Database Management & Computer Networking works.',
+          type: ['web / tech dev', 'relevant'],
+        },
+      ],
+    },
+    {
+      dateFrom: '2023-01-01',
+      dateTo: '2023-12-31',
+      city: '',
+      country: '',
+      company: '',
+      title: '',
+      description: '',
+      type: ['web / tech dev', 'relevant'],
+      responsibilities: [
+        {
+          content:
+            'Started Open Source Contribution Journey from million.js library.',
+          type: ['web / tech dev', 'relevant'],
+        },
+        {
+          content:
+            'Worked on awesome projects such as GetSetBooking, Promptopia.',
+          type: ['web / tech dev', 'relevant'],
+        },
+        {
+          content:
+            'Learned Typescript, NextJS, ReactJS, NodeJS, Express, MongoDB.',
+          type: ['web / tech dev', 'relevant'],
+        },
+      ],
+    },
+    {
+      dateFrom: '2024-01-01',
+      dateTo: '2024-02-01',
+      city: '',
+      country: '',
+      company: '',
+      title: '',
+      description: '',
+      type: ['web / tech dev', 'relevant'],
+      responsibilities: [
+        {
+          content:
+            'Worked on awesome projects such as Real Time Chat, Omegle 2.0, Genius AI.',
+          type: ['web / tech dev', 'relevant'],
+        },
+        {
+          content:
+            'Learned WebSocket, WebRTC, Docker, Prisma, PostgresQL, GraphQL, NestJS, Zustand.',
+          type: ['web / tech dev', 'relevant'],
         },
       ],
     },
@@ -797,11 +811,11 @@ export const CV = {
   capabilities: {
     languages: [
       {
-        name: "Hindi - native",
+        name: 'Hindi - native',
         Icon: null,
       },
       {
-        name: "English - bilingual",
+        name: 'English - bilingual',
         Icon: null,
       },
     ],
@@ -839,7 +853,14 @@ export const CV = {
       TECH.docker,
     ],
     serviceProviders: [TECH.vercel, TECH.aws, TECH.firebase, TECH.github],
-    marketing: [TECH.vercel, TECH.aws, TECH.firebase, TECH.netlify, TECH.planetscale, TECH.github],
+    marketing: [
+      TECH.vercel,
+      TECH.aws,
+      TECH.firebase,
+      TECH.netlify,
+      TECH.planetscale,
+      TECH.github,
+    ],
     dataProviders: [TECH.wordpress],
     tools: [
       TECH.vscode,
@@ -854,14 +875,14 @@ export const CV = {
   },
   certifications: [
     {
-      date: "2021",
-      name: "Oracle - Java Foundations Certification",
-      type: ["web / tech dev", "relevant"],
+      date: '2021',
+      name: 'Oracle - Java Foundations Certification',
+      type: ['web / tech dev', 'relevant'],
     },
     {
-      date: "2021",
-      name: "Cisco - C Foundations Certification",
-      type: ["web / tech dev", "relevant"],
+      date: '2021',
+      name: 'Cisco - C Foundations Certification',
+      type: ['web / tech dev', 'relevant'],
     },
     // {
     //   date: "2017",
@@ -891,19 +912,19 @@ export const CV = {
   ],
   coursework: [
     {
-      name: "Data Structures & Algorithms",
+      name: 'Data Structures & Algorithms',
     },
     {
-      name: "Object Oriented Programming",
+      name: 'Object Oriented Programming',
     },
     {
-      name: "Operating Systems",
+      name: 'Operating Systems',
     },
     {
-      name: "Database Management System",
+      name: 'Database Management System',
     },
     {
-      name: "Web & Networking Concepts",
+      name: 'Web & Networking Concepts',
     },
   ],
   // references: [

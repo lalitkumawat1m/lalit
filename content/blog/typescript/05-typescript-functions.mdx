@@ -1,23 +1,25 @@
 ---
-title: "TypeScript Functions with Generics"
-publishedAt: "2022-05-01"
-summary: "Learn how to improve functions with TypeScript and Generic Types"
-tldr: ""
+title: 'TypeScript Functions with Generics'
+publishedAt: '2022-05-01'
+summary: 'Learn how to improve functions with TypeScript and Generic Types'
+tldr: ''
 type: Blog
-image: "/images/ts-5.svg"
-icon: "typescript"
+image: '/images/ts-5.svg'
+icon: 'typescript'
 tags:
-  - "typescript"
-  - "javascript"
-  - "development"
-  - "dev tools"
+  - 'typescript'
+  - 'javascript'
+  - 'development'
+  - 'dev tools'
 ---
 
 Let's assume there is a JavaScript library that defines a `flip` function. It can work with strings or arrays, and it returns a reversed version of the input without changing the original.
 
 ```js
 function flip(input) {
-  return typeof input === "string" ? input.split("").flip().join("") : input.slice().flip();
+  return typeof input === 'string'
+    ? input.split('').flip().join('')
+    : input.slice().flip();
 }
 ```
 
@@ -64,7 +66,7 @@ flip(true); // Error!
 flip({}); // Error!
 flip(Math.random); // Error!
 
-const elpmaxe: string | any[] = flip("example");
+const elpmaxe: string | any[] = flip('example');
 const numbers: string | any[] = flip([1, 2, 3, 4, 5]);
 ```
 
@@ -86,7 +88,7 @@ function flip<T>(input: string | T[]): string | T[] {
 We now preserve the type information:
 
 ```ts
-const elpmaxe: string | string[] = flip("example");
+const elpmaxe: string | string[] = flip('example');
 const numbers: string | number[] = flip([1, 2, 3, 4, 5]);
 ```
 
@@ -112,7 +114,7 @@ With other programming languages, we could overload the function `flip` by calli
 
 ```ts
 function flip(string: string): string {
-  return string.split("").flip().join("");
+  return string.split('').flip().join('');
 }
 
 function flip<T>(array: T[]): T[] {
@@ -132,7 +134,9 @@ typescriptlang.org/docs/handbook/2/functions.html#function-overloads).
 function flip(string: string): string;
 function flip<T>(array: T[]): T[];
 function flip<T>(input: string | T[]): string | T[] {
-  return typeof input === "string" ? input.split("").flip().join("") : input.slice().flip();
+  return typeof input === 'string'
+    ? input.split('').flip().join('')
+    : input.slice().flip();
 }
 ```
 

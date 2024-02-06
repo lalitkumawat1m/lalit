@@ -1,11 +1,11 @@
-import { useTooltipStore } from "components/_stores/tooltip-store";
-import { Image } from "components/image";
-import { ABOUT } from "content/about";
-import { FC, useCallback, useRef, useState } from "react";
+import {useTooltipStore} from 'components/_stores/tooltip-store';
+import {Image} from 'components/image';
+import {ABOUT} from 'content/about';
+import {FC, useCallback, useRef, useState} from 'react';
 
 type AboutProps = {};
 
-export const About: FC<AboutProps> = (props) => {
+export const About: FC<AboutProps> = props => {
   const imageRef = useRef<HTMLImageElement[]>([]);
   const [focusImageIndex, setFocusImageIndex] = useState(0);
   const [images, setImages] = useState(ABOUT.images);
@@ -15,12 +15,12 @@ export const About: FC<AboutProps> = (props) => {
   const handleImageClick = useCallback(() => {
     setTooltip(false);
     if (focusImageIndex === images.length - 1) {
-      setFocusImageIndex((current) => current + 1);
-      setImages((current) => current.sort(() => 0.5 - Math.random()));
+      setFocusImageIndex(current => current + 1);
+      setImages(current => current.sort(() => 0.5 - Math.random()));
       setTimeout(() => {
         setFocusImageIndex(0);
         setTooltip(true);
-        const trigger = new Event("mouseover");
+        const trigger = new Event('mouseover');
         setTimeout(() => {
           buttonRef.current?.dispatchEvent(trigger);
         }, 50);
@@ -28,10 +28,10 @@ export const About: FC<AboutProps> = (props) => {
     }
 
     if (focusImageIndex < images.length - 1) {
-      setFocusImageIndex((current) => current + 1);
+      setFocusImageIndex(current => current + 1);
       setTimeout(() => {
         setTooltip(true);
-        const trigger = new Event("mouseover");
+        const trigger = new Event('mouseover');
         setTimeout(() => {
           buttonRef.current?.dispatchEvent(trigger);
         }, 50);
@@ -51,7 +51,7 @@ export const About: FC<AboutProps> = (props) => {
           data-tip={images[focusImageIndex]?.alt}
         >
           <span className="sr-only">Cycle through Images</span>
-          {images.map(({ src, alt }, index) => {
+          {images.map(({src, alt}, index) => {
             return (
               <Image
                 maxWidth={540}
@@ -68,18 +68,22 @@ export const About: FC<AboutProps> = (props) => {
                 onLoadingComplete={() =>
                   document
                     .querySelectorAll(`[data-about-image-index="${index}"]`)
-                    .forEach((img) => img.classList.remove("!opacity-0"))
+                    .forEach(img => img.classList.remove('!opacity-0'))
                 }
                 style={{
                   transform:
                     focusImageIndex > index
-                      ? `translate(-700px, -${(index % 4) * 60 + 25}px) rotate(${
+                      ? `translate(-700px, -${
+                          (index % 4) * 60 + 25
+                        }px) rotate(${
                           (index % 4) * (index % 2 === 0 ? 0.5 : -1.2) * 3
                         }deg)`
-                      : `rotate(${(index % 4) * (index % 2 === 0 ? 0.5 : -1.2) * 3}deg)`,
+                      : `rotate(${
+                          (index % 4) * (index % 2 === 0 ? 0.5 : -1.2) * 3
+                        }deg)`,
                   zIndex: -index,
-                  filter: focusImageIndex !== index ? "grayscale(80)" : "",
-                  opacity: focusImageIndex > index ? "0" : "1",
+                  filter: focusImageIndex !== index ? 'grayscale(80)' : '',
+                  opacity: focusImageIndex > index ? '0' : '1',
                 }}
               />
             );
@@ -88,7 +92,7 @@ export const About: FC<AboutProps> = (props) => {
         </button>
         <section className="spacing-8">
           <header className="grid max-w-xl grid-cols-2 gap-4 text-center sm:grid-cols-4 sm:text-left">
-            {ABOUT.stats.map(({ statistic, caption, tooltip }, index) => {
+            {ABOUT.stats.map(({statistic, caption, tooltip}, index) => {
               return (
                 <figure
                   key={caption + index}

@@ -12,8 +12,14 @@
     "start": "next start",
     "export": "next build && next export -o .export",
     "analyze": "SET ANALYZE=true&& next build",
-    "lint": "prettier --check . && --allow-empty-input \"**/*.{css,scss}\" && next lint",
-    "format": "prettier --write ."
+    "lint": "gts lint",
+    "format": "prettier --write .",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run lint"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -79,14 +85,18 @@
     "@tailwindcss/typography": "^0.5.7",
     "@tanstack/react-query-devtools": "^4.3.9",
     "@types/chrome": "^0.0.197",
-    "@types/node": "^18.7.18",
+    "@types/node": "^14.11.2",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
     "@types/tailwindcss": "^3.0.11",
     "@types/validator": "^13.7.6",
     "autoprefixer": "10.4.5",
     "clsx": "^1.2.1",
-    "fx-style": "^2.0.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "fx-style": "^3.0.3",
+    "gts": "^3.1.1",
     "mini-svg-data-uri": "^1.4.4",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.16",
@@ -98,7 +108,7 @@
     "tailwind-gradient-mask-image": "^1.0.0",
     "tailwindcss": "^3.1.8",
     "type-fest": "^3.0.0",
-    "typescript": "^4.8.3"
+    "typescript": "~4.7.0"
   },
   "typeRoots": [
     "./node_modules/@types",
