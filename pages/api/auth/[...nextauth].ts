@@ -17,7 +17,7 @@ import validate from "validator";
 export const authOptions: NextAuthOptions = {
   // Configure one or more authentication providers
   adapter: PrismaAdapter(prisma),
-  secret: env.NEXTAUTH_SECRET,
+  // secret: env.NEXTAUTH_SECRET,
   session: {
     maxAge: 120 * 24 * 60 * 60, // 120 days
     strategy: "jwt",
@@ -30,33 +30,33 @@ export const authOptions: NextAuthOptions = {
     verifyRequest: "/auth/verify-request", // (used for check email message)
   },
   providers: [
-    GithubProvider({
-      clientId: env.GITHUB_ID,
-      clientSecret: env.GITHUB_SECRET,
-    }),
-    GoogleProvider({
-      clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET,
-    }),
-    TwitterProvider({
-      clientId: env.TWITTER_CLIENT_ID,
-      clientSecret: env.TWITTER_CLIENT_SECRET,
-      // version: "2.0", // opt-in to Twitter OAuth 2.0
-    }),
-    FacebookProvider({
-      clientId: env.FACEBOOK_CLIENT_ID,
-      clientSecret: env.FACEBOOK_CLIENT_SECRET,
-    }),
+    // GithubProvider({
+    //   clientId: env.GITHUB_ID,
+    //   clientSecret: env.GITHUB_SECRET,
+    // }),
+    // GoogleProvider({
+    //   clientId: env.GOOGLE_CLIENT_ID,
+    //   clientSecret: env.GOOGLE_CLIENT_SECRET,
+    // }),
+    // TwitterProvider({
+    //   clientId: env.TWITTER_CLIENT_ID,
+    //   clientSecret: env.TWITTER_CLIENT_SECRET,
+    //   // version: "2.0", // opt-in to Twitter OAuth 2.0
+    // }),
+    // FacebookProvider({
+    //   clientId: env.FACEBOOK_CLIENT_ID,
+    //   clientSecret: env.FACEBOOK_CLIENT_SECRET,
+    // }),
     EmailProvider({
       server: {
-        host: env.EMAIL_SERVER_HOST,
-        port: env.EMAIL_SERVER_PORT,
-        auth: {
-          user: env.EMAIL_SERVER_USER,
-          pass: env.EMAIL_SERVER_PASSWORD,
-        },
+        // host: env.EMAIL_SERVER_HOST,
+        // port: env.EMAIL_SERVER_PORT,
+        // auth: {
+        //   user: env.EMAIL_SERVER_USER,
+        //   pass: env.EMAIL_SERVER_PASSWORD,
+        // },
       },
-      from: env.EMAIL_FROM,
+      // from: env.EMAIL_FROM,
       maxAge: 24 * 60 * 60,
       // sendVerificationRequest: async ({ identifier: email, url, provider: { server, from } }) => {
       //   console.log({
