@@ -185,3 +185,5 @@
 //     revalidate: 60,
 //   };
 // };
+
+export {}
