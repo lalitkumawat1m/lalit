@@ -1,27 +1,28 @@
-import FlextLogo from 'public/logo.svg';
+import FlextLogo from "public/logo.svg";
+import LalitLogo from "public/logo-profile.png";
 
 export const HEADER = {
   logo: {
-    href: '/',
-    title: <FlextLogo />,
-    alt: 'Flext Logo',
+    href: "/",
+    title: <strong><h1 className="text-4xl font-extrabold bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent animate-hue">LK</h1></strong>,
+    alt: "Lalit Logo",
   },
   nav: [
     {
-      href: '/',
-      title: 'Home',
-      alt: 'Country roads..',
+      href: "/",
+      title: "Home",
+      alt: "Country roads..",
       desktop: false,
     },
     {
-      href: '/#about',
-      title: 'About',
-      alt: 'More about me.',
+      href: "/#about",
+      title: "About",
+      alt: "More about me.",
       desktop: true,
     },
     {
-      href: '/#portfolio',
-      title: 'Portfolio',
+      href: "/#portfolio",
+      title: "Portfolio",
       alt: "Work I've done.",
       desktop: true,
     },
@@ -38,9 +39,9 @@ export const HEADER = {
       alt: "Images and stuff",
       desktop: true,
     },*/ {
-      href: '/resume',
-      title: 'Resume',
-      alt: 'My professional resume',
+      href: "/resume",
+      title: "Resume",
+      alt: "My professional resume",
       desktop: true,
     },
   ],
