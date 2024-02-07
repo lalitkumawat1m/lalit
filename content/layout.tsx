@@ -4,7 +4,13 @@ import LalitLogo from "public/logo-profile.png";
 export const HEADER = {
   logo: {
     href: "/",
-    title: <strong><h1 className="text-4xl font-extrabold bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent animate-hue">LK</h1></strong>,
+    title: (
+      <strong>
+        <h1 className="text-4xl font-sans font-black bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent animate-hue">
+          LK
+        </h1>
+      </strong>
+    ),
     alt: "Lalit Logo",
   },
   nav: [

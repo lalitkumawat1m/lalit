@@ -90,6 +90,7 @@ module.exports = {
         blink: "blink 0.75s step-start infinite",
       },
       fontFamily: {
+        monton:["Monton","cursive"],
         sans: ["Inter", /*"'Basier Circle'",*/ ...defaultTheme.fontFamily.sans],
         mono: [
           "Consolas",

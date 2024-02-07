@@ -103,7 +103,7 @@ export const Hero: FC<HeroProps> = ({twitterData}) => {
               </Link>
               <Link
                 target="_blank"
-                href="https://github.com/lalitkumawat1m/stargazers"
+                href="https://github.com/lalitkumawat1m/"
                 className="group flex h-9 w-9 items-center justify-center rounded-full border-2 border-gray-400/50 bg-gray-100 bg-clip-padding text-sm font-medium text-gray-600 transition-all hfa:border-yellow-500/30 hfa:bg-yellow-500 hfa:text-white d:bg-gray-700 d:text-gray-50 d:hfa:bg-yellow-500"
                 data-tip="Star on Github"
               >

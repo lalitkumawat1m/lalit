@@ -386,7 +386,7 @@ export const Resume: FC = props => {
                       </ul>
                     </section>
 
-                    {/* {['all', 'relevant', 'web / tech dev'].includes(filter) ? (
+                    {['all', 'relevant', 'web / tech dev'].includes(filter) ? (
                       <section className="relative max-w-prose spacing-1">
                           <h3 className="items-baseline text-sm tracking-tight spacing-1 ">
                             <strong className="text-[17px] font-bold text-gray-900 d:text-gray-100">
@@ -401,7 +401,7 @@ export const Resume: FC = props => {
                             ))}
                           </ul>
                         </section>
-                      ) : null} */}
+                      ) : null}
                   </div>
                 </ResumeSection>
 
