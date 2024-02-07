@@ -1,5 +1,4 @@
-import FlextLogo from "public/logo.svg";
-import LalitLogo from "public/logo-profile.png";
+// import LalitLogo from "public/logo.svg";
 
 export const HEADER = {
   logo: {

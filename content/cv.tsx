@@ -13,7 +13,7 @@ export const CV = {
   ],
   address: 'Madhya Pradesh, India',
   email: 'lalitkumawat112@gmail.com',
-  website: 'https://flext.dev',
+  website: 'https://lalitkumawat.vercel.app',
   mobile: {
     href: `tel:+91xxxxxxxxxx`,
     number: '+91 xxx xxx xxxx',

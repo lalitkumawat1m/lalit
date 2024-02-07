@@ -1,7 +1,7 @@
 /*= =============== Strings ================ */
 const myname = 'Lalit Kumawat';
 const title = 'Full-stack Developer';
-const website = String('https://flext.dev');
+const website = String('https://lalitkumawat.vercel.app');
 const greeting = `Hello, my name is ${myname}, and I'm a ${title}.`;
 
 // You can use single-, double-quotes or backticks to set
@@ -14,7 +14,7 @@ const inferredName = 'Lalit Kumawat';
 const inferredTitle = 'Full-stack Developer';
 // inferredTitle: string
 
-const inferredWebsite = String('https://flext.dev');
+const inferredWebsite = String('https://lalitkumawat.vercel.app');
 // inferredWebsite: string
 
 const inferredGreeting = `Hello, my name is ${myname}, and I'm a ${title}.`;

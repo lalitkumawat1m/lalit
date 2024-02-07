@@ -82,7 +82,7 @@ export const ResumeFooter = () => {
               href="mailto:lalitkumawat1129@gmail.com"
               target="_blank"
               className="rounded p-1 text-gray-400 transition-all duration-75 hf:bg-gray-100 hf:text-gray-700 d:text-gray-300 d:hf:bg-gray-800/80 d:hf:text-gray-200"
-              data-tip="hello@flext.dev"
+              data-tip="lalitkumawat1129@gmail.com"
             >
               <span className="sr-only">Email me</span>
               <EnvelopeIcon className="h-4 w-4" />
