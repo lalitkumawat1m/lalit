@@ -1,21 +1,21 @@
 import {Image} from 'components/image';
 import {Link} from 'components/link';
 import {FC} from 'react';
-// import {components} from 'twitter-api-sdk/dist/gen/openapi-types';
+import {components} from 'twitter-api-sdk/dist/gen/openapi-types';
 import LalitLogo from "public/logo-profile.png";
 
-// type TwitterProfileProps = components['schemas']['User'];
-
-// FC<TwitterProfileProps> = ({
-//   profile_image_url,
-//   name,
-//   username,
-//   description,
-//   public_metrics,
-// })
+type TwitterProfileProps = components['schemas']['User'];
 
 
-export const TwitterProfile=() => {
+
+
+export const TwitterProfile: FC<TwitterProfileProps> = ({
+  profile_image_url,
+  name,
+  username,
+  description,
+  public_metrics,
+}) => {
   return (
     <section className="max-w-xs animate-float rounded-lg border-2 border-gray-400/30 bg-white/90 p-4 backdrop-blur-md will-change-transform spacing-2 d:bg-gray-800 lg:bg-white/80">
       <header className="flex gap-4">
