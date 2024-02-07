@@ -28,9 +28,14 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "jsx": "preserve",
-    "typeRoots": ["./node_modules/@types","./@types/types.d.ts"]
+    "typeRoots": [
+      "./node_modules/@types",
+      "./@types/types.d.ts"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",
@@ -39,10 +44,10 @@
     "**/*.ts",
     "**/*.tsx",
     "./*.js",
-    "**/*.svg",
+    "**/*.svg"
   ],
   "exclude": [
     "node_modules",
-    "content/code-blocks/**/*",
+    "content/code-blocks/**/*"
   ]
 }
