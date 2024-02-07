@@ -162,7 +162,16 @@
 //   );
 // };
 
-// export default BookList;
+export const BookList = ()=>{
+ return (
+    <>
+    <h1>This is booklist</h1>
+    </>
+ );
+}
+
+
+export default BookList;
 
 // export const getStaticProps = async () => {
 //   const ssg = createProxySSGHelpers({
@@ -186,4 +195,3 @@
 //   };
 // };
 
-export {}
