@@ -3,7 +3,7 @@ import {Favicon} from 'components/_document/favicon';
 import {Font} from 'components/_document/font';
 import Document, {Head, Html, Main, NextScript} from 'next/document';
 import Script from 'next/script';
-import { Analytics } from '@vercel/analytics/react';
+
 
 class Root extends Document {
   render(): JSX.Element {
@@ -31,7 +31,6 @@ class Root extends Document {
         <body className="color-gray--slate bg-white [--line-color:theme(colors.gray.200/0.8)] d:bg-gray-900 d:bg-gradient-to-b d:from-black/40 d:to-black/40">
           <Main />
           <NextScript />
-          <Analytics />
         </body>
       </Html>
     );

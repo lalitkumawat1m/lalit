@@ -1,6 +1,7 @@
 import {trpc} from 'components/_app/trpc';
 import {ContextProviders} from 'components/_stores/_context-providers';
 import {LoadInitialData} from 'components/_stores/_load-initial-data';
+import { Analytics } from '@vercel/analytics/react';
 
 import {Footer} from 'components/layout/footer';
 import {Header} from 'components/layout/header';
@@ -52,6 +53,7 @@ const App = ({pageProps, Component}: AppProps) => {
       <Header />
       <main className="min-h-screen print:!mx-auto print:!w-[1024px]">
         <Component {...pageProps} />
+        <Analytics/>
       </main>
       <Footer />
       {/*<Stars />*/}
